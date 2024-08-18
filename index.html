@@ -1,484 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="UTF-8" />
-    <title>Safs - HTML</title>
+    <meta charset="utf-8" />
+    <title>Abhishek Bhowmik</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free Website Template" name="keywords" />
+    <meta content="Free Website Template" name="description" />
 
-    <!-- ====== Google Fonts ====== -->
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Font -->
     <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- ====== ALL CSS ====== -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="assets/css/lightbox.min.css" />
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- CSS Libraries -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
   </head>
 
-  <body data-spy="scroll" data-target=".navbar-nav">
-    <!-- Preloader -->
-    <div class="preloader">
-      <div class="spinner">
-        <div class="cube1"></div>
-        <div class="cube2"></div>
+  <body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">Abhishek</a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarCollapse"
+        >
+          <div class="navbar-nav ml-auto">
+            <a href="#home" class="nav-item nav-link active">Home</a>
+            <a href="#about" class="nav-item nav-link">About</a>
+            <a href="#service" class="nav-item nav-link">Service</a>
+            <a href="#experience" class="nav-item nav-link">Experience</a>
+            <a href="#blog" class="nav-item nav-link">Projects</a>
+            <a href="#contact" class="nav-item nav-link">Contact</a>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- // Preloader -->
+    <!-- Nav Bar End -->
 
-    <!-- ====== Header ====== -->
-    <header id="header" class="header">
-      <!-- ====== Navbar ====== -->
-      <nav class="navbar navbar-expand-lg fixed-top bg-primari" id="counter">
-        <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand logo" href="index.html">
-            <img src="assets/images/logo.png" alt="logo" />
-          </a>
-          <!-- // Logo -->
-
-          <!-- Mobile Menu -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-expanded="false"
-          >
-            <span><i class="fa fa-bars"></i></span>
-          </button>
-          <!-- Mobile Menu -->
-
-          <div
-            class="collapse navbar-collapse main-menu"
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#home">HOME</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">ABOUT</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#service">SERVICE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#portfolio">PORTFOLIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html">BLOG</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link pr0" href="#contact">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- ====== // Navbar ====== -->
-    </header>
-    <!-- ====== // Header ====== -->
-
-    <!-- ====== Hero Area ====== -->
-    <!-- <div class="hero-aria" id="home">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 hero-content h-100">
-            <div class="d-table">
-              <div class="d-table-cell">
-                <h2 class="text-uppercase">Let's Begin</h2>
-                <h3 class="text-uppercase"><span class="typed"></span></h3>
-                <p>Make designed by as Begindot.</p>
-                <a href="#about" class="button smooth-scroll">Learn More</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 hero-content h-100">
-            <h1>Hello</h1>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <div class="position-relative" id="home">
-      <div class="container">
-        <div class="row heroBgL">
-          <div class="col-lg-6 mt-5 pt-4">
-            <!-- <div class="d-table-cell h-100 hero-content">
-                <h2 class="text-uppercase">Let's Begin</h2>
-                <h3 class="text-uppercase"><span class="typed"></span></h3>
-                <p>Make designed by as Begindot.</p>
-                <a href="#about" class="button smooth-scroll">Learn More</a>
-            </div> -->
+    <!-- Hero Start -->
+    <div class="hero" id="home">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-sm-12 col-md-6">
             <div class="hero-content">
-              <h2>Abhisek</h2>
-              <h3 class="text-uppercase"><span class="typed"></span></h3>
-              <p>Make designed by as Begindot.</p>
-              <a href="#about" class="button smooth-scroll">Learn More</a>
+              <div class="hero-text">
+                <p>I'm</p>
+                <h1>Abhishek Bhowmik</h1>
+                <h2></h2>
+                <div class="typed-text">
+                  Web Designer, Web Developer, Front End Developer, Apps
+                  Designer, Apps Developer
+                </div>
+              </div>
+              <div class="hero-btn">
+                <a class="btn" href="">LINKEDIN</a>
+                <a class="btn" href="">DOWNLOAD CV</a>
+              </div>
             </div>
           </div>
-          <div class="col-lg-6 mt-5 pt-4 ">
-            <div
-              class="about-bg h-100"
-              style="background-image: url(assets/images/about-bg.jpg)"
-            >
-              <!-- Social Link -->
-              <div class="social-aria">
-                <a target="_blank" href="#"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
-                <a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="#"><i class="fab fa-pinterest"></i></a>
-                <a target="_blank" href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-              <!-- // Social Link -->
+          <div class="col-sm-12 col-md-6 d-none d-md-block">
+            <div class="hero-image">
+              <img src="img/abhishek.png" alt="Hero Image" class="pb-4" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- ====== //Hero Area ====== -->
+    <!-- Hero End -->
 
-    <!-- ====== About Area ====== -->
-    <section id="about" class="section-padding about-area">
-      <div class="container">
-        <!-- Section Title -->
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <div class="section-title text-center">
-              <h2>About Me</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus
-                placeat unde non modi, facilis, quae?
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- //Section Title -->
-        <div class="row align-items-baseline">
+    <!-- About Start -->
+    <div class="about wow fadeInUp mt-5" data-wow-delay="0.1s" id="about">
+      <div class="container-fluid">
+        <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="about-content">
-              <h2>Hello, I am <span>AL Mamun</span></h2>
+              <h2>Hello, I am <span>Abhishek Bhowmik</span></h2>
               <h4>Graphic Designer and Web Designer</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Corporis numquam ipsam ut deleniti perferendis aliquid ullam,
-                voluptatibus nam sunt eum laudantium cupiditate iste, obcaecati
-                deserunt dolores aliquam quia cum minus animi ipsa est facere
-                culpa fugiat, maxime quam! Itaque aperiam sequi accusantium
-                impedit recusandae nobis quod sunt deserunt provident omnis.
+              <p class="text-justify">
+                As a UI/UX designer with 4+ years of experience, and a notable
+                technical know-how acquired through a short stint in
+                development, I am confident in my ability to craft exceptional
+                digital experiences. Over the past few years at Webkul, I have
+                consistently delivered intuitive and visually appealing designs
+                for both customer-facing and enterprise software, specializing
+                in eCommerce and CRM solutions. My passion for creating
+                user-centric solutions drives me to excel in designing
+                interfaces that seamlessly bridge the gap between functionality
+                and aesthetics.
+                <br />
+                <br />My design obsession knows no bounds. I'm equally
+                fascinated by the sleek lines of industrial design, the grandeur
+                of architecture, and the realms of 3D modeling. If it's got a
+                design element, consider me intrigued. Above all, I appreciate
+                the elegance of minimalism, finding beauty in clean lines and
+                uncluttered spaces, and I strive to infuse this appreciation for
+                simplicity into all my creative endeavours. Simplicity is hard
+                to achieve but once it's there, it's beautiful.
               </p>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="about-content">
-              <h5>My Skills</h5>
-
-              <!-- Skill Area -->
-              <div id="skills" class="skill-area">
-                <!-- Single skill -->
-                <div class="single-skill">
-                  <div class="skillbar" data-percent="100%">
-                    <div class="skillbar-title"><span>HTML5</span></div>
-                    <div class="skillbar-bar"></div>
-                    <div class="skill-bar-percent">100%</div>
-                  </div>
-                </div>
-                <!-- //Single skill -->
-
-                <!-- Single skill -->
-                <div class="single-skill">
-                  <div class="skillbar" data-percent="85%">
-                    <div class="skillbar-title"><span>CSS3</span></div>
-                    <div class="skillbar-bar"></div>
-                    <div class="skill-bar-percent">85%</div>
-                  </div>
-                </div>
-                <!-- //Single skill -->
-
-                <!-- Single skill -->
-                <div class="single-skill">
-                  <div class="skillbar" data-percent="50%">
-                    <div class="skillbar-title"><span>JS</span></div>
-                    <div class="skillbar-bar"></div>
-                    <div class="skill-bar-percent">50%</div>
-                  </div>
-                </div>
-                <!-- //Single skill -->
+              <div class="section-header text-left">
+                <p>Learn About Me</p>
+                <h2>4 Years+ Experience</h2>
               </div>
-              <!-- //Skill Area -->
+              <div class="about-text">
+                <p>
+                  Passionate about crafting intuitive and visually compelling
+                  interfaces. When I'm not designing, I enjoy exploring new
+                  creative outlets and challenges.
+                </p>
+              </div>
+              <div class="skills">
+                <div class="skill-name">
+                  <p>Web Design</p>
+                  <p>85%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="85"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="skill-name">
+                  <p>Web Development</p>
+                  <p>95%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="skill-name">
+                  <p>Apps Design</p>
+                  <p>90%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="skill-name">
+                  <p>Apps Development</p>
+                  <p>85%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="85"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+              <a class="btn" href="">Learn More</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- ====== // About Area ====== -->
+    </div>
+    <!-- About End -->
 
-    <!-- ====== Service Section ====== -->
-    <!-- <section id="service" class="section-padding pb-70 service-area bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 ">
-                    <div class="section-title text-center">
-                        <h2>Service</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="fa fa-code"></i>
-                        </div>
-                        <h2>Web Design</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente minima repudiandae amet, accusamus ea impedit aperiam consectetur libero. Deleniti id sit minima.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="fa fa-chart-area"></i>
-                        </div>
-                        <h2>Business Services</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente minima repudiandae amet, accusamus ea impedit aperiam consectetur libero. Deleniti id sit minima.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-service">
-                        <div class="service-icon">
-                            <i class="fa fa-chart-line"></i>
-                        </div>
-                        <h2>Business Services</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente minima repudiandae amet, accusamus ea impedit aperiam consectetur libero. Deleniti id sit minima.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section> -->
-    <!-- ====== //Service Section ====== -->
-
-    <!-- ====== Portfolio Section ====== -->
-    <!-- <section id="portfolio" class="section-padding pb-85 portfolio-area bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 ">
-                    <div class="section-title text-center">
-                        <h2>Recent Work</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="work-list text-center">
-                        <ul>
-                            <li class="filter" class="active" data-filter="all">ALL</li>
-                            <li class="filter" data-filter=".web">Web Design</li>
-                            <li class="filter" data-filter=".graphic">Graphic</li>
-                            <li class="filter" data-filter=".logo">Logo</li>
-                            <li class="filter" data-filter=".wp">Wordpress</li>
-                            <li class="filter" data-filter=".other">Other</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row portfolio">
-                <div class="col-lg-4 col-md-6 mix wp graphic">
-                    <div class="single-portfolio" style="background-image: url(assets/images/portfolio/img-1.jpg)">
-                        <div class="portfolio-icon text-center">
-                            <a data-lightbox='lightbox' href="assets/images/portfolio/img-1.jpg"><i class="fas fa-expand-arrows-alt"></i></a>
-                        </div>
-                        <div class="portfolio-hover">
-                            <h4>Project <span>Name</span></h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mix logo web graphic other wp">
-                    <div class="single-portfolio" style="background-image: url(assets/images/portfolio/img-2.jpg)">
-                        <div class="portfolio-icon text-center">
-                            <a data-lightbox='lightbox' href="assets/images/portfolio/img-2.jpg"><i class="fas fa-expand-arrows-alt"></i></a>
-                        </div>
-                        <div class="portfolio-hover">
-                            <h4>Project <span>Name</span></h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mix wp other">
-                    <div class="single-portfolio" style="background-image: url(assets/images/portfolio/img-3.jpg)">
-                        <div class="portfolio-icon text-center">
-                            <a data-lightbox='lightbox' href="assets/images/portfolio/img-3.jpg"><i class="fas fa-expand-arrows-alt"></i></a>
-                        </div>
-                        <div class="portfolio-hover">
-                            <h4>Project <span>Name</span></h4>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section> -->
-    <!-- ====== // Portfolio Section ====== -->
-
-    <!-- ====== Blog Section ====== -->
-    <section class="section-padding pb-70 blog-section bg-light">
+    <!-- Service Start -->
+    <div class="service" id="service">
       <div class="container">
-        <!-- Section Title -->
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <div class="section-title text-center">
-              <h2>Projects</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        <!-- //Section Title -->
-        <div class="row">
-          <!-- Single Blog -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single-blog">
-              <div
-                class="blog-thumb"
-                style="background-image: url(assets/images/blog/img-1.jpg)"
-              ></div>
-              <h4 class="blog-title">
-                <a href="single-blog.html">Full Responsive</a>
-              </h4>
-              <p class="blog-meta"><a href="#">AL Mamun</a>, 22 FEB 2018</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloremque similique velit, officiis non.
-              </p>
-              <a href="single-blog.html" class="button">Read More</a>
-            </div>
-          </div>
-          <!-- Single Blog -->
-          <!-- Single Blog -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single-blog">
-              <div
-                class="blog-thumb"
-                style="background-image: url(assets/images/blog/img-2.jpg)"
-              ></div>
-              <h4 class="blog-title">
-                <a href="single-blog.html">Lifetime free Update</a>
-              </h4>
-              <p class="blog-meta"><a href="#">AL Mamun</a>, 22 FEB 2018</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloremque similique velit, officiis non.
-              </p>
-              <a href="single-blog.html" class="button">Read More</a>
-            </div>
-          </div>
-          <!-- Single Blog -->
-          <!-- Single Blog -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single-blog">
-              <div
-                class="blog-thumb"
-                style="background-image: url(assets/images/blog/img-3.jpg)"
-              ></div>
-              <h4 class="blog-title">
-                <a href="single-blog.html">Unlimited Support</a>
-              </h4>
-              <p class="blog-meta"><a href="#">AL Mamun</a>, 22 FEB 2018</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Doloremque similique velit, officiis non.
-              </p>
-              <a href="single-blog.html" class="button">Read More</a>
-            </div>
-          </div>
-          <!-- Single Blog -->
-        </div>
-      </div>
-    </section>
-    <!-- ====== // Blog Section ====== -->
-
-    <!-- ====== Featured Area ====== -->
-    <section id="featured" class="section-padding pb-70">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <div class="section-title text-center">
-              <h2>Services</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
+        <div
+          class="section-header text-center wow zoomIn"
+          data-wow-delay="0.1s"
+        >
+          <p>What I do</p>
+          <h2>Awesome Quality Services</h2>
         </div>
         <div class="row">
-          <!-- single featured item -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single-featured-item-wrap">
-              <h3><a href="#">Graphic Design</a></h3>
-              <div class="single-featured-item">
-                <div class="featured-icon">
-                  <i class="fa fa-edit"></i>
-                </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fa fa-laptop"></i>
+              </div>
+              <div class="service-text">
+                <h3>Web Design</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
-                  voluptatibus, sunt. Recusandae ab aliquid voluptate
-                  exercitationem dicta ipsa, odio cumque sapiente quaerat nisi
-                  ad rem dolor iusto.
+                  Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi
+                  facilis ornare velit non
                 </p>
               </div>
             </div>
           </div>
-          <!-- single featured item -->
-          <!-- single featured item -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single-featured-item-wrap">
-              <h3><a href="#">Web Design</a></h3>
-              <div class="single-featured-item">
-                <div class="featured-icon">
-                  <i class="fa fa-code"></i>
-                </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fa fa-laptop-code"></i>
+              </div>
+              <div class="service-text">
+                <h3>Web Development</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
-                  voluptatibus, sunt. Recusandae ab aliquid voluptate
-                  exercitationem dicta ipsa, odio cumque sapiente quaerat nisi
-                  ad rem dolor iusto.
+                  Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi
+                  facilis ornare velit non
                 </p>
               </div>
             </div>
           </div>
-          <!-- single featured item -->
-          <!-- single featured item -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single-featured-item-wrap">
-              <h3><a href="#">SEO Services</a></h3>
-              <div class="single-featured-item">
-                <div class="featured-icon">
-                  <i class="fa fa-search"></i>
-                </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fab fa-android"></i>
+              </div>
+              <div class="service-text">
+                <h3>Apps Design</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
-                  voluptatibus, sunt. Recusandae ab aliquid voluptate
-                  exercitationem dicta ipsa, odio cumque sapiente quaerat nisi
-                  ad rem dolor iusto.
+                  Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi
+                  facilis ornare velit non
                 </p>
               </div>
             </div>
           </div>
-          <!-- single featured item -->
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fab fa-apple"></i>
+              </div>
+              <div class="service-text">
+                <h3>Apps Development</h3>
+                <p>
+                  Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi
+                  facilis ornare velit non
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- ====== //Featured Area ====== -->
+    </div>
+    <!-- Service End -->
+
+    <!-- Experience Start -->
+    <div class="experience" id="experience">
+      <div class="container">
+        <header
+          class="section-header text-center wow zoomIn"
+          data-wow-delay="0.1s"
+        >
+          <p>My Resume</p>
+          <h2>Working Experience</h2>
+        </header>
+        <div class="timeline">
+          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2045 - 2050</div>
+              <h2>Web Developer</h2>
+              <h4>Soft Agency, San Francisco, CA</h4>
+              <p>
+                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
+                erat sagittis non. Ut blandit semper pretium.
+              </p>
+            </div>
+          </div>
+          <div
+            class="timeline-item right wow slideInRight"
+            data-wow-delay="0.1s"
+          >
+            <div class="timeline-text">
+              <div class="timeline-date">2045 - 2050</div>
+              <h2>Web Developer</h2>
+              <h4>Soft Agency, San Francisco, CA</h4>
+              <p>
+                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
+                erat sagittis non. Ut blandit semper pretium.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2045 - 2050</div>
+              <h2>Web Developer</h2>
+              <h4>Soft Agency, San Francisco, CA</h4>
+              <p>
+                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
+                erat sagittis non. Ut blandit semper pretium.
+              </p>
+            </div>
+          </div>
+          <div
+            class="timeline-item right wow slideInRight"
+            data-wow-delay="0.1s"
+          >
+            <div class="timeline-text">
+              <div class="timeline-date">2045 - 2050</div>
+              <h2>Web Developer</h2>
+              <h4>Soft Agency, San Francisco, CA</h4>
+              <p>
+                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
+                erat sagittis non. Ut blandit semper pretium.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2045 - 2050</div>
+              <h2>Web Developer</h2>
+              <h4>Soft Agency, San Francisco, CA</h4>
+              <p>
+                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
+                erat sagittis non. Ut blandit semper pretium.
+              </p>
+            </div>
+          </div>
+          <div
+            class="timeline-item right wow slideInRight"
+            data-wow-delay="0.1s"
+          >
+            <div class="timeline-text">
+              <div class="timeline-date">2045 - 2050</div>
+              <h2>Web Developer</h2>
+              <h4>Soft Agency, San Francisco, CA</h4>
+              <p>
+                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
+                erat sagittis non. Ut blandit semper pretium.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Job Experience End -->
+
+    <!-- Banner Start -->
+    <!-- <div class="banner wow zoomIn" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Reasonable Price</p>
+                    <h2>Get A <span>Special</span> Price</h2>
+                </div>
+                <div class="container banner-text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. 
+                    </p>
+                    <a class="btn">Pricing Plan</a>
+                </div>
+            </div>
+        </div> -->
+    <!-- Banner End -->
+
+    <!-- Banner Start -->
+    <!-- <div class="banner wow zoomIn" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Awesome Discount</p>
+                    <h2>Get <span>30%</span> Discount</h2>
+                </div>
+                <div class="container banner-text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. 
+                    </p>
+                    <a class="btn">Order Now</a>
+                </div>
+            </div>
+        </div> -->
+    <!-- Banner End -->
+
+    <!-- Blog Start -->
+    <div class="blog" id="blog">
+      <div class="container">
+        <div
+          class="section-header text-center wow zoomIn"
+          data-wow-delay="0.1s"
+        >
+          <p>From Projects</p>
+          <h2>Latest Projects</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
+              <div class="blog-img">
+                <img src="img/blog-1.jpg" alt="Blog" />
+              </div>
+              <div class="blog-text">
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <div class="blog-meta">
+                  <p><i class="far fa-user"></i>Admin</p>
+                  <p><i class="far fa-list-alt"></i>Web Design</p>
+                  <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                  <p><i class="far fa-comments"></i>5</p>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet elit. Nullam commodo mattis mi.
+                  Nullam eu erat lectus. Proin viverra risus vitae luctus. Proin
+                  ut ante, vitae sapien. Fusce sem ac erat rhoncus, ornare
+                  mattis nisl massa et eros vitae pulvin
+                </p>
+                <a class="btn" href=""
+                  >Read More <i class="fa fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
+              <div class="blog-img">
+                <img src="img/blog-2.jpg" alt="Blog" />
+              </div>
+              <div class="blog-text">
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <div class="blog-meta">
+                  <p><i class="far fa-user"></i>Admin</p>
+                  <p><i class="far fa-list-alt"></i>Apps Design</p>
+                  <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                  <p><i class="far fa-comments"></i>10</p>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet elit. Nullam commodo mattis mi.
+                  Nullam eu erat lectus. Proin viverra risus vitae luctus. Proin
+                  ut ante, vitae sapien. Fusce sem ac erat rhoncus, ornare
+                  mattis nisl massa et eros vitae pulvin
+                </p>
+                <a class="btn" href=""
+                  >Read More <i class="fa fa-angle-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Blog End -->
+
+    <!-- Contact Start -->
+    <!-- <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8">
+                            <div class="contact-form">
+                                <div id="success"></div>
+                                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                                    <div class="control-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                        <p class="help-block"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                        <p class="help-block"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                        <p class="help-block"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                        <p class="help-block"></p>
+                                    </div>
+                                    <div>
+                                        <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!-- Contact End -->
 
     <!-- ====== Contact Area ====== -->
     <section id="contact" class="section-padding contact-section bg-light">
@@ -502,7 +524,7 @@
               id="contact-form"
               action="mail.php"
               method="post"
-              class="contact-form bg-white"
+              class="contact-form bg-white pb-3"
             >
               <div class="row">
                 <div class="col-lg-6 form-group">
@@ -543,9 +565,9 @@
                   placeholder="Message"
                 ></textarea>
               </div>
-              <div class="form-btn text-center">
-                <button class="button" type="submit">Send Message</button>
-                <p class="form-message"></p>
+              <div class="form-btn mt-5 text-center">
+                <button class="btn" type="submit">Send Message</button>
+                <p class="form-message mb-0"></p>
               </div>
             </form>
             <!-- // Form -->
@@ -556,35 +578,57 @@
     </section>
     <!-- ====== // Contact Area ====== -->
 
-    <!-- ====== Footer Area ====== -->
-    <footer class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <div class="copyright-text">
-              <p class="text-white">
-                &copy; 2018
-                <a href="https://www.begindot.com/"
-                  >A Template Designed by Begindot</a
-                >
-              </p>
+    <!-- Footer Start -->
+    <div class="footer wow fadeIn" data-wow-delay="0.3s">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="footer-info">
+            <h2>Kate Winslet</h2>
+            <h3>123 Street, New York, USA</h3>
+            <div class="footer-menu">
+              <p>+012 345 67890</p>
+              <p>info@example.com</p>
+            </div>
+            <div class="footer-social">
+              <a href=""><i class="fab fa-twitter"></i></a>
+              <a href=""><i class="fab fa-facebook-f"></i></a>
+              <a href=""><i class="fab fa-youtube"></i></a>
+              <a href=""><i class="fab fa-instagram"></i></a>
+              <a href=""><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
+        <div class="container copyright">
+          <p>&copy; All Right Reserved</p>
+        </div>
       </div>
-    </footer>
-    <!-- ====== // Footer Area ====== -->
+    </div>
+    <!-- Footer End -->
 
-    <!-- ====== ALL JS ====== -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/lightbox.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/jquery.mixitup.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/typed.js"></script>
-    <script src="assets/js/skill.bar.js"></script>
-    <script src="assets/js/fact.counter.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Back to top button -->
+    <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- Pre Loader -->
+    <div id="loader" class="show">
+      <div class="loader"></div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
   </body>
 </html>
