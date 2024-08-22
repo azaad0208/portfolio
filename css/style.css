@@ -314,21 +314,40 @@ a:focus {
 
 .hero .hero-btn .btn {
     margin-top: 35px;
-    color: #3D56D9;
-    background: #ffffff;
-    box-shadow: inset 0 0 0 50px #ffffff;
-}
-
-.hero .hero-btn .btn:hover {
     color: #ffffff;
     background: transparent;
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
 }
 
+.hero .hero-btn .btn:hover {    
+    color: #3D56D9;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 50px #ffffff;
+}
+
+
 .hero .hero-btn .btn:first-child {
     margin-right: 10px;
+    color: #3D56D9;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 50px #ffffff;
 }
+
+.hero .hero-btn .btn:first-child:hover {
+    color: #ffffff;
+    background: transparent;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    border-color: #ffffff;
+}
+
+/* .hero .hero-btn .btn:first-child:hover ~ .btn:last-child {
+    color: #3D56D9;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 50px #ffffff;
+} */
+
+
 
 @media (max-width: 991.98px) {
     .hero {
