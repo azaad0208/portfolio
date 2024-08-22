@@ -5,7 +5,14 @@ const dataArray = [
         description: "Lorem ipsum dolor sit amet",
         image: "img/projects/wallicon-interior-pro.webp",
         url: "https://wallicon.in"
-    }
+    },
+    {
+        project: "Project 1",
+        description: "Lorem ipsum dolor sit amet",
+        image: "img/projects/house-of-kalakriti.webp",
+        url: "https://wallicon.in",
+        url2: "https://wallicon.in"
+    },
 ];
 
 // Get the container where the data will be displayed
