@@ -22,7 +22,7 @@ const container = document.getElementById('data-container');
 function mapArrayToHTML(array) {
     return array.map(item => {
         return `
-           <div class="col-lg-4 col-md-6">
+           <div class="col-md-6">
             <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
               <div class="blog-img">
                 <img src="${item.image}" alt="Blog" />
