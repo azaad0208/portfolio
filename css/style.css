@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #414141;
+  color: #181818;
 }
 
 a {
@@ -140,7 +140,7 @@ a:focus {
 }
 
 .back-to-top:hover i {
-  color: #414141;
+  color: #181818;
 }
 
 /**********************************/
@@ -219,19 +219,21 @@ a:focus {
 
   .navbar-light.nav-sticky .navbar-nav .nav-link,
   .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
-    color: #414141;
+    color: #181818;
   }
 
   .navbar-light .navbar-nav .nav-link:hover,
   .navbar-light .navbar-nav .nav-link.active {
     /* color: #b05e5e; */
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    
   }
 
   .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
   .navbar-light.nav-sticky .navbar-nav .nav-link.active {
     /* color: #d34e4e; */
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    font-weight: 800;
   }
 }
 
@@ -758,8 +760,8 @@ a:focus {
 .experience .timeline .timeline-text h4 {
   margin: 0 0 10px 0;
   font-size: 16px;
-  font-style: italic;
-  font-weight: 400;
+  /* font-style: italic; */
+  font-weight: 500;
 }
 
 .experience .timeline .timeline-text p {
@@ -1024,7 +1026,7 @@ a:focus {
 }
 
 .banner .section-header p {
-  color: #414141;
+  color: #181818;
   background: transparent;
 }
 
@@ -1037,7 +1039,7 @@ a:focus {
 }
 
 .banner .section-header h2 span {
-  color: #414141;
+  color: #181818;
   font-size: 50px;
 }
 
@@ -1097,7 +1099,7 @@ a:focus {
 
 .price .price-header {
   padding: 45px 0 30px 0;
-  color: #414141;
+  color: #181818;
 }
 
 .price .price-item.featured-item .price-header {
@@ -1154,15 +1156,15 @@ a:focus {
 
 .price .price-item .price-action .btn {
   color: #ffffff;
-  background: #414141;
-  box-shadow: inset 0 0 0 50px #414141;
+  background: #181818;
+  box-shadow: inset 0 0 0 50px #181818;
 }
 
 .price .price-item .price-action .btn:hover {
-  color: #414141;
+  color: #181818;
   background: transparent;
-  box-shadow: inset 0 0 0 0 #414141;
-  border-color: #414141;
+  box-shadow: inset 0 0 0 0 #181818;
+  border-color: #181818;
 }
 
 .price .price-item.featured-item .price-action .btn {
@@ -1574,7 +1576,8 @@ input:-webkit-autofill {
 
 .blog .blog-item {
   position: relative;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+  border: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .blog .blog-img {
@@ -1595,9 +1598,9 @@ input:-webkit-autofill {
 .blog .blog-text {
   position: relative;
   padding: 30px;
-  border-right: 1px solid rgba(0, 0, 0, 0.07);
+  /* border-right: 1px solid rgba(0, 0, 0, 0.07);
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  border-left: 1px solid rgba(0, 0, 0, 0.07);
+  border-left: 1px solid rgba(0, 0, 0, 0.07); */
 }
 
 .blog .blog-text h2 {
@@ -1617,6 +1620,10 @@ input:-webkit-autofill {
 .blog .blog-item a.btn i {
   margin-left: 5px;
 } */
+
+.text-dsc{
+  z-index: 1;
+}
 
 .truncate {
   display: -webkit-box;
@@ -1668,7 +1675,7 @@ input:-webkit-autofill {
 }
 
 .blog .blog-meta i {
-  color: #414141;
+  color: #181818;
   margin-right: 5px;
 }
 
@@ -1720,7 +1727,7 @@ input:-webkit-autofill {
 }
 
 .footer .copyright p a:hover {
-  color: #414141;
+  color: #181818;
 }
 
 @media (max-width: 575.98px) {
