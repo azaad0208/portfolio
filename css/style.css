@@ -475,9 +475,17 @@ a:focus {
     height: 18px;
   }
 
+  .hero-btn {
+    justify-content: space-between;
+  }
+  .hero-btn .btn {
+    width: 45%;
+  }
+
   .hero .hero-btn .btn {
     padding: 8px 10px;
     letter-spacing: 0;
+    width: auto;
   }
 }
 
@@ -868,6 +876,7 @@ a:focus {
   position: relative;
   width: calc(100% - 120px);
   padding: 0 30px;
+  text-align: justify;
 }
 
 .service .service-text h3 {
@@ -913,7 +922,7 @@ a:focus {
 @media screen and (max-width: 545px) {
   .service .service-item {
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
     border: 1px solid rgba(0, 0, 0, 0.07);
     padding: 20px 10px;
   }
@@ -1647,12 +1656,12 @@ input:-webkit-autofill {
 .blog .blog-text h2 {
   font-size: 25px;
   font-weight: 600;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .blog .blog-text p {
   margin-bottom: 10px;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 /* .blog .blog-item a.btn {
@@ -1693,6 +1702,11 @@ input:-webkit-autofill {
   .truncate {
     display: block;
     height: auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .blog-text {
+    padding: 10px;
   }
 }
 
