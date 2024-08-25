@@ -28,7 +28,7 @@ const dataArray = [
   },
   {
     image: "img/projects/go-park-yourself.webp",
-    project: "Go Park Yourself -Case Study",
+    project: "Go Park Yourself- UX Case Study",
     skills: ["UX Design", "User Research", "Wireframing", "Prototyping", "Adobe XD"],
     description:
       `Go Park Yourself case study addresses the widespread problem of finding parking, 
