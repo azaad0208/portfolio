@@ -226,7 +226,7 @@ a:focus {
   .navbar-light .navbar-nav .nav-link.active {
     /* color: #b05e5e; */
     /* text-decoration: underline; */
-    
+    font-weight: 800;
   }
 
   .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
@@ -882,6 +882,11 @@ a:focus {
   font-size: 16px;
   transition: 1s;
 }
+.stp {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
 
 .service .service-item:hover .service-text h3,
 .service .service-item:hover .service-text p {
@@ -889,6 +894,12 @@ a:focus {
 }
 
 @media (max-width: 575.98px) {
+  .service .service-icon {
+    min-height: 125px;
+  }
+  .service .service-text {
+    padding: 0 20px;
+  }
   .service .service-text h3 {
     font-size: 16px;
     margin-bottom: 5px;
@@ -896,6 +907,22 @@ a:focus {
 
   .service .service-text p {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .service .service-item {
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 20px 10px;
+  }
+  .service .service-icon {
+    margin-bottom: 20px;
+  }
+  .service .service-text {
+    padding: 0px;
+    width: 100%;
   }
 }
 
@@ -1472,6 +1499,20 @@ a:focus {
     }
 } */
 
+@media screen and (max-width: 445px) {
+  .contact-section h2 {
+    font-size: 22px;
+  }
+  .contact-section p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 345px) {
+  .stp {
+    font-size: 14px;
+  }
+}
+
 /*::::::::::::::::::::::::::::::::::::
    Contact Area 
 ::::::::::::::::::::::::::::::::::::*/
@@ -1606,10 +1647,12 @@ input:-webkit-autofill {
 .blog .blog-text h2 {
   font-size: 25px;
   font-weight: 600;
+  text-align: justify;
 }
 
 .blog .blog-text p {
   margin-bottom: 10px;
+  text-align: justify;
 }
 
 /* .blog .blog-item a.btn {
@@ -1621,7 +1664,7 @@ input:-webkit-autofill {
   margin-left: 5px;
 } */
 
-.text-dsc{
+.text-dsc {
   z-index: 1;
 }
 
@@ -1731,20 +1774,7 @@ input:-webkit-autofill {
 }
 
 @media (max-width: 575.98px) {
-  .footer .footer-info h2 {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  .footer .footer-info h3 {
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-
-  .footer .footer-menu p {
-    font-size: 16px;
-    line-height: 16px;
-    padding: 0 5px;
+  .footer .copyright {
+    font-size: 12px;
   }
 }
