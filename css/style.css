@@ -53,6 +53,12 @@ a:focus {
   -moz-transition: ease-out 0.3s;
 }
 
+@media screen and (max-width: 390px) {
+  .btn {
+    padding: 12px 10px;
+  }
+}
+
 .btn:hover {
   color: #181818;
   background: transparent;
@@ -274,7 +280,7 @@ a:focus {
 .hero .hero-image {
   position: relative;
   text-align: right;
-  /* padding-right: 75px; */
+  padding-right: 100px;
 }
 
 .hero .hero-image img {
@@ -354,6 +360,9 @@ a:focus {
   font-weight: 300;
   color: #181818;
 }
+.hero-btn {
+  display: flex;
+}
 
 .hero-btn .btn {
   margin-top: 35px;
@@ -424,12 +433,12 @@ a:focus {
     padding-bottom: 60px;
   }
 
-  .hero,
+  /* .hero,
   .hero .hero-text,
   .hero .hero-btn {
     width: 100%;
     text-align: center;
-  }
+  } */
 
   .hero .hero-text p {
     font-size: 18px;
@@ -574,9 +583,9 @@ a:focus {
   margin-bottom: 15px;
 }
 
-.about-content p {
+/* .about-content p {
   font-weight: 400;
-}
+} */
 
 .about-content h5 {
   margin: 30px 0;
@@ -836,6 +845,10 @@ a:focus {
   justify-content: center;
   border: 1px solid #181818;
   background: #ffffff;
+}
+
+.service .service-icon img {
+  max-height: 70px;
 }
 
 .service .service-icon i {
@@ -1609,19 +1622,39 @@ input:-webkit-autofill {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  -webkit-line-clamp: 4; /* Number of lines to display */
+  -webkit-line-clamp: 5; /* Number of lines to display */
   text-overflow: ellipsis;
   height: 100px;
+}
+
+@media screen and (max-width: 1224px) {
+  .truncate {
+    -webkit-line-clamp: 6;
+    height: 130px;
+  }
+}
+@media screen and (max-width: 1054px) {
+  .truncate {
+    -webkit-line-clamp: 6;
+    height: 140px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .truncate {
+    display: block;
+    height: auto;
+  }
 }
 
 .blog .blog-meta {
   position: relative;
   display: flex;
-  margin: 15px 0;
+  margin-top: 15px;
+  flex-wrap: wrap;
 }
 
 .blog .blog-meta p {
-  margin: 0 10px 0 0;
+  margin: 0 10px 10px 0;
   font-size: 13px;
   border: 1px solid;
   border-radius: 30px;
@@ -1639,9 +1672,9 @@ input:-webkit-autofill {
   margin-right: 5px;
 }
 
-.blog .blog-meta p:last-child {
+/* .blog .blog-meta p:last-child {
   margin: 0;
-}
+} */
 
 /*******************************/
 /********* Footer CSS **********/
