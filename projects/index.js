@@ -23,7 +23,7 @@ const dataArray = [
     skills: ["UX Design", "UI Deisgn", "POS Panel", "Figma"],
     description:
       "Webkul provides a Restro POS table booking system with a user-friendly interface for fast transactions, featuring reporting, offline orders, payments, table selection, inventory management, staff management, customer insights, and promotions.",
-    url: "https://wallicon.in",
+    url: "https://webkul.design/project/pos/",
     url2: "",
   },
   {
