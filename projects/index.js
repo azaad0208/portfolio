@@ -53,7 +53,7 @@ const dataArray = [
     description:
       "Krayin CRM by Webkul is a free, open-source Laravel CRM for SMEs and enterprises that automates sales and marketing to drive substantial growth through complete customer lifecycle management.",
     url: "https://webkul.design/project/krayin-crm/",
-    url2: "https://webkul.design/project/krayin-crm/",
+    url2: "https://demo.krayincrm.com/",
   },
   {
     image: "img/projects/spa-surfers.webp",

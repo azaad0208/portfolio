@@ -911,7 +911,7 @@ a:focus {
 }
 
 .service .service-item:hover {
-  box-shadow: inset 800px 0 0 0 #181818;
+  /* box-shadow: inset 800px 0 0 0 #181818; */
 }
 
 .service .service-icon {
@@ -943,7 +943,7 @@ a:focus {
 .service .service-text {
   position: relative;
   width: calc(100% - 120px);
-  padding: 0 30px;
+  /* padding: 0 30px; */
   /* text-align: justify; */
 }
 
@@ -968,7 +968,7 @@ a:focus {
 
 .service .service-item:hover .service-text h3,
 .service .service-item:hover .service-text p {
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 @media (max-width: 575.98px) {
@@ -1826,16 +1826,16 @@ input:-webkit-autofill {
   font-size: 12px;
   font-weight: 500;
   border: 1px solid;
-  border-radius: 30px;
+  border-radius: 8px;
   padding: 5px 10px;
   min-width: 50px;
   text-align: center;
 }
 
-.blog .blog-meta p:hover {
+/* .blog .blog-meta p:hover {
   background: #181818;
   color: #f8f9fa;
-}
+} */
 
 .blog .blog-meta i {
   color: #181818;
