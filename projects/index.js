@@ -18,6 +18,15 @@ const dataArray = [
     url2Name: "Dealer Website"
   },
   {
+    image: "img/projects/discount-engine.webp",
+    project: "Designing for Deals: A Simple Discount System Design",
+    skills: ["UX Design", "User Research", "UI Deisgn", "Discount Engine Design", "Admin Panel", "Wireframing", "Figma"],
+    description:
+      "This project showcases the design of an easy-to-use discount system for a luxury jewelry e-commerce platform. It features seamless discount integration on product and checkout pages, along with a simple admin dashboard for managing offers. The goal is to boost sales and enhance customer experience.",
+    url: "https://www.behance.net/gallery/208140321/Designing-for-Deals-A-Simple-Discount-System-Design",
+    url2: "",
+  },
+  {
     image: "img/projects/restro-pos-webkul.webp",
     project: "Restro-POS Case Study",
     skills: ["UX Design", "UI Deisgn", "POS Panel", "Figma"],
