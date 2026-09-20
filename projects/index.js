@@ -20,7 +20,7 @@ const dataArray = [
   {
     image: "img/projects/discount-engine.webp",
     project: "Designing for Deals: A Simple Discount System Design",
-    skills: ["UX Design", "User Research", "UI Deisgn", "Discount Engine Design", "Admin Panel", "Wireframing", "Figma"],
+    skills: ["UX Design", "User Research", "UI Design", "Discount Engine Design", "Admin Panel", "Wireframing", "Figma"],
     description:
       "This project showcases the design of an easy-to-use discount system for a luxury jewelry e-commerce platform. It features seamless discount integration on product and checkout pages, along with a simple admin dashboard for managing offers. The goal is to boost sales and enhance customer experience.",
     url: "https://www.behance.net/gallery/208140321/Designing-for-Deals-A-Simple-Discount-System-Design",
@@ -29,7 +29,7 @@ const dataArray = [
   {
     image: "img/projects/restro-pos-webkul.webp",
     project: "Restro-POS Case Study",
-    skills: ["UX Design", "UI Deisgn", "POS Panel", "Figma"],
+    skills: ["UX Design", "UI Design", "POS Panel", "Figma"],
     description:
       "Webkul provides a Restro POS table booking system with a user-friendly interface for fast transactions, featuring reporting, offline orders, payments, table selection, inventory management, staff management, customer insights, and promotions.",
     url: "https://webkul.design/project/pos/",
