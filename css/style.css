@@ -1902,3 +1902,215 @@ input:-webkit-autofill {
     font-size: 12px !important;
   }
 }
+
+/*******************************/
+/********* AI Work CSS *********/
+/*******************************/
+.ai-work {
+  position: relative;
+  width: 100%;
+  padding: 45px 0 60px 0;
+}
+
+.ai-work-marquee {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+
+.ai-work-track {
+  display: flex;
+  width: max-content;
+}
+
+.ai-work-track.is-marquee {
+  animation: aiWorkScroll 48s linear infinite;
+  will-change: transform;
+}
+
+.ai-work-track.is-paused,
+.ai-work-marquee:hover .ai-work-track.is-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes aiWorkScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-work-track.is-marquee {
+    animation: none;
+  }
+}
+
+.ai-work-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 36px 28px 32px;
+  min-height: 260px;
+  width: 340px;
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  margin: 8px 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ai-work-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ai-work-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+
+.ai-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #181818;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ai-chip svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ai-work-card p {
+  flex: 1;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.ai-work-card .btn {
+  align-self: flex-start;
+  padding: 10px 22px;
+  cursor: pointer;
+}
+
+.ai-work-sheet-handle {
+  display: none;
+}
+
+.ai-work-modal {
+  border-radius: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.ai-work-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  z-index: 2;
+  font-size: 32px;
+  opacity: 1;
+  color: #181818;
+}
+
+.ai-work-modal-img img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.ai-work-modal-body {
+  padding: 28px 32px 36px;
+}
+
+.ai-work-modal-body h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ai-work-modal-body .hero-btn {
+  margin-top: 8px;
+}
+
+.ai-work-modal-body .hero-btn .btn {
+  margin-top: 12px;
+}
+
+@media (max-width: 767.98px) {
+  .ai-work-marquee {
+    overflow-x: auto;
+    overflow-y: hidden;
+    mask-image: none;
+    -webkit-mask-image: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .ai-work-track,
+  .ai-work-track.is-marquee {
+    animation: none !important;
+    will-change: auto;
+  }
+
+  .ai-work-card {
+    width: 70vw;
+    flex: 0 0 70vw;
+    min-height: 0;
+    margin: 8px 12px 12px 0;
+    padding: 28px 22px;
+    scroll-snap-align: start;
+  }
+
+  .ai-work-modal-body {
+    padding: 20px;
+  }
+
+  #aiWorkModal .modal-dialog.modal-dialog-centered {
+    align-items: flex-end;
+    min-height: 100%;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  #aiWorkModal .ai-work-modal {
+    border-radius: 20px 20px 0 0;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+
+  .ai-work-sheet-handle {
+    display: block;
+    width: 44px;
+    height: 4px;
+    border-radius: 4px;
+    background: #d4d4d4;
+    margin: 12px auto 0;
+  }
+
+  .ai-work-modal-close {
+    top: 8px;
+  }
+
+  .ai-work-modal-img img {
+    max-height: 180px;
+  }
+}

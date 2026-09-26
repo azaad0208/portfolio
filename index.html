@@ -61,6 +61,7 @@
           <a href="#home" class="nav-item nav-link active">Home</a>
           <a href="#about" class="nav-item nav-link">About</a>
           <a href="#experience" class="nav-item nav-link">Experience</a>
+          <a href="#ai-work" class="nav-item nav-link">AI Work</a>
           <a href="#blog" class="nav-item nav-link">Projects</a>
           <a href="#service" class="nav-item nav-link">Specialities</a>
           <a href="#contact" class="nav-item nav-link">Contact</a>
@@ -276,6 +277,41 @@
   </div>
   <!-- Job Experience End -->
 
+  <!-- AI Work Start -->
+  <div class="ai-work" id="ai-work">
+    <div class="container-fluid">
+      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>Plugins &amp; AI Products</p>
+        <h2>AI Work</h2>
+      </div>
+      <div class="ai-work-marquee" id="ai-work-carousel">
+        <div class="ai-work-track" id="ai-work-track"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="aiWorkModal" tabindex="-1" role="dialog" aria-labelledby="aiWorkModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content ai-work-modal">
+        <div class="ai-work-sheet-handle" aria-hidden="true"></div>
+        <button type="button" class="close ai-work-modal-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="ai-work-modal-img">
+          <img id="aiWorkModalImage" src="" alt="" />
+        </div>
+        <div class="ai-work-modal-body">
+          <h3 id="aiWorkModalTitle"></h3>
+          <div class="blog-meta" id="aiWorkModalTags"></div>
+          <p id="aiWorkModalText"></p>
+          <div class="hero-btn" id="aiWorkModalLinks"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- AI Work End -->
+
   <!-- Blog Start -->
   <div class="blog" id="blog">
     <div class="container-fluid">
@@ -407,8 +443,6 @@
                   src="img/icons/linkedin.svg" alt="linkedin" /></a>
               <a target="_blank" href="https://www.behance.net/abhishebhoumic"><img src="img/icons/behance.svg"
                   alt="behance" /></a>
-              <a target="_blank" href="https://www.instagram.com/azad0208/"><img src="img/icons/instagram.svg"
-                  alt="instagram" /></a>
               <a target="_blank"
                 href="https://wa.me/919892308320?text=Hello Abhishek Bhowmick I am interested in your profile"><img
                   src="img/icons/whatsapp.svg" alt="whatsapp" /></a>
@@ -461,6 +495,7 @@
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
   <script src="projects/index.js"></script>
+  <script src="projects/ai-work.js"></script>
 </body>
 
 </html>
