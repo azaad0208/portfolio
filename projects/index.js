@@ -1,62 +1,6 @@
 // Example array data
 const dataArray = [
   {
-    image: "img/abhishek-bhowmick.webp",
-    project: "Hive AI — Figma Design System Plugin",
-    skills: ["Figma Plugin", "Design System", "AI Product", "Tokens"],
-    description:
-      "Enterprise Figma plugin to create, govern, and audit design systems: primitive/semantic/component tokens, CSS/SCSS/W3C/Style Dictionary export, Auto-Heal, and a 0–100% design-system health score.",
-    url: "",
-    url2: "",
-  },
-  {
-    image: "img/abhishek-bhowmick.webp",
-    project: "Vernac — Multi-Language Text Translator",
-    skills: ["Figma Plugin", "Localization", "AI Product"],
-    description:
-      "One-click translation of Figma text layers into Indic and other languages, with side-by-side localized frames, layer exclusions for brands/logos, and proofreading before generate.",
-    url: "https://www.figma.com/community/plugin/1665010377089179726/vernac-instant-multi-language-text-translator",
-    urlName: "Figma Community",
-    url2: "",
-  },
-  {
-    image: "img/abhishek-bhowmick.webp",
-    project: "Vivid Color Palette Generator",
-    skills: ["Figma Plugin", "Color Systems", "AI Product"],
-    description:
-      "Turns any image into Dominant, Vibrant, Muted, Contrast, and Mixed palettes. HEX/RGB/CSS/HSL/HSB, lock and regenerate, PNG/JSON/CSS export, and Figma Color Styles.",
-    url: "https://www.figma.com/community/plugin/1573288416469934658/vivid-color-palette-generator",
-    urlName: "Figma Community",
-    url2: "",
-  },
-  {
-    image: "img/abhishek-bhowmick.webp",
-    project: "Design Arcade — Figma Gaming Plugin",
-    skills: ["Figma Plugin", "HTML5 Canvas", "Product Design"],
-    description:
-      "Playable arcade games inside Figma (True or False, Car Race, Catch the Egg, Shoot Balls, Snake Rush) with scoring, difficulty, economy, skins, and pause/revive — published on Figma Community.",
-    url: "",
-    url2: "",
-  },
-  {
-    image: "img/abhishek-bhowmick.webp",
-    project: "FitOS — Multi-Branch Gym OS",
-    skills: ["AI Product", "Multi-role UX", "Dashboards"],
-    description:
-      "Operating system connecting gym owners, branch managers, trainers, and members: revenue and staffing, check-ins and pricing, trainer workouts, and a QR member pass with live sync.",
-    url: "",
-    url2: "",
-  },
-  {
-    image: "img/abhishek-bhowmick.webp",
-    project: "Quickbite — Restaurant Ops & Delivery",
-    skills: ["AI Product", "Multi-role UX", "Ops Design"],
-    description:
-      "Platform for diners, kitchen, managers, and riders: dine-in/takeaway/delivery ordering, kitchen display, live stock, and delivery claim-to-doorstep workflows.",
-    url: "",
-    url2: "",
-  },
-  {
     image: "img/projects/wallicon-interior-pro.webp",
     project: "Wallicon",
     skills: [
