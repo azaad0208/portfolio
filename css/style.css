@@ -2029,10 +2029,31 @@ input:-webkit-autofill {
   color: #181818;
 }
 
+.ai-work-modal-img {
+  position: relative;
+  background: #f4f4f4;
+}
+
 .ai-work-modal-img img {
   width: 100%;
-  max-height: 280px;
-  object-fit: cover;
+  max-height: 360px;
+  object-fit: contain;
+  display: block;
+  background: #111;
+}
+
+.ai-work-empty-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  min-height: 180px;
+  color: #9a9a9a;
+}
+
+.ai-work-empty-icon {
+  width: 48px;
+  height: 48px;
   display: block;
 }
 
