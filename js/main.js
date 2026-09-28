@@ -41,8 +41,32 @@
     
     
     // Smooth scrolling on the navbar links
+    function workScrollOffset() {
+        var navH = $('.navbar').outerHeight() || 0;
+        var tabH = $('.work-tabs').outerHeight() || 0;
+        return navH + tabH + 12;
+    }
+
+    function activateWorkTab(id) {
+        if (!id) {
+            return;
+        }
+        $('.work-tabs a').removeClass('active');
+        $('.work-tabs a[href="#' + id + '"]').addClass('active');
+    }
+
+    function scrollToWorkHash(hash) {
+        if (!hash || !$(hash).length) {
+            return;
+        }
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top - workScrollOffset()
+        }, 1500, 'easeInOutExpo');
+        activateWorkTab(hash.slice(1));
+    }
+
     $(".navbar-nav a").on('click', function (event) {
-        if (this.hash !== "") {
+        if (this.hash !== "" && $(this.hash).length) {
             event.preventDefault();
             
             $('html, body').animate({
@@ -55,6 +79,34 @@
             }
         }
     });
+
+    $(".work-tabs a").on('click', function (event) {
+        if (this.hash !== "" && $(this.hash).length) {
+            event.preventDefault();
+            scrollToWorkHash(this.hash);
+            if (history.replaceState) {
+                history.replaceState(null, '', this.hash);
+            }
+        }
+    });
+
+    if ($('.work-tabs').length) {
+        $(window).on('scroll', function () {
+            var fromTop = $(this).scrollTop() + workScrollOffset() + 24;
+            var current = $('.work-panel').first().attr('id');
+            $('.work-panel').each(function () {
+                if ($(this).offset().top <= fromTop) {
+                    current = this.id;
+                }
+            });
+            activateWorkTab(current);
+        });
+        if (window.location.hash) {
+            setTimeout(function () {
+                scrollToWorkHash(window.location.hash);
+            }, 200);
+        }
+    }
     
     
     // Typed Initiate

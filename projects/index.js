@@ -47,15 +47,6 @@ const dataArray = [
     url2: "",
   },
   {
-    image: "img/projects/harpe.webp",
-    project: "Harpe",
-    skills: ["UX Design", "UI Design", "User Research", "Seller Panel", "Admin Dashboard", "Figma"],
-    description:
-      "Harpe Digital India Private Limited is a comprehensive B2B and B2C digital services provider in India, offering a wide range of services, including AEPS, BBPS, DMT, banking, utility bills, PAN cards, travel, and recharges, all at affordable prices with numerous benefits.",
-    url: "https://www.harpe.in/",
-    url2: "",
-  },
-  {
     image: "img/projects/krayin-crm-webkul.webp",
     project: "Krayin CRM- Case Study",
     skills: ["UI Design", "Wireframing", "CRM Design", "Figma"],
@@ -63,15 +54,6 @@ const dataArray = [
       "Krayin CRM by Webkul is a free, open-source Laravel CRM for SMEs and enterprises that automates sales and marketing to drive substantial growth through complete customer lifecycle management.",
     url: "https://webkul.design/project/krayin-crm/",
     url2: "https://demo.krayincrm.com/",
-  },
-  {
-    image: "img/projects/spa-surfers.webp",
-    project: "Spa Surfers",
-    skills: ["UX Design", "User Research", "Wireframing", "Prototyping", "Admin Dashboard", "Figma"],
-    description:
-      "Spa Surfers connects you with top spa service providers all in one place, offering a wide range of spa treatments to enhance your relaxation and wellness.",
-    url: "https://spasurfer.com/",
-    url2: "",
   },
   {
     image: "img/projects/bagisto-webkul.webp",
@@ -85,17 +67,6 @@ const dataArray = [
     url2: "https://demo.bagisto.com/",
     urlName: "",
     url2Name: "",
-  },
-  {
-    image: "img/projects/house-of-kalakriti.webp",
-    project: "House of Kalakriti",
-    skills: ["UI Design", "Wireframing", "Website Design", "Admin Panel", "Figma"],
-    description:
-      `Explore House of Kalakriti, where exceptional design 
-    and craftsmanship come together to transform your living spaces 
-    into personalized sanctuaries that reflect your unique style.`,
-    url: "https://www.houseofkalakriti.com/",
-    url2: "",
   },
 ];
 

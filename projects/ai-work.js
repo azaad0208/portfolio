@@ -55,7 +55,7 @@ const aiWorkItems = [
     title: "FitOS",
     short: "A multi-branch gym OS for owners, trainers, and members.",
     name: "FitOS — Multi-Branch Gym OS",
-    image: "",
+    image: "img/projects/ai/Fitos-gym_ecosystem.webp",
     chips: [
       { label: "Gemini", icon: "gemini" },
       { label: "Google AI Studio", icon: "google-ai" },
@@ -65,12 +65,13 @@ const aiWorkItems = [
       "Operating system connecting gym owners, branch managers, trainers, and members: revenue and staffing, check-ins and pricing, trainer workouts, and a QR member pass with live sync.",
     url: "",
     urlName: "",
+    page: "work/fitos.html",
   },
   {
     id: "quickbite",
-    title: "Quickbite",
+    title: "QuickByte",
     short: "Restaurant ops from dine-in and kitchen display through to delivery.",
-    name: "Quickbite — Restaurant Ops & Delivery",
+    name: "QuickByte — Restaurant Ops & Delivery",
     image: "",
     chips: [
       { label: "Gemini", icon: "gemini" },
@@ -81,6 +82,7 @@ const aiWorkItems = [
       "Platform for diners, kitchen, managers, and riders: dine-in/takeaway/delivery ordering, kitchen display, live stock, and delivery claim-to-doorstep workflows.",
     url: "",
     urlName: "",
+    page: "work/quickbyte.html",
   },
   {
     id: "vernac",
@@ -139,12 +141,13 @@ function chipsMarkup(chips) {
 }
 
 function cardMarkup(item) {
+  const action = item.page ? "View details" : "View";
   return `
     <article class="ai-work-card" data-ai-id="${escapeHtml(item.id)}" tabindex="0" role="button">
       <h3>${escapeHtml(item.title)}</h3>
       ${chipsMarkup(item.chips)}
       <p>${escapeHtml(item.short)}</p>
-      <span class="btn">View</span>
+      <span class="btn">${action}</span>
     </article>
   `;
 }
@@ -182,8 +185,12 @@ function cardMarkup(item) {
       return;
     }
 
+    if (item.page) {
+      window.location.assign(item.page);
+      return;
+    }
+
     const image = document.getElementById("aiWorkModalImage");
-    const empty = document.getElementById("aiWorkModalEmpty");
     const media = document.getElementById("aiWorkModalMedia");
     const title = document.getElementById("aiWorkModalTitle");
     const tags = document.getElementById("aiWorkModalTags");
@@ -191,17 +198,13 @@ function cardMarkup(item) {
     const links = document.getElementById("aiWorkModalLinks");
 
     const hasImage = Boolean(item.image);
-    media.classList.toggle("has-image", hasImage);
+    media.hidden = !hasImage;
     if (hasImage) {
-      image.hidden = false;
       image.src = item.image;
       image.alt = item.name;
-      empty.hidden = true;
     } else {
-      image.hidden = true;
       image.removeAttribute("src");
       image.alt = "";
-      empty.hidden = false;
     }
     title.textContent = item.name;
     tags.className = "ai-work-chips";
