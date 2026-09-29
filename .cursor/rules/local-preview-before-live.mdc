@@ -1,0 +1,14 @@
+---
+description: Preview all portfolio changes locally; commit and push only when the user asks to update the live site.
+alwaysApply: true
+---
+
+# Local first — live only on request
+
+Before pushing to git and updating the live website, show the changes locally first and create (or reuse) a local server.
+
+Whenever the user asks for any update, check it locally first. Once it is finalized, and they tell you to update the live website, then only commit and push (`website/` → `origin main`).
+
+- Serve `website/` (default `http://127.0.0.1:5500`).
+- Do not `git commit` or `git push` in `website/` unless they clearly ask to update live / deploy / push.
+- Live site: https://abhishekbhowmick.netlify.app/ from GitHub `azaad0208/portfolio`.
