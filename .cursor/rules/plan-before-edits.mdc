@@ -1,0 +1,17 @@
+---
+description: Show a plan filter before any portfolio site change; do not implement extras without approval.
+alwaysApply: true
+---
+
+# Plan first — do not ship extras
+
+Before editing, committing, or pushing this portfolio, list a short **task filter** in chat and wait unless the user already said to proceed on that exact list.
+
+For every request, show:
+
+1. **In scope** — files and copy that will change
+2. **Out of scope** — related ideas that will NOT be done
+3. **Needs from you** — links, screenshots, yes/no
+4. **Live site** — after local preview is approved, commit/push **only** if they asked to update the live site
+
+Do not rewrite experience, About, skills, email, or the work grid unless that item is in the approved list. Prefer explaining *how* to add a section over building it unasked. This site stays on the current HTML/CSS/JS until they request a revamp.
