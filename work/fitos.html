@@ -70,12 +70,12 @@
             <a class="active" href="#tldr">TLDR</a>
             <a href="#context">Context</a>
             <a href="#research">Research</a>
-            <a href="#competitive">Competitive Research</a>
-            <a href="#journeys">Journeys &amp; Flows</a>
-            <a href="#strategy">Product Strategy</a>
-            <a href="#experience">Product Experience</a>
+            <a href="#competitive"><span class="work-tab-full">Competitive Research</span><span class="work-tab-short">Competitive</span></a>
+            <a href="#journeys"><span class="work-tab-full">Journeys &amp; Flows</span><span class="work-tab-short">Journeys</span></a>
+            <a href="#strategy"><span class="work-tab-full">Product Strategy</span><span class="work-tab-short">Strategy</span></a>
+            <a href="#experience"><span class="work-tab-full">Product Experience</span><span class="work-tab-short">Experience</span></a>
             <a href="#validation">Validation</a>
-            <a href="#learnings">Learnings &amp; Next</a>
+            <a href="#learnings"><span class="work-tab-full">Learnings &amp; Next</span><span class="work-tab-short">Learnings</span></a>
             <a href="#references">References</a>
           </div>
         </div>
@@ -87,37 +87,33 @@
         <section class="work-panel" id="tldr">
           <div class="work-section">
             <h2>TL;DR</h2>
-            <div class="work-card-grid">
-              <div class="work-card">
-                <div class="work-card-icon" aria-hidden="true"><i class="fas fa-exclamation-circle"></i></div>
-                <h4>The problem</h4>
-                <p>A gym owner managing multiple locations was struggling to monitor and operate the business remotely. Day-to-day activities were spread across <strong>WhatsApp, phone calls, paper registers and manual records</strong>.</p>
-                <p>Owners needed network-level visibility. Branch Co-Owners needed local operational control. Trainers needed visibility into shifts and clients. Trainees needed simple access, workout guidance and membership visibility.</p>
-              </div>
-              <div class="work-card">
-                <div class="work-card-icon" aria-hidden="true"><i class="fas fa-project-diagram"></i></div>
-                <h4>The approach</h4>
-                <p>I approached the problem as an <strong>ecosystem-design challenge</strong> rather than as a collection of screens.</p>
-                <p>Stakeholder Research → Problem Mapping → Jobs-to-be-Done → Competitive Research → Journey Mapping → Information Architecture → Product Hypotheses → Product Design → Development → Live Validation</p>
-              </div>
-              <div class="work-card">
-                <div class="work-card-icon" aria-hidden="true"><i class="fas fa-link"></i></div>
-                <h4>The solution</h4>
-                <p>FitOS connects <strong>Owners + Branches + Trainers + Trainees</strong> through shared operational workflows covering <strong>Branches · Members · Attendance · Memberships · Revenue · Trainers · Workouts · Bookings</strong>.</p>
-              </div>
+            <div class="work-tldr">
+              <article class="work-tldr-card">
+                <p class="work-tldr-kicker">The problem</p>
+                <p>Multi-branch gym operations were fragmented across WhatsApp, calls, paper and manual coordination.</p>
+              </article>
+              <article class="work-tldr-card">
+                <p class="work-tldr-kicker">The approach</p>
+                <div class="work-tldr-path">
+                  <span>Research</span><span>Stakeholders</span><span>Problems</span><span>JTBD</span><span>Competitive</span><span>Journeys</span><span>IA</span><span>Product</span><span>Validation</span>
+                </div>
+              </article>
+              <article class="work-tldr-card">
+                <p class="work-tldr-kicker">The product</p>
+                <p>One connected operating system for Owners, Co-Owners, Trainers and Trainees.</p>
+              </article>
+              <article class="work-tldr-card">
+                <p class="work-tldr-kicker">Current status</p>
+                <ul class="work-status-list">
+                  <li><span class="work-pill work-pill-live">Live</span> Owner</li>
+                  <li><span class="work-pill work-pill-live">Live</span> Co-Owner</li>
+                  <li><span class="work-pill work-pill-live">Live</span> Trainer clock-in/out</li>
+                  <li><span class="work-pill work-pill-adoption">In adoption</span> Trainer workflows</li>
+                  <li><span class="work-pill work-pill-designed">Designed / not yet live</span> Trainee</li>
+                </ul>
+              </article>
             </div>
-            <div class="work-card-grid-2 work-stack">
-              <div class="work-card">
-                <div class="work-card-icon" aria-hidden="true"><i class="fas fa-signal"></i></div>
-                <h4>Current state</h4>
-                <p><span class="work-status">Live: Owner + Co-Owner workflows</span><span class="work-status">Live: Trainer clock-in / clock-out</span><span class="work-status">Ongoing: Trainer workflow adoption</span><span class="work-status">Ongoing: Trainee rollout</span><span class="work-status">Ongoing: Usability + accessibility validation</span></p>
-              </div>
-              <div class="work-card">
-                <div class="work-card-icon" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
-                <h4>The key idea</h4>
-                <p><strong>One action should create the right context for every stakeholder who needs it.</strong></p>
-              </div>
-            </div>
+            <p class="work-quote">One action should create the right context for every stakeholder who needs it.</p>
           </div>
         </section>
 
@@ -165,7 +161,7 @@
           </div>
           <div class="work-section">
             <h2>Why This Problem Matters</h2>
-            <p class="work-section-lead"><a href="https://www.deloitte.com/in/en/Industries/consumer/perspectives/india-fitness-market-report-2025.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Deloitte India and the Health &amp; Fitness Association</a> estimate India's fitness market at approximately <strong>₹16,200 crore in 2024</strong>, with a projection of approximately <strong>₹37,700 crore by 2030</strong>. Fitness memberships are projected to increase from <strong>12.3 million in 2024 to around 23.2 million by 2030</strong>.</p>
+            <p class="work-section-lead"><a href="https://www.deloitte.com/in/en/Industries/consumer/perspectives/india-fitness-market-report-2025.html" target="_blank" rel="noopener noreferrer">Deloitte India and the Health &amp; Fitness Association</a> estimate India's fitness market at approximately <strong>₹16,200 crore in 2024</strong>, with a projection of approximately <strong>₹37,700 crore by 2030</strong>. Fitness memberships are projected to increase from <strong>12.3 million in 2024 to around 23.2 million by 2030</strong>.</p>
             <p class="work-section-lead">The research also reports that the top 10 Indian cities generated <strong>56% of fitness-market revenue while representing 31% of facilities</strong> in 2024.</p>
             <p class="work-section-lead">As the market grows, businesses can also become more distributed across <strong>locations → teams → members → transactions → operations</strong>. That created the context for FitOS.</p>
           </div>
@@ -189,12 +185,44 @@
           <div class="work-section">
             <h2>Stakeholder Mapping</h2>
             <p class="work-section-lead">The first major research finding was that a gym is not a single-user system. There are four key stakeholder groups.</p>
+            <div class="work-eco" aria-hidden="true">
+              <div class="work-eco-root">FitOS</div>
+              <div class="work-eco-vline"></div>
+              <div class="work-eco-cols">
+                <div class="work-eco-col">
+                  <div class="work-eco-vline"></div>
+                  <div class="work-eco-name">Owner</div>
+                  <div class="work-eco-vline"></div>
+                  <div class="work-eco-name">Network</div>
+                </div>
+                <div class="work-eco-col">
+                  <div class="work-eco-vline"></div>
+                  <div class="work-eco-name">Co-Owner</div>
+                  <div class="work-eco-vline"></div>
+                  <div class="work-eco-name">Branch</div>
+                </div>
+                <div class="work-eco-col">
+                  <div class="work-eco-vline"></div>
+                  <div class="work-eco-name">Trainer</div>
+                  <div class="work-eco-vline"></div>
+                  <div class="work-eco-name">Client</div>
+                </div>
+              </div>
+              <div class="work-eco-vline"></div>
+              <div class="work-eco-root">Trainee</div>
+            </div>
+            <div class="work-eco-captions">
+              <p><strong>Owner:</strong> Network visibility</p>
+              <p><strong>Co-Owner:</strong> Local control</p>
+              <p><strong>Trainer:</strong> Client context</p>
+              <p><strong>Trainee:</strong> Personal journey</p>
+            </div>
             <div class="work-subsection">
               <div class="work-subsection-head"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-building"></i></div><h3>Global Owner</h3></div>
               <p class="work-section-lead"><strong>Primary responsibility:</strong> Manage the overall fitness business. The owner needs to understand what is happening across locations without being physically present at every branch.</p>
               <div class="work-card-grid-2">
                 <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-list"></i></div><h4>Needs</h4><p>Network-wide visibility · Branch performance · Revenue visibility · Membership status · Trainer allocation · Operational exceptions</p></div>
-                <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-th-large"></i></div><h4>FitOS response — Network Command Center</h4><p>Network Executive KPIs · 12-Branch Performance Grid · Branch Drill-Down · Global Member Registry · Staff &amp; Trainer Reallocation · Enterprise Tariff &amp; Plan Manager · Centralized Financial Ledger</p></div>
+                <div class="work-solve"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-th-large"></i></div><h4>FitOS response — Network Command Center</h4><p>Network Executive KPIs · 12-Branch Performance Grid · Branch Drill-Down · Global Member Registry · Staff &amp; Trainer Reallocation · Enterprise Tariff &amp; Plan Manager · Centralized Financial Ledger</p></div>
               </div>
             </div>
           </div>
@@ -206,18 +234,21 @@
               <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-clock"></i></div><h4>Front-desk bottlenecks</h4><p>One of three major operational problems highlighted by research.</p></div>
               <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-clipboard-check"></i></div><h4>Unverified staff hours</h4><p>One of three major operational problems highlighted by research.</p></div>
             </div>
-            <div class="work-card work-stack"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-store"></i></div><h4>Needs &amp; FitOS response</h4><p><strong>Needs:</strong> Local member management, check-in, membership validation, local pricing, trainer monitoring, expenses, branch performance.</p><p><strong>FitOS response:</strong> Localized Branch KPIs · Front-Desk Turnstile &amp; Manual Check-In Hub · Branch Member Roster · Local Pricing &amp; Tariff Customization · Trainer Duty &amp; Break Monitor · Local Expense &amp; Disbursement Ledger</p></div>
+            <div class="work-card-grid-2">
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-store"></i></div><h4>Needs</h4><p>Local member management, check-in, membership validation, local pricing, trainer monitoring, expenses, branch performance.</p></div>
+              <div class="work-solve"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div><h4>FitOS response</h4><p>Localized Branch KPIs · Front-Desk Turnstile &amp; Manual Check-In Hub · Branch Member Roster · Local Pricing &amp; Tariff Customization · Trainer Duty &amp; Break Monitor · Local Expense &amp; Disbursement Ledger</p></div>
+            </div>
           </div>
           <div class="work-section">
             <h2>Trainer</h2>
             <p class="work-section-lead"><strong>Primary responsibility:</strong> Coach clients and manage floor activity. Needs include shift tracking, client visibility, workout management, session scheduling, client communication and progress information. The research identified administrative overload, limited floor awareness and fragmented workout history as key problems.</p>
             <div class="work-card-grid">
-              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-stopwatch"></i></div><h4>Live Shift Clock &amp; Break Timer</h4></div>
-              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-address-book"></i></div><h4>Assigned Client Roster</h4></div>
-              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-dumbbell"></i></div><h4>Structured Workout Builder</h4></div>
-              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-calendar-check"></i></div><h4>1-on-1 Session Scheduler</h4></div>
-              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-comments"></i></div><h4>Direct Client Chat</h4></div>
-              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-info-circle"></i></div><h4>Current status</h4><p><strong>Trainer clock-in / clock-out is currently live.</strong> The broader trainer workflows are still being introduced and validated.</p></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-stopwatch"></i></div><h4>Live Shift Clock &amp; Break Timer</h4><span class="work-pill work-pill-live">Live</span></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-address-book"></i></div><h4>Assigned Client Roster</h4><span class="work-pill work-pill-adoption">In adoption</span></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-dumbbell"></i></div><h4>Structured Workout Builder</h4><span class="work-pill work-pill-adoption">In adoption</span></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-calendar-check"></i></div><h4>1-on-1 Session Scheduler</h4><span class="work-pill work-pill-adoption">In adoption</span></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-comments"></i></div><h4>Direct Client Chat</h4><span class="work-pill work-pill-adoption">In adoption</span></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-info-circle"></i></div><h4>Current status</h4><p>Trainer clock-in / clock-out is live. Broader trainer workflows are still being introduced.</p></div>
             </div>
           </div>
           <div class="work-section">
@@ -228,7 +259,7 @@
               <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-list-ol"></i></div><h4>Directionless Workouts</h4></div>
               <div class="work-card"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-exclamation-circle"></i></div><h4>Surprise Expirations</h4></div>
             </div>
-            <div class="work-card work-stack"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-qrcode"></i></div><h4>FitOS response</h4><p>Dynamic Digital QR Gym Pass · Membership Status · Interactive Workout Player · Attendance &amp; Streak Tracker · 1-on-1 Coach Booking · Self-Service Membership Renewal &amp; Billing</p><p><strong>Current status:</strong> The broader Trainee experience has not yet been adopted in the live environment and is still part of the rollout and validation process.</p></div>
+            <div class="work-solve"><div class="work-card-icon" aria-hidden="true"><i class="fas fa-qrcode"></i></div><h4>FitOS response <span class="work-pill work-pill-designed">Designed / not yet live</span></h4><p>Dynamic Digital QR Gym Pass · Membership Status · Interactive Workout Player · Attendance &amp; Streak Tracker · 1-on-1 Coach Booking · Self-Service Membership Renewal &amp; Billing</p></div>
           </div>
           <div class="work-section">
             <h2>What Stakeholder Mapping Revealed</h2>
@@ -273,7 +304,7 @@
           <div class="work-section">
             <h2>Competitive Benchmark</h2>
             <div class="work-table-wrap">
-              <table class="work-table">
+              <table class="work-table work-table-wide">
                 <thead>
                   <tr>
                     <th>Capability</th>
@@ -300,21 +331,35 @@
                 </tbody>
               </table>
             </div>
+            <h3 class="work-subsection-head">What this changed</h3>
+            <div class="work-findings">
+              <article class="work-finding">
+                <span class="work-finding-num">01</span>
+                <p>Core gym features are already table stakes.</p>
+              </article>
+              <article class="work-finding">
+                <span class="work-finding-num">02</span>
+                <p>Multi-location management is already established.</p>
+              </article>
+              <article class="work-finding">
+                <span class="work-finding-num">03</span>
+                <p>The opportunity was to improve connected operational workflows.</p>
+              </article>
+            </div>
             <p class="work-section-lead"><strong>Note:</strong> The benchmark compares capabilities publicly described by each vendor. A checkmark indicates that the capability exists in the product offering; it does not imply equal implementation or depth.</p>
             <div class="work-card work-stack">
               <div class="work-card-icon" aria-hidden="true"><i class="fas fa-link"></i></div>
               <h4>Competitive sources</h4>
-              <p>Mindbody: membership, scheduling, payments, staffing, reporting, self-check-in and multi-location management. (<a href="https://www.mindbodyonline.com/business/fitness?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">mindbodyonline.com</a>)</p>
-              <p>Glofox: memberships, billing, check-in, reporting, staff management and multi-location operations. (<a href="https://www.glofox.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">glofox.com</a>)</p>
-              <p>GymMaster: membership, access, payments, bookings, workouts and member experiences. (<a href="https://www.gymmaster.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">gymmaster.com</a>)</p>
-              <p>Virtuagym: business management, coaching, workout experiences and member management. (<a href="https://business.virtuagym.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">business.virtuagym.com</a>)</p>
-              <p>Zenoti: memberships, access, staff, scheduling, analytics and multi-location operations. (<a href="https://www.zenoti.com/fitness-center-membership-software?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">zenoti.com</a>)</p>
+              <p>Mindbody: membership, scheduling, payments, staffing, reporting, self-check-in and multi-location management. (<a href="https://www.mindbodyonline.com/business/fitness" target="_blank" rel="noopener noreferrer">mindbodyonline.com</a>)</p>
+              <p>Glofox: memberships, billing, check-in, reporting, staff management and multi-location operations. (<a href="https://www.glofox.com/" target="_blank" rel="noopener noreferrer">glofox.com</a>)</p>
+              <p>GymMaster: membership, access, payments, bookings, workouts and member experiences. (<a href="https://www.gymmaster.com/" target="_blank" rel="noopener noreferrer">gymmaster.com</a>)</p>
+              <p>Virtuagym: business management, coaching, workout experiences and member management. (<a href="https://business.virtuagym.com/" target="_blank" rel="noopener noreferrer">business.virtuagym.com</a>)</p>
+              <p>Zenoti: memberships, access, staff, scheduling, analytics and multi-location operations. (<a href="https://www.zenoti.com/fitness-center-membership-software" target="_blank" rel="noopener noreferrer">zenoti.com</a>)</p>
             </div>
           </div>
           <div class="work-section">
             <h2>What Competitive Research Changed</h2>
-            <p class="work-section-lead">The competitive landscape showed that many expected fitness-management capabilities already existed: Memberships, Payments, Check-in, Scheduling, Staff management, Reporting, Member apps, Multi-location management.</p>
-            <p class="work-quote">Instead of “What features are missing from the market?” I focused on: How can these operational capabilities work together around real-world events?</p>
+            <p class="work-section-lead">The competitive landscape showed that many expected fitness-management capabilities already existed. Instead of “What features are missing from the market?” I focused on: How can these operational capabilities work together around real-world events?</p>
             <p class="work-quote work-quote-center">Role + Context + Real-Time State</p>
           </div>
         </section>
@@ -383,15 +428,15 @@
           <div class="work-section">
             <h2>Product Hypotheses</h2>
             <div class="work-table-wrap"><table class="work-table"><thead><tr><th>Hypothesis</th><th>Product response</th><th>Current status</th></tr></thead><tbody>
-              <tr><td>Owners need cross-branch visibility</td><td>Network Command Center</td><td><strong>Live</strong></td></tr>
-              <tr><td>Branch operators need autonomy</td><td>Branch-scoped experience</td><td><strong>Live</strong></td></tr>
-              <tr><td>Fragmented operations create manual work</td><td>Central operating system</td><td><strong>Live / impact observed</strong></td></tr>
-              <tr><td>Check-in should update multiple stakeholders</td><td>Connected check-in</td><td><strong>Implemented</strong></td></tr>
-              <tr><td>Trainers need less administrative effort</td><td>Trainer workspace</td><td><strong>Partially live</strong></td></tr>
-              <tr><td>Members need clearer workout guidance</td><td>Workout Player</td><td><strong>Designed / not yet adopted</strong></td></tr>
-              <tr><td>Membership status should be visible</td><td>Digital membership state</td><td><strong>Designed</strong></td></tr>
-              <tr><td>Engagement should extend beyond billing</td><td>Attendance + workout + trainer relationship</td><td><strong>Partially implemented</strong></td></tr>
-              <tr><td>New workflows may create adoption friction</td><td>Incremental rollout + validation</td><td><strong>Ongoing</strong></td></tr>
+              <tr><td>Owners need cross-branch visibility</td><td>Network Command Center</td><td><span class="work-pill work-pill-live">Live</span></td></tr>
+              <tr><td>Branch operators need autonomy</td><td>Branch-scoped experience</td><td><span class="work-pill work-pill-live">Live</span></td></tr>
+              <tr><td>Fragmented operations create manual work</td><td>Central operating system</td><td><span class="work-pill work-pill-live">Live</span></td></tr>
+              <tr><td>Check-in should update multiple stakeholders</td><td>Connected check-in</td><td><span class="work-pill work-pill-live">Live</span></td></tr>
+              <tr><td>Trainers need less administrative effort</td><td>Trainer workspace</td><td><span class="work-pill work-pill-adoption">In adoption</span></td></tr>
+              <tr><td>Members need clearer workout guidance</td><td>Workout Player</td><td><span class="work-pill work-pill-designed">Designed / not yet live</span></td></tr>
+              <tr><td>Membership status should be visible</td><td>Digital membership state</td><td><span class="work-pill work-pill-designed">Designed / not yet live</span></td></tr>
+              <tr><td>Engagement should extend beyond billing</td><td>Attendance + workout + trainer relationship</td><td><span class="work-pill work-pill-adoption">In adoption</span></td></tr>
+              <tr><td>New workflows may create adoption friction</td><td>Incremental rollout + validation</td><td><span class="work-pill work-pill-validating">Validating</span></td></tr>
             </tbody></table></div>
           </div>
           <div class="work-section">
@@ -451,7 +496,7 @@
             <p class="work-quote work-quote-center">Enter once. Use everywhere it matters.</p>
           </div>
           <div class="work-section">
-            <h2>Designing the Owner Experience</h2>
+            <h2>Designing the Owner Experience <span class="work-pill work-pill-live">Live</span></h2>
             <p class="work-section-lead">The Owner dashboard is designed around the questions the owner needs to answer. The Owner experience brings these capabilities together in a network-level command center.</p>
             <div class="work-card-grid">
               <div class="work-card"><h4>What is happening?</h4><p>Network KPIs</p></div>
@@ -462,42 +507,68 @@
             </div>
           </div>
           <div class="work-section">
-            <h2>Designing the Branch Experience</h2>
+            <h2>Designing the Branch Experience <span class="work-pill work-pill-live">Live</span></h2>
             <p class="work-quote">What is happening in my branch right now?</p>
             <p class="work-section-lead">The interface prioritizes live floor headcount, check-ins, membership validity, trainer status, local revenue and expenses.</p>
             <p class="work-quote">Context is a form of simplification. A user doesn't need everything. They need what they can act on.</p>
           </div>
           <div class="work-section">
             <h2>Designing the Trainer Experience</h2>
+            <p class="work-section-lead"><span class="work-pill work-pill-live">Live</span> Clock-in/out &nbsp; <span class="work-pill work-pill-adoption">In adoption</span> Workout builder and broader trainer workflows</p>
             <div class="work-flow"><div class="work-flow-node work-flow-start">Clock in</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node">See clients</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node">Know who is on floor</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node">Manage workout</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node">Manage session</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node work-flow-end">Communicate</div></div>
             <p class="work-section-lead">The product supports this through the shift clock, client roster, Workout Builder, session scheduling and communication. <strong>Clock-in / clock-out is live.</strong> The broader workflow remains under adoption and validation.</p>
           </div>
           <div class="work-section">
-            <h2>Designing the Trainee Experience</h2>
+            <h2>Designing the Trainee Experience <span class="work-pill work-pill-designed">Designed / not yet live</span></h2>
             <div class="work-flow"><div class="work-flow-node work-flow-start">Membership</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node">Entry</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node">Workout</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node">Progress</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node">Trainer</div><span class="work-flow-join" aria-hidden="true"></span><div class="work-flow-node work-flow-end">Renewal</div></div>
             <p class="work-section-lead">The product includes a Digital QR Gym Pass, membership status, Workout Player, attendance, coach booking and renewal workflows. The Trainee experience is still awaiting live adoption.</p>
           </div>
           <div class="work-section">
             <h2>External Research: Technology Integration</h2>
-            <p class="work-section-lead"><a href="https://xplorgym.co.uk/wp-content/uploads/2025/08/Xplor-Gym-UK-UK-Gym-Operator-Insights-Report-2025.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Xplor Gym's 2025 operator study</a> found that <strong>92%</strong> of surveyed UK gym operators used gym-management software and <strong>83%</strong> used a member app, yet <strong>30%</strong> reported a lack of integration between systems as a technology challenge.</p>
+            <p class="work-section-lead"><a href="https://xplorgym.co.uk/wp-content/uploads/2025/08/Xplor-Gym-UK-UK-Gym-Operator-Insights-Report-2025.pdf" target="_blank" rel="noopener noreferrer">Xplor Gym's 2025 operator study</a> found that <strong>92%</strong> of surveyed UK gym operators used gym-management software and <strong>83%</strong> used a member app, yet <strong>30%</strong> reported a lack of integration between systems as a technology challenge.</p>
             <p class="work-quote">Adding another system is not enough. The systems and workflows need to connect.</p>
             <p class="work-section-lead">FitOS therefore focuses on the connections between <strong>Member → Trainer → Branch → Owner</strong> rather than treating these as isolated applications.</p>
           </div>
           <div class="work-section">
             <h2>External Research: Member Engagement</h2>
-            <p class="work-section-lead"><a href="https://abcfitness.com/press-release/midyear-wellness-watch-report-2026/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">ABC Fitness's Mid-Year 2026 Wellness Watch</a> reports that in the first half of 2026: New joins decreased <strong>9% year over year</strong>; Cancellations increased <strong>8%</strong>; Check-ins increased <strong>1%</strong>; <strong>67% of members</strong> said community was their biggest driver of motivation and accountability.</p>
+            <p class="work-section-lead"><a href="https://abcfitness.com/press-release/midyear-wellness-watch-report-2026/" target="_blank" rel="noopener noreferrer">ABC Fitness's Mid-Year 2026 Wellness Watch</a> reports that in the first half of 2026: New joins decreased <strong>9% year over year</strong>; Cancellations increased <strong>8%</strong>; Check-ins increased <strong>1%</strong>; <strong>67% of members</strong> said community was their biggest driver of motivation and accountability.</p>
             <p class="work-section-lead">The member experience needs to support more than access. It should help connect <strong>Attendance → Workout → Progress → Trainer → Engagement</strong>.</p>
             <p class="work-section-lead"><strong>Evidence boundary:</strong> This supports the importance of engagement at the industry level. It does not yet demonstrate a retention improvement caused by FitOS.</p>
           </div>
           <div class="work-section">
             <h2>External Research: Personalization</h2>
-            <p class="work-section-lead"><a href="https://www.mindbodyonline.com/business/education/research-reports/2025-state-industry-report?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Mindbody's 2025 State of the Industry research</a> found that <strong>56% of surveyed operators identified personalized outreach as their most effective retention strategy</strong>. This reinforced the decision to preserve the trainer/member relationship within FitOS.</p>
+            <p class="work-section-lead"><a href="https://www.mindbodyonline.com/business/education/research-reports/2025-state-industry-report" target="_blank" rel="noopener noreferrer">Mindbody's 2025 State of the Industry research</a> found that <strong>56% of surveyed operators identified personalized outreach as their most effective retention strategy</strong>. This reinforced the decision to preserve the trainer/member relationship within FitOS.</p>
             <p class="work-section-lead">The product therefore connects <strong>Trainer → Client → Workout → Progress → Communication → Booking</strong>.</p>
           </div>
           <div class="work-section">
             <h2>Live Product Validation</h2>
-            <p class="work-section-lead">FitOS has moved from product exploration into actual operational use.</p>
-            <p><span class="work-status">Owner: Live</span><span class="work-status">Branch Co-Owner: Live</span><span class="work-status">Trainer Clock In / Out: Live</span><span class="work-status">Trainer client/workout: Ongoing adoption</span><span class="work-status">Trainee: Not yet adopted</span><span class="work-status">Real-user feedback: Ongoing</span><span class="work-status">Usability: Ongoing</span><span class="work-status">Accessibility: Ongoing</span></p>
+            <p class="work-section-lead">FitOS has moved from product exploration into actual operational use. Designed and live are not the same thing.</p>
+            <div class="work-status-board">
+              <article>
+                <h4>Owner dashboard</h4>
+                <span class="work-pill work-pill-live">Live</span>
+              </article>
+              <article>
+                <h4>Branch operations</h4>
+                <span class="work-pill work-pill-live">Live</span>
+              </article>
+              <article>
+                <h4>Trainer clock-in/out</h4>
+                <span class="work-pill work-pill-live">Live</span>
+              </article>
+              <article>
+                <h4>Workout builder</h4>
+                <span class="work-pill work-pill-adoption">In adoption</span>
+              </article>
+              <article>
+                <h4>Trainee portal</h4>
+                <span class="work-pill work-pill-designed">Designed / not yet live</span>
+              </article>
+              <article>
+                <h4>Usability + accessibility</h4>
+                <span class="work-pill work-pill-validating">Validating</span>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -531,10 +602,10 @@
             <h2>AI-Assisted Research &amp; Development</h2>
             <p class="work-section-lead">AI was used throughout the project to accelerate exploration and implementation. AI accelerated the process, while product decisions remained grounded in the research, business context and real-user feedback.</p>
             <div class="work-card-grid-2">
-              <div class="work-card"><h4>ChatGPT</h4><p>Research synthesis · Problem framing · UX analysis · Hypothesis development · Content structuring</p></div>
-              <div class="work-card"><h4>Gemini</h4><p>Research exploration · Ideation · Alternative product directions · Comparative analysis</p></div>
-              <div class="work-card"><h4>Google AI Studio</h4><p>AI-assisted experimentation · Product exploration · Technical prototyping</p></div>
-              <div class="work-card"><h4>Cursor AI</h4><p>Development · Implementation · Debugging · Iteration</p></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><img src="../img/icons/chatgpt-logo.png" alt="" /></div><h4>ChatGPT</h4><p>Research synthesis · Problem framing · UX analysis · Hypothesis development · Content structuring</p></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="#8E80F5" d="M12 2c1.2 4.4 4.6 7.8 9 9-4.4 1.2-7.8 4.6-9 9-1.2-4.4-4.6-7.8-9-9 4.4-1.2 7.8-4.6 9-9z"></path></svg></div><h4>Gemini</h4><p>Research exploration · Ideation · Alternative product directions · Comparative analysis</p></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="#4285F4" d="M12 2l1.8 5.4L19 9.2l-5.2 1.8L12 16.4 10.2 11 5 9.2l5.2-1.8z"></path><path fill="#EA4335" d="M18 13l.9 2.7 2.7.9-2.7.9L18 20.2l-.9-2.7-2.7-.9 2.7-.9z"></path><path fill="#FBBC05" d="M6.5 14.5l.7 2.1 2.1.7-2.1.7-.7 2.1-.7-2.1-2.1-.7 2.1-.7z"></path><path fill="#34A853" d="M16.2 5.2l.5 1.4 1.4.5-1.4.5-.5 1.4-.5-1.4-1.4-.5 1.4-.5z"></path></svg></div><h4>Google AI Studio</h4><p>AI-assisted experimentation · Product exploration · Technical prototyping</p></div>
+              <div class="work-card"><div class="work-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="#181818" d="M4.2 2.4l16 8.2c.8.4.7 1.6-.2 1.8l-6.4 1.5-1.5 6.4c-.2.9-1.4 1-1.8.2L4.2 2.4z"></path></svg></div><h4>Cursor AI</h4><p>Development · Implementation · Debugging · Iteration</p></div>
             </div>
             <p class="work-section-lead"><strong>My role:</strong> Research → Problem framing → UX decisions → Architecture → Design → Development → Validation</p>
           </div>
@@ -593,18 +664,18 @@
             <h2>References</h2>
             <h3 class="work-subsection-head">Industry &amp; Market Research</h3>
             <div class="work-card-grid-2">
-              <div class="work-card"><h4>Deloitte India + Health &amp; Fitness Association</h4><p>India Fitness Market Report 2025 — Market size, growth projections, membership growth, market concentration and technology trends.</p><p><a href="https://www.deloitte.com/in/en/Industries/consumer/perspectives/india-fitness-market-report-2025.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Deloitte India — India Fitness Market Report 2025</a></p></div>
-              <div class="work-card"><h4>ABC Fitness</h4><p>Mid-Year 2026 Wellness Watch — Member engagement, check-ins, new joins, cancellations, community and retention-related signals.</p><p><a href="https://abcfitness.com/press-release/midyear-wellness-watch-report-2026/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">ABC Fitness — Wellness Watch</a></p></div>
-              <div class="work-card"><h4>Mindbody</h4><p>2025 State of the Industry Report — Personalization, retention and fitness-industry technology trends.</p><p><a href="https://www.mindbodyonline.com/business/education/research-reports/2025-state-industry-report?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Mindbody — 2025 State of the Industry</a></p></div>
-              <div class="work-card"><h4>Xplor Gym</h4><p>UK Gym Operator Insights Report 2025 — Technology adoption and integration challenges among gym operators.</p><p><a href="https://xplorgym.co.uk/wp-content/uploads/2025/08/Xplor-Gym-UK-UK-Gym-Operator-Insights-Report-2025.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Xplor Gym — UK Gym Operator Insights Report 2025</a></p></div>
+              <div class="work-card"><h4>Deloitte India + Health &amp; Fitness Association</h4><p>India Fitness Market Report 2025 — Market size, growth projections, membership growth, market concentration and technology trends.</p><p><a href="https://www.deloitte.com/in/en/Industries/consumer/perspectives/india-fitness-market-report-2025.html" target="_blank" rel="noopener noreferrer">Deloitte India — India Fitness Market Report 2025</a></p></div>
+              <div class="work-card"><h4>ABC Fitness</h4><p>Mid-Year 2026 Wellness Watch — Member engagement, check-ins, new joins, cancellations, community and retention-related signals.</p><p><a href="https://abcfitness.com/press-release/midyear-wellness-watch-report-2026/" target="_blank" rel="noopener noreferrer">ABC Fitness — Wellness Watch</a></p></div>
+              <div class="work-card"><h4>Mindbody</h4><p>2025 State of the Industry Report — Personalization, retention and fitness-industry technology trends.</p><p><a href="https://www.mindbodyonline.com/business/education/research-reports/2025-state-industry-report" target="_blank" rel="noopener noreferrer">Mindbody — 2025 State of the Industry</a></p></div>
+              <div class="work-card"><h4>Xplor Gym</h4><p>UK Gym Operator Insights Report 2025 — Technology adoption and integration challenges among gym operators.</p><p><a href="https://xplorgym.co.uk/wp-content/uploads/2025/08/Xplor-Gym-UK-UK-Gym-Operator-Insights-Report-2025.pdf" target="_blank" rel="noopener noreferrer">Xplor Gym — UK Gym Operator Insights Report 2025</a></p></div>
             </div>
             <h3 class="work-subsection-head">Competitive Research</h3>
             <div class="work-card-grid">
-              <div class="work-card"><h4>Mindbody</h4><p>Business management, scheduling, payments, staff management, reporting, check-in and multi-location capabilities.</p><p><a href="https://www.mindbodyonline.com/business/fitness?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Mindbody Fitness Software</a></p></div>
-              <div class="work-card"><h4>Glofox</h4><p>Memberships, billing, check-in, staff, reporting, member app and multi-location management.</p><p><a href="https://www.glofox.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Glofox Fitness Management Platform</a></p></div>
-              <div class="work-card"><h4>GymMaster</h4><p>Membership, access control, payments, bookings, workouts and member experiences.</p><p><a href="https://www.gymmaster.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">GymMaster</a></p></div>
-              <div class="work-card"><h4>Virtuagym</h4><p>Business management, coaching, workouts, progress and member experiences.</p><p><a href="https://business.virtuagym.com/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Virtuagym Fitness Software</a></p></div>
-              <div class="work-card"><h4>Zenoti</h4><p>Memberships, staff, scheduling, access, analytics and multi-location operations.</p><p><a href="https://www.zenoti.com/fitness-center-membership-software?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Zenoti Fitness Management Software</a></p></div>
+              <div class="work-card"><h4>Mindbody</h4><p>Business management, scheduling, payments, staff management, reporting, check-in and multi-location capabilities.</p><p><a href="https://www.mindbodyonline.com/business/fitness" target="_blank" rel="noopener noreferrer">Mindbody Fitness Software</a></p></div>
+              <div class="work-card"><h4>Glofox</h4><p>Memberships, billing, check-in, staff, reporting, member app and multi-location management.</p><p><a href="https://www.glofox.com/" target="_blank" rel="noopener noreferrer">Glofox Fitness Management Platform</a></p></div>
+              <div class="work-card"><h4>GymMaster</h4><p>Membership, access control, payments, bookings, workouts and member experiences.</p><p><a href="https://www.gymmaster.com/" target="_blank" rel="noopener noreferrer">GymMaster</a></p></div>
+              <div class="work-card"><h4>Virtuagym</h4><p>Business management, coaching, workouts, progress and member experiences.</p><p><a href="https://business.virtuagym.com/" target="_blank" rel="noopener noreferrer">Virtuagym Fitness Software</a></p></div>
+              <div class="work-card"><h4>Zenoti</h4><p>Memberships, staff, scheduling, access, analytics and multi-location operations.</p><p><a href="https://www.zenoti.com/fitness-center-membership-software" target="_blank" rel="noopener noreferrer">Zenoti Fitness Management Software</a></p></div>
             </div>
           </div>
         </section>

@@ -12,8 +12,10 @@
     loader();
     
     
-    // Initiate the wowjs
-    new WOW().init();
+    // Initiate the wowjs (homepage only)
+    if (typeof WOW === "function") {
+        new WOW().init();
+    }
     
     
     // Back to top button
@@ -42,8 +44,15 @@
     
     // Smooth scrolling on the navbar links
     function workScrollOffset() {
-        var navH = $('.navbar').outerHeight() || 0;
         var tabH = $('.work-tabs').outerHeight() || 0;
+        var nav = $('.navbar').get(0);
+        var navH = 0;
+        if (nav) {
+            var pos = window.getComputedStyle(nav).position;
+            if (pos === 'fixed' || pos === 'sticky') {
+                navH = $(nav).outerHeight() || 0;
+            }
+        }
         return navH + tabH + 12;
     }
 
@@ -55,13 +64,17 @@
         $('.work-tabs a[href="#' + id + '"]').addClass('active');
     }
 
+    function workEasing() {
+        return ($.easing && $.easing.easeInOutExpo) ? 'easeInOutExpo' : 'swing';
+    }
+
     function scrollToWorkHash(hash) {
         if (!hash || !$(hash).length) {
             return;
         }
-        $('html, body').animate({
+        $('html, body').stop(true).animate({
             scrollTop: $(hash).offset().top - workScrollOffset()
-        }, 1500, 'easeInOutExpo');
+        }, 1500, workEasing());
         activateWorkTab(hash.slice(1));
     }
 
@@ -69,9 +82,9 @@
         if (this.hash !== "" && $(this.hash).length) {
             event.preventDefault();
             
-            $('html, body').animate({
+            $('html, body').stop(true).animate({
                 scrollTop: $(this.hash).offset().top - 45
-            }, 1500, 'easeInOutExpo');
+            }, 1500, workEasing());
             
             if ($(this).parents('.navbar-nav').length) {
                 $('.navbar-nav .active').removeClass('active');
@@ -84,6 +97,9 @@
         if (this.hash !== "" && $(this.hash).length) {
             event.preventDefault();
             scrollToWorkHash(this.hash);
+            if (this.scrollIntoView) {
+                this.scrollIntoView({ inline: 'center', block: 'nearest' });
+            }
             if (history.replaceState) {
                 history.replaceState(null, '', this.hash);
             }
@@ -123,39 +139,45 @@
     
     
     // Skills
-    $('.skills').waypoint(function () {
-        $('.progress .progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
-        });
-    }, {offset: '80%'});
+    if ($.fn.waypoint) {
+        $('.skills').waypoint(function () {
+            $('.progress .progress-bar').each(function () {
+                $(this).css("width", $(this).attr("aria-valuenow") + '%');
+            });
+        }, {offset: '80%'});
+    }
 
 
     // Testimonials carousel
-    $(".testimonials-carousel").owlCarousel({
-        center: true,
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: {
-            0:{
-                items:1
+    if ($.fn.owlCarousel) {
+        $(".testimonials-carousel").owlCarousel({
+            center: true,
+            autoplay: true,
+            dots: true,
+            loop: true,
+            responsive: {
+                0:{
+                    items:1
+                }
             }
-        }
-    });
+        });
+    }
     
     
     
     // Portfolio filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
+    if ($.fn.isotope) {
+        var portfolioIsotope = $('.portfolio-container').isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
 
-    $('#portfolio-filter li').on('click', function () {
-        $("#portfolio-filter li").removeClass('filter-active');
-        $(this).addClass('filter-active');
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
+        $('#portfolio-filter li').on('click', function () {
+            $("#portfolio-filter li").removeClass('filter-active');
+            $(this).addClass('filter-active');
+            portfolioIsotope.isotope({filter: $(this).data('filter')});
+        });
+    }
     
 })(jQuery);
 
