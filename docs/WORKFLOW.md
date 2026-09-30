@@ -2,11 +2,11 @@
 
 ## 1. Change request
 
-Agent shows a task filter. I confirm or cut items. Then they edit files under `website/`.
+Agent shows a task filter. I confirm or cut items. Then they edit files at the workspace root.
 
 ## 2. Local check (always)
 
-1. Serve `E:\For-Portfolio\website` on a local port (default **5500**).
+1. Serve `E:\For-Portfolio` on a local port (default **5500**).
 2. I open `http://127.0.0.1:5500` and review.
 3. We iterate locally until I am happy.
 
@@ -14,10 +14,10 @@ Agent shows a task filter. I confirm or cut items. Then they edit files under `w
 
 Phrases that mean go live: “update live”, “push”, “deploy”, “update GitHub”, “update Netlify”.
 
-Then, only in `website/`:
+Then, from `E:\For-Portfolio`:
 
 ```powershell
-cd E:\For-Portfolio\website
+cd E:\For-Portfolio
 git status
 git add <approved files>
 git commit -m "short why message"
@@ -29,7 +29,7 @@ Netlify deploys from GitHub `main`. Public URL: https://abhishekbhowmick.netlify
 ## Start the local server yourself
 
 ```powershell
-cd E:\For-Portfolio\website
+cd E:\For-Portfolio
 python -m http.server 5500
 ```
 

@@ -7,13 +7,13 @@ description: Preview the HTML/CSS/JS portfolio locally and never commit or push 
 
 ## When to use
 
-Any change under `website/` (copy, CSS, JS, images, CV).
+Any change to the live site files at the workspace root (`index.html`, `css/`, `js/`, `work/`, `img/`, `projects/`).
 
 ## Steps
 
 1. If the user has not already approved this exact list, show the task filter and wait.
-2. Edit only approved files in `E:\For-Portfolio\website`.
-3. Start a local server from `website/` if none is running:
+2. Edit only approved files in `E:\For-Portfolio`. Never create a second copy under a nested `website/` folder.
+3. Start a local server from the workspace root if none is running:
 
 ```powershell
 python -m http.server 5500
@@ -25,6 +25,4 @@ python -m http.server 5500
 
 ## Live site
 
-Commit and `git push origin main` from `website/` **only** when they say to update the live site, deploy, or push to GitHub/Netlify.
-
-Do not push files from `E:\For-Portfolio` root (docs, `.cursor`) unless they explicitly ask. Those are local working files.
+Commit and `git push origin main` from `E:\For-Portfolio` **only** when they say to update the live site, deploy, or push to GitHub/Netlify.

@@ -7,8 +7,9 @@ alwaysApply: true
 
 Before pushing to git and updating the live website, show the changes locally first and create (or reuse) a local server.
 
-Whenever the user asks for any update, check it locally first. Once it is finalized, and they tell you to update the live website, then only commit and push (`website/` → `origin main`).
+Whenever the user asks for any update, check it locally first. Once it is finalized, and they tell you to update the live website, then only commit and push (`E:\For-Portfolio` → `origin main`).
 
-- Serve `website/` (default `http://127.0.0.1:5500`).
-- Do not `git commit` or `git push` in `website/` unless they clearly ask to update live / deploy / push.
+- Serve the workspace root (default `http://127.0.0.1:5500`).
+- Do not `git commit` or `git push` unless they clearly ask to update live / deploy / push.
 - Live site: https://abhishekbhowmick.netlify.app/ from GitHub `azaad0208/portfolio`.
+- Keep a single copy of the site at the workspace root. Do not duplicate files into a nested `website/` folder.

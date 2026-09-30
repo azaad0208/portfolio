@@ -8,10 +8,10 @@ From now on, before pushing it to git and updating my live website, you show me 
 
 ### What this means
 
-1. **Do the work locally** in `website/` (`E:\For-Portfolio\website`).
+1. **Do the work locally** in `E:\For-Portfolio` (one copy of the site at the workspace root).
 2. **Show what will change** before editing (in scope / out of scope / needs from me).
 3. **Start or reuse a local server** so I can open the site on my machine (for example `http://127.0.0.1:5500`).
-4. **Do not `git commit` or `git push`** on `website/` until I clearly say to update the live site (for example: “push”, “update live”, “deploy”, “update GitHub / Netlify”).
+4. **Do not `git commit` or `git push`** until I clearly say to update the live site (for example: “push”, “update live”, “deploy”, “update GitHub / Netlify”).
 5. Live URL stays **https://abhishekbhowmick.netlify.app/** (Netlify from GitHub `azaad0208/portfolio`, branch `main`).
 
 ## Task filter (every change)
@@ -29,7 +29,7 @@ Do not rewrite experience, About, skills, email, or the work grid unless that it
 
 | Path | What it is |
 |------|------------|
-| `website/` | Live portfolio source (GitHub + Netlify) |
+| `index.html`, `css/`, `js/`, `work/`, `img/` | Live portfolio source (GitHub + Netlify). One copy only. |
 | `Portfolio/` | Local assets, CVs, extra files |
 | `.cursor/rules/` | Agent rules (always on) |
 | `.cursor/skills/` | Agent skills |

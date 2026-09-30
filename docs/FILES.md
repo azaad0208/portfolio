@@ -12,21 +12,20 @@
 | `.cursor/rules/local-preview-before-live.mdc` | Always: local preview; no commit/push until you say live. |
 | `.cursor/skills/portfolio-local-preview/SKILL.md` | How to run local preview and when not to push. |
 
-A copy of the rules also lives in `website/.cursor/rules/` so they apply if that folder is opened alone. Those files are **not** meant to be pushed to GitHub.
-
 ## For the live website (GitHub / Netlify)
 
-Only edit these after the task filter is approved. Preview locally. Push only when you ask.
+Only edit these after the task filter is approved. Preview locally. Push only when you ask. Paths are at the workspace root — there is no nested `website/` copy.
 
 | Path | Role |
 |------|------|
-| `website/index.html` | Page structure, About, experience, contact |
-| `website/css/` | Styles |
-| `website/js/` | Scripts |
-| `website/projects/index.js` | Work grid cards |
-| `website/img/` | Images and CV PDF |
+| `index.html` | Page structure, About, experience, contact |
+| `css/` | Styles |
+| `js/` | Scripts |
+| `work/` | Case studies (for example `work/fitos.html`) |
+| `projects/index.js` | Work grid cards |
+| `img/` | Images and CV PDF |
 
-## Other local folders (not the live site)
+## Other local folders
 
 | Path | Role |
 |------|------|
