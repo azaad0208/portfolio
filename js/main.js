@@ -1,3 +1,25 @@
+(function () {
+    function setWorkNavOffset() {
+        if (!document.body || !document.body.classList.contains('work-layout')) {
+            return;
+        }
+        var nav = document.querySelector('.navbar');
+        if (!nav) {
+            return;
+        }
+        document.documentElement.style.setProperty('--work-nav-h', nav.getBoundingClientRect().height + 'px');
+    }
+    window.setWorkNavOffset = setWorkNavOffset;
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setWorkNavOffset);
+    } else {
+        setWorkNavOffset();
+    }
+    window.addEventListener('load', setWorkNavOffset);
+    window.addEventListener('resize', setWorkNavOffset);
+    window.addEventListener('scroll', setWorkNavOffset, { passive: true });
+})();
+
 (function ($) {
     "use strict";
     
@@ -38,6 +60,9 @@
             $('.navbar').addClass('nav-sticky');
         } else {
             $('.navbar').removeClass('nav-sticky');
+        }
+        if (typeof window.setWorkNavOffset === 'function') {
+            window.setWorkNavOffset();
         }
     });
     

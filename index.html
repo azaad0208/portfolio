@@ -33,6 +33,16 @@
 
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("portfolio-theme");
+        if (theme === "dark" || theme === "light") {
+          document.documentElement.setAttribute("data-theme", theme);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E94XM5XDWW"></script>
   <script>
@@ -51,7 +61,23 @@
       <a href="index.html" class="navbar-brand">
         <img src="img/abhishek-bhowmick-logo.svg" alt="Abhishek" />
       </a>
-
+      <div class="site-tools">
+        <button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode">
+          <span class="theme-switch-track">
+            <span class="theme-switch-knob"></span>
+          </span>
+        </button>
+        <div class="site-updates">
+        <button type="button" class="site-updates-btn" aria-label="Portfolio updates" aria-expanded="false" aria-controls="site-updates-panel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <span class="site-updates-dot" hidden></span>
+        </button>
+        <div class="site-updates-panel" id="site-updates-panel" hidden>
+          <p class="site-updates-kicker">Updates</p>
+          <div class="site-updates-list"></div>
+        </div>
+        </div>
+      </div>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -476,7 +502,9 @@
   <script src="mail/contact.js"></script>
 
   <!-- Template Javascript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=sticky-nav"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/updates.js"></script>
   <script src="projects/index.js"></script>
   <script src="projects/ai-work.js"></script>
 </body>
