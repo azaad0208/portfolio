@@ -15,14 +15,15 @@
     rel="stylesheet" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../lib/animate/animate.min.css" rel="stylesheet" />
-  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/style.css?v=ui-fix16" rel="stylesheet" />
   <script>
     (function () {
       try {
         var theme = localStorage.getItem("portfolio-theme");
-        if (theme === "dark" || theme === "light") {
-          document.documentElement.setAttribute("data-theme", theme);
+        if (theme !== "dark" && theme !== "light") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         }
+        document.documentElement.setAttribute("data-theme", theme);
       } catch (e) {}
     })();
   </script>
@@ -39,9 +40,8 @@
       </a>
       <div class="site-tools">
         <button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode">
-          <span class="theme-switch-track">
-            <span class="theme-switch-knob"></span>
-          </span>
+          <i data-lucide="moon" class="theme-icon theme-icon-moon" aria-hidden="true"></i>
+          <i data-lucide="sun" class="theme-icon theme-icon-sun" aria-hidden="true"></i>
         </button>
       </div>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -905,8 +905,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
   <script src="../lib/easing/easing.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.544.0/dist/umd/lucide.min.js"></script>
-  <script src="../js/main.js?v=sticky-nav"></script>
-  <script src="../js/theme.js"></script>
+  <script src="../js/main.js?v=ui-fix7"></script>
+  <script src="../js/theme.js?v=ui-fix14"></script>
   <script>if (window.lucide) { lucide.createIcons({ attrs: { 'stroke-width': 1.75 } }); }</script>
 </body>
 </html>

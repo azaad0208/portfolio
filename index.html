@@ -32,13 +32,18 @@
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
   <!-- Template Stylesheet -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style.css?v=ui-fix17" rel="stylesheet" />
+  <link href="css/home.css?v=ui-fix16" rel="stylesheet" />
   <script>
     (function () {
       try {
         var theme = localStorage.getItem("portfolio-theme");
-        if (theme === "dark" || theme === "light") {
-          document.documentElement.setAttribute("data-theme", theme);
+        if (theme !== "dark" && theme !== "light") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.classList.add("has-motion");
         }
       } catch (e) {}
     })();
@@ -54,7 +59,8 @@
   </script>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
+<body class="home-page" data-spy="scroll" data-target=".navbar" data-offset="51">
+  <div class="page-progress" aria-hidden="true"><span></span></div>
   <!-- Nav Bar Start -->
   <div class="navbar navbar-expand-lg bg-light navbar-light">
     <div class="container-fluid">
@@ -63,9 +69,8 @@
       </a>
       <div class="site-tools">
         <button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode">
-          <span class="theme-switch-track">
-            <span class="theme-switch-knob"></span>
-          </span>
+          <i data-lucide="moon" class="theme-icon theme-icon-moon" aria-hidden="true"></i>
+          <i data-lucide="sun" class="theme-icon theme-icon-sun" aria-hidden="true"></i>
         </button>
         <div class="site-updates">
         <button type="button" class="site-updates-btn" aria-label="Portfolio updates" aria-expanded="false" aria-controls="site-updates-panel">
@@ -73,8 +78,12 @@
           <span class="site-updates-dot" hidden></span>
         </button>
         <div class="site-updates-panel" id="site-updates-panel" hidden>
-          <p class="site-updates-kicker">Updates</p>
+          <div class="site-updates-header">
+            <p class="site-updates-kicker">Updates</p>
+            <span class="site-updates-status" hidden>New</span>
+          </div>
           <div class="site-updates-list"></div>
+          <button type="button" class="site-updates-more" hidden>View all updates →</button>
         </div>
         </div>
       </div>
@@ -103,7 +112,7 @@
       <div class="row align-items-center">
         <div class="col-sm-12 col-lg-6">
           <div class="hero-content">
-            <div class="hero-text">
+            <div class="hero-text hero-anim">
               <!-- <p>I'm</p> -->
               <h1>Abhishek Bhowmick</h1>
               <h2></h2>
@@ -111,7 +120,7 @@
                 UX/UI Designer, AI/Agentic Product Designer, 3D Animator, AI Aficionado
               </div>
             </div>
-            <div class="hero-btn">
+            <div class="hero-btn hero-anim">
               <a class="btn" target="_blank" href="https://www.linkedin.com/in/abhishek-bhowmick02/">LINKEDIN</a>
               <a class="btn" target="_blank" href="img/abhishek-bhowmick-uxui-designer-cv.pdf"
                 download="ABHISHEK-BHOWMICK-UX-UI-Designer.pdf">DOWNLOAD CV</a>
@@ -119,8 +128,8 @@
           </div>
         </div>
         <div class="col-sm-12 col-lg-6 d-none d-lg-block">
-          <div class="hero-image">
-            <img src="img/abhishek-bhowmick.webp" alt="Hero Image" />
+          <div class="hero-image hero-anim">
+            <img src="img/abhishek-bhowmick.webp" alt="Abhishek Bhowmick" />
           </div>
         </div>
       </div>
@@ -132,7 +141,7 @@
   <div class="about wow fadeInUp mt-lg-5 pt-lg-5" data-wow-delay="0.1s" id="about">
     <div class="container-fluid">
       <div class="row mx-0">
-        <div class="col-lg-6">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="about-content pl-0">
             <h2>Hello, I am Abhishek Bhowmick</h2>
             <div>
@@ -145,14 +154,11 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
           <div class="about-content pr-0">
             <div class="section-header text-left">
               <p>Learn About Me</p>
-              <h2>
-                5+ Years
-                <span class="font-weight-normal">of Experience</span>
-              </h2>
+              <h2>5+ Years <span class="font-weight-normal">of Experience</span></h2>
             </div>
             <div class="about-text">
               <!-- <p>
@@ -203,84 +209,74 @@
   <!-- Experience Start -->
   <div class="experience contact-section" id="experience">
     <div class="container-fluid">
-      <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+      <header class="section-header text-center">
         <p>Resume</p>
-        <h2>My Experiences</h2>
+        <h2>A Journey Through Design</h2>
+        <span class="journey-lead">From visual storytelling and motion to designing complex digital products and systems.</span>
       </header>
-      <div class="timeline">
-        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s"
-          onclick="window.open(`https://www.kbnbfc.in/`, '_blank');">
-          <div class="timeline-text">
-            <div class="timeline-date">October 2024 - Present</div>
-            <h2>UX UI Designer</h2>
-            <h4>KrazyBee Services Pvt. Ltd., Bengaluru</h4>
-            <p>
-              -Designing and optimizing both end-user and admin applications, ensuring smooth interactions and
-              efficiency.
-              <br />
-              -Working closely with product managers to ensure designs align with business goals and user needs.
-              <br />-Partnering with developers and teams to build clear, accessible, and easy-to-use
-              interfaces.
-            </p>
+      <div class="journey-list">
+        <span class="journey-track" aria-hidden="true"></span>
+        <span class="journey-progress" aria-hidden="true"></span>
+        <article class="journey-item is-current is-active" tabindex="0" role="link" data-url="https://www.kbnbfc.in/">
+          <p class="journey-date">October 2024 — Present</p>
+          <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
+          <div class="journey-body">
+            <h3 class="journey-role">UX UI Designer</h3>
+            <p class="journey-meta">KrazyBee Services Pvt. Ltd. · Bengaluru</p>
+            <ul class="journey-copy">
+              <li>Designing and optimizing both end-user and admin applications, ensuring smooth interactions and efficiency.</li>
+              <li>Working closely with product managers to ensure designs align with business goals and user needs.</li>
+              <li>Partnering with developers and teams to build clear, accessible, and easy-to-use interfaces.</li>
+            </ul>
           </div>
-        </div>
-        <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s"
-          onclick="window.open(`https://webkul.com/`, '_blank');">
-          <div class="timeline-text">
-            <div class="timeline-date">May 2022 - September 2024</div>
-            <h2>Visual Designer</h2>
-            <h4>Webkul Software Pvt. Ltd., Noida</h4>
-            <p>
-              -Designed UIs for apps and websites across e-Commerce, CRM, ERP,
-              SAAS, and POS systems.
-              <br />
-              -Created and adjusted wireframes and user flows to make sure
-              designs are clear and easy to follow. <br />-Worked closely with
-              product managers and developers to make sure the design fits the
-              overall product vision.
-            </p>
+        </article>
+        <article class="journey-item" tabindex="0" role="link" data-url="https://webkul.com/">
+          <p class="journey-date">May 2022 — September 2024</p>
+          <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
+          <div class="journey-body">
+            <h3 class="journey-role">Visual Designer</h3>
+            <p class="journey-meta">Webkul Software Pvt. Ltd. · Noida</p>
+            <ul class="journey-copy">
+              <li>Designed UIs for apps and websites across e-Commerce, CRM, ERP, SAAS, and POS systems.</li>
+              <li>Created and adjusted wireframes and user flows to make sure designs are clear and easy to follow.</li>
+              <li>Worked closely with product managers and developers to make sure the design fits the overall product vision.</li>
+            </ul>
           </div>
-        </div>
-        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s"
-          onclick="window.open(`https://www.wallicon.in/`, '_blank');">
-          <div class="timeline-text">
-            <div class="timeline-date">May 2021 - April 2022</div>
-            <h2>UX/UI Designer</h2>
-            <h4>Wallicon Pvt. Ltd., Lucknow</h4>
-            <p>
-              -Designed desktop and mobile websites ensuring clear UX paths,
-              enhanced engagement through effective UI for frontend, sellers
-              panel and admin panel.
-              <br />-Created banners, screens, wireframes, and prototypes.
-              <br />-Launched MVPs under tight deadlines while working closely
-              with the development team.
-            </p>
+        </article>
+        <article class="journey-item" tabindex="0" role="link" data-url="https://www.wallicon.in/">
+          <p class="journey-date">May 2021 — April 2022</p>
+          <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
+          <div class="journey-body">
+            <h3 class="journey-role">UX/UI Designer</h3>
+            <p class="journey-meta">Wallicon Pvt. Ltd. · Lucknow</p>
+            <ul class="journey-copy">
+              <li>Designed desktop and mobile websites ensuring clear UX paths, enhanced engagement through effective UI for frontend, sellers panel and admin panel.</li>
+              <li>Created banners, screens, wireframes, and prototypes.</li>
+              <li>Launched MVPs under tight deadlines while working closely with the development team.</li>
+            </ul>
           </div>
-        </div>
-        <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s"
-          onclick="window.open(`https://itlh.in/`, '_blank');">
-          <div class="timeline-text">
-            <div class="timeline-date">Nov 2020 - Mar 2021</div>
-            <h2>UX/UI Designer</h2>
-            <h4>ITLH LLP, Navi Mumbai</h4>
-            <p>
-              -Designed and delivered web and mobile experiences under mentor
-              and product designer supervision. <br />-Created wireframes,
-              prototypes, and high-fidelity UI for in-house products.
-            </p>
+        </article>
+        <article class="journey-item" tabindex="0" role="link" data-url="https://itlh.in/">
+          <p class="journey-date">Nov 2020 — Mar 2021</p>
+          <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
+          <div class="journey-body">
+            <h3 class="journey-role">UX/UI Designer</h3>
+            <p class="journey-meta">ITLH LLP · Navi Mumbai</p>
+            <ul class="journey-copy">
+              <li>Designed and delivered web and mobile experiences under mentor and product designer supervision.</li>
+              <li>Created wireframes, prototypes, and high-fidelity UI for in-house products.</li>
+            </ul>
           </div>
-        </div>
-        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-          <div class="timeline-text">
-            <div class="timeline-date">2019 - 2020</div>
-            <h2>Camera and Body Tracking Artist</h2>
-            <h4>Trace VFX, Lucknow</h4>
-            <p>
-              -Worked on major motion pictures as Camera and Body Tracking
-              Artist.
-            </p>
+        </article>
+        <article class="journey-item">
+          <p class="journey-date">2019 — 2020</p>
+          <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
+          <div class="journey-body">
+            <h3 class="journey-role">Camera and Body Tracking Artist</h3>
+            <p class="journey-meta">Trace VFX · Lucknow</p>
+            <p class="journey-copy">Worked on major motion pictures as Camera and Body Tracking Artist.</p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </div>
@@ -289,7 +285,7 @@
   <!-- AI Work Start -->
   <div class="ai-work" id="ai-work">
     <div class="container-fluid">
-      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+      <div class="section-header text-center">
         <p>Plugins &amp; AI Products</p>
         <h2>AI Work</h2>
       </div>
@@ -324,7 +320,7 @@
   <!-- Blog Start -->
   <div class="blog" id="blog">
     <div class="container-fluid">
-      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+      <div class="section-header text-center">
         <p>From Projects</p>
         <h2>My Work</h2>
       </div>
@@ -336,7 +332,7 @@
   <!-- Service Start -->
   <div class="service" id="service">
     <div class="container-fluid">
-      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+      <div class="section-header text-center">
         <p>What I do</p>
         <h2>Specialities</h2>
       </div>
@@ -344,7 +340,7 @@
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
           <div class="service-item">
             <div class="service-icon">
-              <img src="img/icons/user-experience-and-user-interface-design.svg" alt="User Experience" />
+              <img src="img/icons/user-experience-and-user-interface-design.svg?v=15" alt="User Experience" />
             </div>
             <div class="service-text">
               <h3>User Experience & User Interface Design</h3>
@@ -359,7 +355,7 @@
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
           <div class="service-item">
             <div class="service-icon">
-              <img src="img/icons/responsive-web-and-mobile-design.svg " alt="Web Design" />
+              <img src="img/icons/responsive-web-and-mobile-design.svg?v=15" alt="Web Design" />
             </div>
             <div class="service-text">
               <h3>Responsive Web & Mobile Design</h3>
@@ -374,7 +370,7 @@
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
           <div class="service-item">
             <div class="service-icon">
-              <img src="img/icons/ux-auditing-and-usability-testing.svg" alt="UX Auditing" />
+              <img src="img/icons/ux-auditing-and-usability-testing.svg?v=15" alt="UX Auditing" />
             </div>
             <div class="service-text">
               <h3>UX Auditing & Usability Testing</h3>
@@ -389,7 +385,7 @@
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
           <div class="service-item">
             <div class="service-icon">
-              <img src="img/icons/user-experience-and-user-interface-design.svg" alt="Plugin Development" />
+              <img src="img/icons/user-experience-and-user-interface-design.svg?v=15" alt="Plugin Development" />
             </div>
             <div class="service-text">
               <h3>Figma Plugin Design & Development</h3>
@@ -404,7 +400,7 @@
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.8s">
           <div class="service-item">
             <div class="service-icon">
-              <img src="img/icons/on-page-and-off-page-seo-optimization.svg" alt="SEO" />
+              <img src="img/icons/on-page-and-off-page-seo-optimization.svg?v=15" alt="SEO" />
             </div>
             <div class="service-text">
               <h3>On-Page & Off-Page SEO Optimization</h3>
@@ -433,30 +429,38 @@
             potential collaborations.<br> Feel free to reach out to me.
           </p>
         </div>
-        <div class="col-md-4 footer1">
-          <div class="service-text">
-            <h5>Contact Details</h5>
-            <p class="mt-2 stp">
-              <img src="img/icons/email.svg" alt="email" />
-              <a target="_blank" href="mailto:abhishekbhoumick89@gmail.com">abhishekbhoumick89@gmail.com</a>
-            </p>
-            <p class="stp">
-              <img src="img/icons/call.svg" alt="email" />
-              <a href="tel:+91-9892308320">+91-9892308320</a>
-            </p>
-          </div>
-          <div class="service-text">
-            <h5>Social Media</h5>
-            <p class="stp mb-0">
-              <a target="_blank" href="https://www.linkedin.com/in/abhishek-bhowmick02/"><img
-                  src="img/icons/linkedin.svg" alt="linkedin" /></a>
-              <a target="_blank" href="https://www.behance.net/abhishebhoumic"><img src="img/icons/behance.svg"
-                  alt="behance" /></a>
-              <a target="_blank"
-                href="https://wa.me/919892308320?text=Hello Abhishek Bhowmick I am interested in your profile"><img
-                  src="img/icons/whatsapp.svg" alt="whatsapp" /></a>
-            </p>
-          </div>
+        <div class="col-md-4">
+          <aside class="contact-aside">
+            <div class="contact-block">
+              <h5>Contact Details</h5>
+              <p class="mt-2 stp">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </span>
+                <a target="_blank" href="mailto:abhishekbhoumick89@gmail.com">abhishekbhoumick89@gmail.com</a>
+              </p>
+              <p class="stp">
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <a href="tel:+91-9892308320">+91-9892308320</a>
+              </p>
+            </div>
+            <div class="contact-block">
+              <h5>Social Media</h5>
+              <p class="stp stp-social mb-0">
+                <a class="contact-social" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/abhishek-bhowmick02/" aria-label="LinkedIn">
+                  <img class="contact-brand" src="img/icons/linkedin-logo.png" width="22" height="22" alt="" />
+                </a>
+                <a class="contact-social" target="_blank" rel="noopener noreferrer" href="https://www.behance.net/abhishebhoumic" aria-label="Behance">
+                  <img class="contact-brand" src="img/icons/behance-logo.png" width="22" height="22" alt="" />
+                </a>
+                <a class="contact-social" target="_blank" rel="noopener noreferrer" href="https://wa.me/919892308320?text=Hello Abhishek Bhowmick I am interested in your profile" aria-label="WhatsApp">
+                  <img class="contact-brand" src="img/icons/whatsapp-color.svg" width="22" height="22" alt="" />
+                </a>
+              </p>
+            </div>
+          </aside>
         </div>
       </div>
       <!-- // Contact Form -->
@@ -465,7 +469,7 @@
   <!-- ====== // Contact Area ====== -->
 
   <!-- Footer Start -->
-  <div class="footer wow fadeIn" data-wow-delay="0.3s">
+  <div class="footer">
     <div class="container copyright">
       <p>
         &copy;
@@ -502,11 +506,16 @@
   <script src="mail/contact.js"></script>
 
   <!-- Template Javascript -->
-  <script src="js/main.js?v=sticky-nav"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/updates.js"></script>
-  <script src="projects/index.js"></script>
+  <script src="js/main.js?v=ui-fix16"></script>
+  <script src="js/theme.js?v=ui-fix16"></script>
+  <script src="js/updates.js?v=ui-fix20"></script>
+  <script src="projects/index.js?v=ui-fix9"></script>
   <script src="projects/ai-work.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/motion.js?v=ui-fix16"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.544.0/dist/umd/lucide.min.js"></script>
+  <script>if (window.lucide) { lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }</script>
 </body>
 
 </html>

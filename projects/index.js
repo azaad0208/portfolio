@@ -70,21 +70,32 @@ const dataArray = [
   },
 ];
 
-// Get the container where the data will be displayed
 const container = document.getElementById("data-container");
 
-// Function to map array data to HTML
 function mapArrayToHTML(array) {
   return array
     .map((item) => {
+      const primary = item.url
+        ? `<a target="_blank" rel="noopener noreferrer" class="btn mt-2 project-card-cta" href="${item.url}">${item.urlName || "View"}<span class="cta-arrow" aria-hidden="true">→</span></a>`
+        : "";
+      const secondary = item.url2
+        ? `<a target="_blank" rel="noopener noreferrer" class="btn mt-2" href="${item.url2}">${item.url2Name || "View Demo"}</a>`
+        : "";
+      const hint = item.url
+        ? `<span class="project-card-hint" aria-hidden="true">View Project</span>`
+        : "";
+
       return `
-           <div class="col-md-6 mb-5">
-            <div class="blog-item wow fadeInUp h-100" data-wow-delay="0.3s">
-              <div class="blog-img">
-                <img src="${item.image}" alt="Blog" />
+          <div class="col-md-6 mb-4">
+            <article class="blog-item project-card wow fadeInUp h-100">
+              <div class="blog-img project-card-media">
+                <div class="project-card-media-shift">
+                  <img src="${item.image}" alt="${item.project}" />
+                </div>
+                ${hint}
               </div>
               <div class="blog-text">
-                <h2>${item.project}</h2>
+                <h2 class="project-card-title">${item.project}</h2>
                 <div class="blog-meta">
                   ${item?.skills?.map((skill) => `<p>${skill}</p>`).join("")}
                 </div>
@@ -92,25 +103,22 @@ function mapArrayToHTML(array) {
                 <p class="truncate">
                   ${item.description}
                 </p>
-                 <div class="hero-btn">
-               ${item.url && ` <a target="_blank" class="btn mt-2" href="${item.url}">${item?.urlName || "View"}</a>`}
-                ${item.url2 && ` <a target="_blank" class="btn mt-2" href="${item.url2}">${item?.url2Name || "View Demo"}</a>`}
+                 <div class="project-card-actions">
+               ${primary}
+                ${secondary}
                  </div>
                  </div>
               </div>
-            </div>
+            </article>
           </div>
         `;
     })
     .join("");
 }
 
-// Inject the mapped HTML into the container
-container.innerHTML = mapArrayToHTML(dataArray);
-
-{
-  /* <p><i class="far fa-user"></i>Admin</p>
-                  <p><i class="far fa-list-alt"></i>Apps Design</p>
-                  <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                  <p><i class="far fa-comments"></i>10</p> */
+if (container) {
+  container.innerHTML = mapArrayToHTML(dataArray);
+  if (typeof window.setupHeadingReveal === "function") {
+    window.setupHeadingReveal();
+  }
 }

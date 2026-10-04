@@ -20,6 +20,68 @@
     window.addEventListener('scroll', setWorkNavOffset, { passive: true });
 })();
 
+(function () {
+  var reduceMotion = false;
+  try {
+    reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  } catch (e) {}
+
+  function setupHeadingReveal() {
+    var headings = document.querySelectorAll(
+      ".section-header h2, .about-content > h2, .contact-section h2"
+    );
+    if (!headings.length) {
+      return;
+    }
+
+    headings.forEach(function (el) {
+      el.classList.add("reveal-heading");
+    });
+
+    function showHeading(el) {
+      if (el) {
+        el.classList.add("is-visible");
+      }
+    }
+
+    function observeRoot(el) {
+      return el.closest(".section-header") || el;
+    }
+
+    if (reduceMotion || typeof IntersectionObserver === "undefined") {
+      headings.forEach(showHeading);
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          var heading = entry.target.classList.contains("reveal-heading")
+            ? entry.target
+            : entry.target.querySelector(".reveal-heading");
+          showHeading(heading);
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0, rootMargin: "0px 0px -18% 0px" }
+    );
+
+    headings.forEach(function (el) {
+      observer.observe(observeRoot(el));
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupHeadingReveal);
+  } else {
+    setupHeadingReveal();
+  }
+  window.setupHeadingReveal = setupHeadingReveal;
+})();
+
 (function ($) {
     "use strict";
     
@@ -34,8 +96,8 @@
     loader();
     
     
-    // Initiate the wowjs (homepage only)
-    if (typeof WOW === "function") {
+    // WOW is skipped on the homepage; GSAP in motion.js handles reveals there
+    if (typeof WOW === "function" && !document.body.classList.contains("home-page")) {
         new WOW().init();
     }
     
@@ -85,8 +147,27 @@
         if (!id) {
             return;
         }
-        $('.work-tabs a').removeClass('active');
-        $('.work-tabs a[href="#' + id + '"]').addClass('active');
+        var $link = $('.work-tabs a[href="#' + id + '"]');
+        if (!$link.length) {
+            return;
+        }
+        var changed = !$link.hasClass('active');
+        if (changed) {
+            $('.work-tabs a').removeClass('active');
+            $link.addClass('active');
+        }
+        var el = $link.get(0);
+        var track = document.querySelector('.work-tabs-track');
+        if (!el || !track) {
+            return;
+        }
+        var left = el.offsetLeft;
+        var right = left + el.offsetWidth;
+        var viewLeft = track.scrollLeft;
+        var viewRight = viewLeft + track.clientWidth;
+        if (changed || left < viewLeft + 12 || right > viewRight - 12) {
+            el.scrollIntoView({ inline: 'center', block: 'nearest', behavior: changed ? 'smooth' : 'auto' });
+        }
     }
 
     function workEasing() {
@@ -107,9 +188,14 @@
         if (this.hash !== "" && $(this.hash).length) {
             event.preventDefault();
             
-            $('html, body').stop(true).animate({
-                scrollTop: $(this.hash).offset().top - 45
-            }, 1500, workEasing());
+            var targetTop = $(this.hash).offset().top - 45;
+            if (document.body.classList.contains('home-page')) {
+                window.scrollTo({ top: targetTop, behavior: 'smooth' });
+            } else {
+                $('html, body').stop(true).animate({
+                    scrollTop: targetTop
+                }, 1500, workEasing());
+            }
             
             if ($(this).parents('.navbar-nav').length) {
                 $('.navbar-nav .active').removeClass('active');
@@ -141,7 +227,7 @@
                 }
             });
             activateWorkTab(current);
-        });
+        }).trigger('scroll');
         if (window.location.hash) {
             setTimeout(function () {
                 scrollToWorkHash(window.location.hash);
