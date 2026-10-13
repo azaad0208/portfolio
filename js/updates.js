@@ -5,11 +5,19 @@
     // date: YYYY-MM-DD. Items from the last 15 days show a red dot on the bell.
     var PORTFOLIO_UPDATES = [
         {
+            title: "Theme, footer, and experience update",
+            description: "Added dark and light footer closing scenes, a Try me hint on the theme switch, and a clearer animation chapter in Experience.",
+            date: "2026-10-13",
+            type: "Portfolio",
+            link: "/",
+            cta: "View homepage"
+        },
+        {
             title: "FitOS case study updated",
             description: "Updated the FitOS case study with a clearer structure and current product status.",
             date: "2026-09-30",
             type: "Case Study",
-            link: "/work/fitos.html#competitive",
+            link: "/work/fitos.html",
             cta: "View case study"
         },
         {

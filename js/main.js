@@ -28,7 +28,7 @@
 
   function setupHeadingReveal() {
     var headings = document.querySelectorAll(
-      ".section-header h2, .about-content > h2, .contact-section h2"
+      ".section-header h2, .about-content > h2, .contact-section h2, .site-end-heading"
     );
     if (!headings.length) {
       return;
@@ -229,9 +229,11 @@
             activateWorkTab(current);
         }).trigger('scroll');
         if (window.location.hash) {
-            setTimeout(function () {
-                scrollToWorkHash(window.location.hash);
-            }, 200);
+            if (history.replaceState) {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+            window.scrollTo(0, 0);
+            activateWorkTab($('.work-panel').first().attr('id'));
         }
     }
     

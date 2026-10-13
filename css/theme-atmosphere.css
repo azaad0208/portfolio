@@ -1,0 +1,177 @@
+/* Theme-aware cursors + decorative atmosphere. Does not change content. */
+
+body.home-page,
+body.work-layout {
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
+.theme-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  contain: paint;
+}
+
+.theme-atmosphere[hidden] {
+  display: none !important;
+}
+
+.theme-atmosphere-pixels,
+.theme-atmosphere-clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.theme-atmosphere-pixels {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.theme-atmosphere-clouds {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-atmosphere-pixels {
+  display: block;
+}
+
+html:not([data-theme="dark"]) .theme-atmosphere-clouds {
+  display: block;
+}
+
+html:not([data-theme="dark"]) body.home-page .hero,
+html:not([data-theme="dark"]) body.home-page .about,
+html:not([data-theme="dark"]) body.home-page .experience,
+html:not([data-theme="dark"]) body.home-page .ai-work,
+html:not([data-theme="dark"]) body.home-page .blog,
+html:not([data-theme="dark"]) body.home-page .service,
+html:not([data-theme="dark"]) body.home-page .footer,
+html:not([data-theme="dark"]) body.home-page .contact-section,
+html:not([data-theme="dark"]) body.home-page .site-end,
+html:not([data-theme="dark"]) body.work-layout .work-page,
+html:not([data-theme="dark"]) body.work-layout .footer,
+html:not([data-theme="dark"]) body.work-layout .site-end {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.atmosphere-cloud {
+  position: absolute;
+  left: 0;
+  will-change: transform;
+  opacity: 0.88;
+  filter: drop-shadow(0 8px 12px rgba(150, 168, 184, 0.08));
+}
+
+body.work-layout .atmosphere-cloud {
+  opacity: 0.34;
+  filter: drop-shadow(0 8px 16px rgba(120, 140, 165, 0.1));
+}
+
+.atmosphere-cloud svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+@keyframes atmosphere-cloud-drift {
+  from {
+    transform: translate3d(-42vw, 0, 0);
+  }
+  to {
+    transform: translate3d(108vw, 0, 0);
+  }
+}
+
+html.has-motion:not([data-theme="dark"]) .atmosphere-cloud {
+  animation: atmosphere-cloud-drift linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.has-motion:not([data-theme="dark"]) .atmosphere-cloud {
+    animation: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html[data-theme="dark"] body.home-page,
+  html[data-theme="dark"] body.work-layout {
+    cursor: url("../img/cursor-pixel.svg") 2 2, auto;
+  }
+
+  html[data-theme="dark"] body.home-page a,
+  html[data-theme="dark"] body.home-page button,
+  html[data-theme="dark"] body.home-page .btn,
+  html[data-theme="dark"] body.home-page [role="button"],
+  html[data-theme="dark"] body.home-page [role="link"],
+  html[data-theme="dark"] body.home-page [role="switch"],
+  html[data-theme="dark"] body.home-page .project-card,
+  html[data-theme="dark"] body.home-page .ai-work-card,
+  html[data-theme="dark"] body.home-page .navbar-brand,
+  html[data-theme="dark"] body.home-page .nav-link,
+  html[data-theme="dark"] body.home-page .theme-switch,
+  html[data-theme="dark"] body.home-page .site-updates-btn,
+  html[data-theme="dark"] body.home-page .journey-item[data-url],
+  html[data-theme="dark"] body.work-layout a,
+  html[data-theme="dark"] body.work-layout button,
+  html[data-theme="dark"] body.work-layout .btn,
+  html[data-theme="dark"] body.work-layout [role="button"],
+  html[data-theme="dark"] body.work-layout .nav-link,
+  html[data-theme="dark"] body.work-layout .theme-switch,
+  html[data-theme="dark"] body.work-layout .work-tabs a,
+  html[data-theme="dark"] body.work-layout .navbar-brand {
+    cursor: url("../img/cursor-pixel-hover.svg") 2 2, pointer;
+  }
+
+  html:not([data-theme="dark"]) body.home-page,
+  html:not([data-theme="dark"]) body.work-layout {
+    cursor: url("../img/cursor-pencil.svg") 2 2, auto;
+  }
+
+  html:not([data-theme="dark"]) body.home-page a,
+  html:not([data-theme="dark"]) body.home-page button,
+  html:not([data-theme="dark"]) body.home-page .btn,
+  html:not([data-theme="dark"]) body.home-page [role="button"],
+  html:not([data-theme="dark"]) body.home-page [role="link"],
+  html:not([data-theme="dark"]) body.home-page [role="switch"],
+  html:not([data-theme="dark"]) body.home-page .project-card,
+  html:not([data-theme="dark"]) body.home-page .ai-work-card,
+  html:not([data-theme="dark"]) body.home-page .navbar-brand,
+  html:not([data-theme="dark"]) body.home-page .nav-link,
+  html:not([data-theme="dark"]) body.home-page .theme-switch,
+  html:not([data-theme="dark"]) body.home-page .site-updates-btn,
+  html:not([data-theme="dark"]) body.home-page .journey-item[data-url],
+  html:not([data-theme="dark"]) body.work-layout a,
+  html:not([data-theme="dark"]) body.work-layout button,
+  html:not([data-theme="dark"]) body.work-layout .btn,
+  html:not([data-theme="dark"]) body.work-layout [role="button"],
+  html:not([data-theme="dark"]) body.work-layout .nav-link,
+  html:not([data-theme="dark"]) body.work-layout .theme-switch,
+  html:not([data-theme="dark"]) body.work-layout .work-tabs a,
+  html:not([data-theme="dark"]) body.work-layout .navbar-brand {
+    cursor: url("../img/cursor-pencil-hover.svg") 2 2, pointer;
+  }
+
+  html[data-theme="dark"] body.home-page input,
+  html[data-theme="dark"] body.home-page textarea,
+  html[data-theme="dark"] body.home-page select,
+  html[data-theme="dark"] body.home-page [contenteditable="true"],
+  html[data-theme="dark"] body.work-layout input,
+  html[data-theme="dark"] body.work-layout textarea,
+  html[data-theme="dark"] body.work-layout select,
+  html:not([data-theme="dark"]) body.home-page input,
+  html:not([data-theme="dark"]) body.home-page textarea,
+  html:not([data-theme="dark"]) body.home-page select,
+  html:not([data-theme="dark"]) body.home-page [contenteditable="true"],
+  html:not([data-theme="dark"]) body.work-layout input,
+  html:not([data-theme="dark"]) body.work-layout textarea,
+  html:not([data-theme="dark"]) body.work-layout select {
+    cursor: text;
+  }
+}

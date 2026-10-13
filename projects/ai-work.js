@@ -141,13 +141,14 @@ function chipsMarkup(chips) {
 }
 
 function cardMarkup(item) {
-  const action = item.page ? "View details" : "View";
+  const caseReady = item.id === "fitos";
+  const action = caseReady ? "View case study" : "Case study coming soon";
   return `
-    <article class="ai-work-card" data-ai-id="${escapeHtml(item.id)}" tabindex="0" role="button">
+    <article class="ai-work-card${caseReady ? "" : " is-soon"}" data-ai-id="${escapeHtml(item.id)}" tabindex="0" role="button">
       <h3>${escapeHtml(item.title)}</h3>
       ${chipsMarkup(item.chips)}
       <p>${escapeHtml(item.short)}</p>
-      <span class="btn">${action}</span>
+      <span class="ai-work-link">${action}</span>
     </article>
   `;
 }
@@ -185,7 +186,7 @@ function cardMarkup(item) {
       return;
     }
 
-    if (item.page) {
+    if (item.id === "fitos" && item.page) {
       window.location.assign(item.page);
       return;
     }

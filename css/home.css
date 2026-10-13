@@ -322,6 +322,7 @@ body.home-page .journey-item {
   padding: 20px 0 48px;
   z-index: 1;
   cursor: default;
+  scroll-margin-top: 88px;
 }
 
 body.home-page .journey-item[data-url] {

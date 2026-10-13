@@ -15,7 +15,8 @@ const dataArray = [
       "Wallicon offers a variety of interior products. Sellers can register easily, set up their profile, choose products, and customize prices. They can manage orders and promote their site on Facebook, Instagram, WhatsApp, and other social media platforms.",
     url: "https://wallicon.in",
     url2: "https://dealer.wallicon.in",
-    url2Name: "Dealer Website"
+    url2Name: "Dealer Website",
+    comingSoon: true
   },
   {
     image: "img/projects/discount-engine.webp",
@@ -45,6 +46,7 @@ const dataArray = [
       and assists in locating their vehicle within the parking area.`,
     url: "https://www.behance.net/gallery/113205683/Go-Park-Yourself-(Parking-App)-UX-Case-Study",
     url2: "",
+    comingSoon: true,
   },
   {
     image: "img/projects/krayin-crm-webkul.webp",
@@ -75,13 +77,12 @@ const container = document.getElementById("data-container");
 function mapArrayToHTML(array) {
   return array
     .map((item) => {
-      const primary = item.url
-        ? `<a target="_blank" rel="noopener noreferrer" class="btn mt-2 project-card-cta" href="${item.url}">${item.urlName || "View"}<span class="cta-arrow" aria-hidden="true">→</span></a>`
+      const primary = item.comingSoon
+        ? `<span class="project-card-soon">Case study coming soon</span>`
+        : item.url
+        ? `<a target="_blank" rel="noopener noreferrer" class="project-card-link" href="${item.url}">View project</a>`
         : "";
-      const secondary = item.url2
-        ? `<a target="_blank" rel="noopener noreferrer" class="btn mt-2" href="${item.url2}">${item.url2Name || "View Demo"}</a>`
-        : "";
-      const hint = item.url
+      const hint = !item.comingSoon && item.url
         ? `<span class="project-card-hint" aria-hidden="true">View Project</span>`
         : "";
 
@@ -105,7 +106,6 @@ function mapArrayToHTML(array) {
                 </p>
                  <div class="project-card-actions">
                ${primary}
-                ${secondary}
                  </div>
                  </div>
               </div>

@@ -17,11 +17,13 @@
     content="I'm transforming web and mobile experiences with UX/UI design expertise, creating engaging, user-friendly designs that enhance user satisfaction and deliver impactful results." />
 
   <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.png" />
-  <link href="/img/favicon.png" rel="icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-light.svg" />
+  <link href="/img/favicon-light.svg" rel="icon" media="(prefers-color-scheme: light)" />
+  <link href="/img/favicon-dark.svg" rel="icon" media="(prefers-color-scheme: dark)" />
+  <link href="/img/favicon-light.svg" rel="icon" />
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet" />
 
   <!-- CSS Libraries -->
@@ -32,8 +34,11 @@
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
   <!-- Template Stylesheet -->
-  <link href="css/style.css?v=ui-fix17" rel="stylesheet" />
-  <link href="css/home.css?v=ui-fix16" rel="stylesheet" />
+  <link href="css/style.css?v=hint6" rel="stylesheet" />
+  <link href="css/home.css?v=ui-fix18" rel="stylesheet" />
+  <link href="css/theme-skins.css?v=skin10" rel="stylesheet" />
+  <link href="css/theme-atmosphere.css?v=atm5" rel="stylesheet" />
+  <link href="css/site-end.css?v=end13" rel="stylesheet" />
   <script>
     (function () {
       try {
@@ -42,6 +47,13 @@
           theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         }
         document.documentElement.setAttribute("data-theme", theme);
+        var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var file = systemDark ? "favicon-dark.svg" : "favicon-light.svg";
+        var links = document.querySelectorAll('link[rel="icon"]:not([media]), link[rel="apple-touch-icon"]');
+        for (var i = 0; i < links.length; i++) {
+          var href = links[i].getAttribute("href") || "/img/favicon-light.svg";
+          links[i].setAttribute("href", href.replace(/[^/]+$/, "") + file);
+        }
         if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
           document.documentElement.classList.add("has-motion");
         }
@@ -68,10 +80,19 @@
         <img src="img/abhishek-bhowmick-logo.svg" alt="Abhishek" />
       </a>
       <div class="site-tools">
-        <button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode">
-          <i data-lucide="moon" class="theme-icon theme-icon-moon" aria-hidden="true"></i>
-          <i data-lucide="sun" class="theme-icon theme-icon-sun" aria-hidden="true"></i>
-        </button>
+        <div class="theme-switch-wrap">
+          <button type="button" class="theme-hint" aria-label="Try the other colour theme">
+            <span class="theme-hint-text">Try me</span>
+            <svg class="theme-hint-arrow" viewBox="0 0 42 36" aria-hidden="true" focusable="false">
+              <path d="M3 30 C 7 30, 11 28, 14 22 C 18 12, 24 5, 38 8" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/>
+              <path d="M31 4 L38.5 8 L32.5 13" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode">
+            <i data-lucide="moon" class="theme-icon theme-icon-moon" aria-hidden="true"></i>
+            <i data-lucide="sun" class="theme-icon theme-icon-sun" aria-hidden="true"></i>
+          </button>
+        </div>
         <div class="site-updates">
         <button type="button" class="site-updates-btn" aria-label="Portfolio updates" aria-expanded="false" aria-controls="site-updates-panel">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
@@ -269,12 +290,11 @@
           </div>
         </article>
         <article class="journey-item">
-          <p class="journey-date">2019 — 2020</p>
+          <p class="journey-date">2011–2020</p>
           <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
           <div class="journey-body">
-            <h3 class="journey-role">Camera and Body Tracking Artist</h3>
-            <p class="journey-meta">Trace VFX · Lucknow</p>
-            <p class="journey-copy">Worked on major motion pictures as Camera and Body Tracking Artist.</p>
+            <h3 class="journey-role">3D Animation and VFX Artist</h3>
+            <p class="journey-copy">Before moving into UX and product design, I spent nearly a decade in 3D animation and visual effects across films and animated productions. It shaped my eye for movement, visual storytelling, and detail, which I bring to the digital products I design today.</p>
           </div>
         </article>
       </div>
@@ -417,73 +437,83 @@
   </div>
   <!-- Service End -->
 
-  <!-- ====== Contact Area ====== -->
-  <section id="contact" class="section-padding contact-section bg-light wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container-fluid">
-      <!-- Contact Form -->
-      <div class="row justify-content-center">
-        <div class="col-md-8 pr-md-5">
-          <h2>Let’s Start a Conversation</h2>
-          <p>
-            I’m always open to discussing new projects, creative ideas, or
-            potential collaborations.<br> Feel free to reach out to me.
-          </p>
+  <footer id="contact" class="site-end" role="contentinfo">
+    <div class="site-end-horizon" aria-hidden="true">
+      <span class="site-end-horizon-track"></span>
+      <span class="site-end-pixel-diamond"></span>
+      <span class="site-end-pixel-ledge"></span>
+    </div>
+    <div class="site-end-shell">
+      <div class="site-end-intro">
+        <p class="site-end-kicker site-end-kicker-idea">HAVE AN IDEA WORTH BUILDING?</p>
+        <p class="site-end-kicker site-end-kicker-lets">LET'S CONNECT</p>
+        <h2 class="site-end-heading">Let's Start a Conversation</h2>
+      </div>
+      <p class="site-end-message">I'm always open to discussing new projects, creative ideas, or potential collaborations. Feel free to reach out to me.</p>
+      <a class="site-end-email" href="mailto:abhishekbhoumick89@gmail.com">abhishekbhoumick89@gmail.com<span class="site-end-email-mark" aria-hidden="true">→</span></a>
+      <a class="site-end-phone" href="tel:+91-9892308320">+91-9892308320</a>
+      <div class="site-end-aside">
+        <p class="site-end-aside-label">CONNECT</p>
+        <ul class="site-end-social">
+          <li><a href="https://www.linkedin.com/in/abhishek-bhowmick02/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.behance.net/abhishebhoumic" target="_blank" rel="noopener noreferrer">Behance</a></li>
+          <li><a href="https://wa.me/919892308320?text=Hello Abhishek Bhowmick I am interested in your profile" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-end-close">
+      <div class="end-scene">
+        <div class="end-scene-dark">
+          <div class="end-scene-copy">
+            <p class="end-scene-kicker">QUEST COMPLETE!</p>
+            <p class="end-scene-sub">Thanks for playing.</p>
+          </div>
+          <div class="end-pixel" aria-hidden="true">
+            <span class="end-coin end-coin-a"></span>
+            <span class="end-coin end-coin-b"></span>
+            <span class="end-star"></span>
+            <svg class="end-flag" viewBox="0 0 18 28" shape-rendering="crispEdges" focusable="false">
+              <rect x="2" y="0" width="2" height="28" fill="#f5f2e8"/>
+              <rect x="4" y="2" width="12" height="8" fill="#ffd84d"/>
+              <rect x="4" y="4" width="10" height="4" fill="#55e6c1"/>
+            </svg>
+            <svg class="end-hero" viewBox="0 0 16 20" shape-rendering="crispEdges" focusable="false">
+              <rect x="4" y="0" width="8" height="2" fill="#ffd84d"/>
+              <rect x="3" y="2" width="10" height="2" fill="#ffd84d"/>
+              <rect x="4" y="4" width="8" height="6" fill="#f5f2e8"/>
+              <rect x="5" y="6" width="2" height="2" fill="#10101b"/>
+              <rect x="9" y="6" width="2" height="2" fill="#10101b"/>
+              <rect x="4" y="10" width="8" height="6" fill="#55e6c1"/>
+              <rect x="3" y="12" width="2" height="4" fill="#ffd84d"/>
+              <rect x="11" y="12" width="2" height="4" fill="#ffd84d"/>
+              <rect x="4" y="16" width="3" height="4" fill="#252541"/>
+              <rect x="9" y="16" width="3" height="4" fill="#252541"/>
+            </svg>
+            <div class="end-ground"></div>
+          </div>
         </div>
-        <div class="col-md-4">
-          <aside class="contact-aside">
-            <div class="contact-block">
-              <h5>Contact Details</h5>
-              <p class="mt-2 stp">
-                <span class="contact-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </span>
-                <a target="_blank" href="mailto:abhishekbhoumick89@gmail.com">abhishekbhoumick89@gmail.com</a>
-              </p>
-              <p class="stp">
-                <span class="contact-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                </span>
-                <a href="tel:+91-9892308320">+91-9892308320</a>
-              </p>
-            </div>
-            <div class="contact-block">
-              <h5>Social Media</h5>
-              <p class="stp stp-social mb-0">
-                <a class="contact-social" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/abhishek-bhowmick02/" aria-label="LinkedIn">
-                  <img class="contact-brand" src="img/icons/linkedin-logo.png" width="22" height="22" alt="" />
-                </a>
-                <a class="contact-social" target="_blank" rel="noopener noreferrer" href="https://www.behance.net/abhishebhoumic" aria-label="Behance">
-                  <img class="contact-brand" src="img/icons/behance-logo.png" width="22" height="22" alt="" />
-                </a>
-                <a class="contact-social" target="_blank" rel="noopener noreferrer" href="https://wa.me/919892308320?text=Hello Abhishek Bhowmick I am interested in your profile" aria-label="WhatsApp">
-                  <img class="contact-brand" src="img/icons/whatsapp-color.svg" width="22" height="22" alt="" />
-                </a>
-              </p>
-            </div>
-          </aside>
+        <div class="end-scene-light">
+          <div class="end-scene-copy">
+            <p class="end-scene-kicker">UNTIL THE NEXT IDEA.</p>
+          </div>
+          <svg class="end-sky" viewBox="0 0 560 140" focusable="false" aria-hidden="true">
+            <path class="end-trail" d="M36 96 C 150 18, 290 126, 508 42" fill="none" stroke="#42664b" stroke-width="1.25" stroke-dasharray="3 7" stroke-linecap="round"/>
+            <g class="end-plane">
+              <g class="end-plane-body">
+                <path d="M0 8 L26 0 L18 10 L26 16 Z" fill="#c96d4d"/>
+                <path d="M8 8 L18 10 L12 12 Z" fill="#fbf8f1"/>
+              </g>
+            </g>
+          </svg>
         </div>
       </div>
-      <!-- // Contact Form -->
     </div>
-  </section>
-  <!-- ====== // Contact Area ====== -->
-
-  <!-- Footer Start -->
-  <div class="footer">
-    <div class="container copyright">
-      <p>
-        &copy;
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Abhishek Bhowmick. All Rights Reserved.
-      </p>
+    <div class="site-end-legal">
+      <p>&copy; <script>document.write(new Date().getFullYear());</script> Abhishek Bhowmick. All Rights Reserved.</p>
     </div>
-  </div>
-  <!-- Footer End -->
+  </footer>
 
-  <!-- Back to top button -->
-  <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <a href="#" class="btn back-to-top" aria-label="Back to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 
   <!-- Pre Loader -->
   <div id="loader" class="show">
@@ -506,14 +536,15 @@
   <script src="mail/contact.js"></script>
 
   <!-- Template Javascript -->
-  <script src="js/main.js?v=ui-fix16"></script>
-  <script src="js/theme.js?v=ui-fix16"></script>
-  <script src="js/updates.js?v=ui-fix20"></script>
-  <script src="projects/index.js?v=ui-fix9"></script>
-  <script src="projects/ai-work.js"></script>
+  <script src="js/main.js?v=end1"></script>
+  <script src="js/theme.js?v=hint6"></script>
+  <script src="js/theme-atmosphere.js?v=atm5"></script>
+  <script src="js/updates.js?v=upd1"></script>
+  <script src="projects/index.js?v=soon2"></script>
+  <script src="projects/ai-work.js?v=soon1"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/motion.js?v=ui-fix16"></script>
+  <script src="js/motion.js?v=end8"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.544.0/dist/umd/lucide.min.js"></script>
   <script>if (window.lucide) { lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }</script>
 </body>

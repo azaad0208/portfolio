@@ -211,8 +211,8 @@
       [".experience", ".experience .section-header", headingFrom, headingTo, 1.15],
       [".ai-work", ".ai-work .section-header", headingFrom, headingTo, 1.15],
       ["#service", "#service .section-header", headingFrom, headingTo, 1.15],
-      ["#contact", "#contact .col-md-8", isMobile() ? 16 : 24, isMobile() ? -10 : -16, 1.2],
-      ["#contact", "#contact .contact-aside", isMobile() ? 18 : 28, isMobile() ? -8 : -12, 1.25],
+      ["#contact", "#contact .site-end-intro", isMobile() ? 16 : 24, isMobile() ? -10 : -16, 1.2],
+      ["#contact", "#contact .site-end-aside", isMobile() ? 18 : 28, isMobile() ? -8 : -12, 1.25],
     ].forEach(function (item) {
       var section = document.querySelector(item[0]);
       if (!section) {

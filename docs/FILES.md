@@ -12,6 +12,18 @@
 | `.cursor/rules/local-preview-before-live.mdc` | Always: local preview; no commit/push until you say live. |
 | `.cursor/skills/portfolio-local-preview/SKILL.md` | How to run local preview and when not to push. |
 
+## Recently shipped (13 Oct 2026)
+
+These are on the live homepage and case-study footers after the latest push:
+
+- **Footer closing scenes** — dark: pixel “QUEST COMPLETE!” landscape; light: paper plane and “UNTIL THE NEXT IDEA.”
+- **Theme switcher** — handwritten Try me hint with a curly arrow; fades when scrolling away from the header.
+- **Experience** — last timeline item is **3D Animation and VFX Artist**, **2011–2020**, with the personal animation-to-UX paragraph.
+- **Atmosphere** — pixel cursor and floating pixels in dark; pencil cursor and drifting clouds in light.
+- **Work cards** — only FitOS has a live case study; other AI work and some My Work items show “Case study coming soon.”
+
+Main files: `index.html`, `css/style.css`, `css/home.css`, `css/theme-skins.css`, `css/theme-atmosphere.css`, `css/site-end.css`, `js/theme.js`, `js/theme-atmosphere.js`, `js/updates.js`, `work/fitos.html`, `work/quickbyte.html`.
+
 ## For the live website (GitHub / Netlify)
 
 Only edit these after the task filter is approved. Preview locally. Push only when you ask. Paths are at the workspace root — there is no nested `website/` copy.

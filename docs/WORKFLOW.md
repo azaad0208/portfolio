@@ -26,6 +26,8 @@ git push origin main
 
 Netlify deploys from GitHub `main`. Public URL: https://abhishekbhowmick.netlify.app/
 
+Keep the same files in `E:\For-Portfolio` and on GitHub. Do not duplicate the site into a nested `website/` folder.
+
 ## Start the local server yourself
 
 ```powershell

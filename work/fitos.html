@@ -9,13 +9,18 @@
   <meta
     content="Designing a real-time operating system for multi-branch fitness businesses."
     name="description" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon.png" />
-  <link href="../img/favicon.png" rel="icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon-light.svg" />
+  <link href="../img/favicon-light.svg" rel="icon" media="(prefers-color-scheme: light)" />
+  <link href="../img/favicon-dark.svg" rel="icon" media="(prefers-color-scheme: dark)" />
+  <link href="../img/favicon-light.svg" rel="icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../lib/animate/animate.min.css" rel="stylesheet" />
-  <link href="../css/style.css?v=ui-fix16" rel="stylesheet" />
+  <link href="../css/style.css?v=hint6" rel="stylesheet" />
+  <link href="../css/theme-skins.css?v=skin10" rel="stylesheet" />
+  <link href="../css/theme-atmosphere.css?v=atm5" rel="stylesheet" />
+  <link href="../css/site-end.css?v=end13" rel="stylesheet" />
   <script>
     (function () {
       try {
@@ -39,10 +44,19 @@
         <img src="../img/abhishek-bhowmick-logo.svg" alt="Abhishek" />
       </a>
       <div class="site-tools">
-        <button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode">
-          <i data-lucide="moon" class="theme-icon theme-icon-moon" aria-hidden="true"></i>
-          <i data-lucide="sun" class="theme-icon theme-icon-sun" aria-hidden="true"></i>
-        </button>
+        <div class="theme-switch-wrap">
+          <button type="button" class="theme-hint" aria-label="Try the other colour theme">
+            <span class="theme-hint-text">Try me</span>
+            <svg class="theme-hint-arrow" viewBox="0 0 42 36" aria-hidden="true" focusable="false">
+              <path d="M3 30 C 7 30, 11 28, 14 22 C 18 12, 24 5, 38 8" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/>
+              <path d="M31 4 L38.5 8 L32.5 13" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button type="button" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode">
+            <i data-lucide="moon" class="theme-icon theme-icon-moon" aria-hidden="true"></i>
+            <i data-lucide="sun" class="theme-icon theme-icon-sun" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -894,19 +908,90 @@
     </div>
   </main>
 
-  <div class="footer">
-    <div class="container copyright">
+  <footer class="site-end" role="contentinfo">
+    <div class="site-end-horizon" aria-hidden="true">
+      <span class="site-end-horizon-track"></span>
+      <span class="site-end-pixel-diamond"></span>
+      <span class="site-end-pixel-ledge"></span>
+    </div>
+    <div class="site-end-shell">
+      <div class="site-end-intro">
+        <p class="site-end-kicker site-end-kicker-idea">HAVE AN IDEA WORTH BUILDING?</p>
+        <p class="site-end-kicker site-end-kicker-lets">LET'S CONNECT</p>
+        <h2 class="site-end-heading">Let's Start a Conversation</h2>
+      </div>
+      <p class="site-end-message">I'm always open to discussing new projects, creative ideas, or potential collaborations. Feel free to reach out to me.</p>
+      <a class="site-end-email" href="mailto:abhishekbhoumick89@gmail.com">abhishekbhoumick89@gmail.com<span class="site-end-email-mark" aria-hidden="true">→</span></a>
+      <a class="site-end-phone" href="tel:+91-9892308320">+91-9892308320</a>
+      <div class="site-end-aside">
+        <p class="site-end-aside-label">CONNECT</p>
+        <ul class="site-end-social">
+          <li><a href="https://www.linkedin.com/in/abhishek-bhowmick02/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.behance.net/abhishebhoumic" target="_blank" rel="noopener noreferrer">Behance</a></li>
+          <li><a href="https://wa.me/919892308320?text=Hello Abhishek Bhowmick I am interested in your profile" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-end-close">
+      <div class="end-scene">
+        <div class="end-scene-dark">
+          <div class="end-scene-copy">
+            <p class="end-scene-kicker">QUEST COMPLETE!</p>
+            <p class="end-scene-sub">Thanks for playing.</p>
+          </div>
+          <div class="end-pixel" aria-hidden="true">
+            <span class="end-coin end-coin-a"></span>
+            <span class="end-coin end-coin-b"></span>
+            <span class="end-star"></span>
+            <svg class="end-flag" viewBox="0 0 18 28" shape-rendering="crispEdges" focusable="false">
+              <rect x="2" y="0" width="2" height="28" fill="#f5f2e8"/>
+              <rect x="4" y="2" width="12" height="8" fill="#ffd84d"/>
+              <rect x="4" y="4" width="10" height="4" fill="#55e6c1"/>
+            </svg>
+            <svg class="end-hero" viewBox="0 0 16 20" shape-rendering="crispEdges" focusable="false">
+              <rect x="4" y="0" width="8" height="2" fill="#ffd84d"/>
+              <rect x="3" y="2" width="10" height="2" fill="#ffd84d"/>
+              <rect x="4" y="4" width="8" height="6" fill="#f5f2e8"/>
+              <rect x="5" y="6" width="2" height="2" fill="#10101b"/>
+              <rect x="9" y="6" width="2" height="2" fill="#10101b"/>
+              <rect x="4" y="10" width="8" height="6" fill="#55e6c1"/>
+              <rect x="3" y="12" width="2" height="4" fill="#ffd84d"/>
+              <rect x="11" y="12" width="2" height="4" fill="#ffd84d"/>
+              <rect x="4" y="16" width="3" height="4" fill="#252541"/>
+              <rect x="9" y="16" width="3" height="4" fill="#252541"/>
+            </svg>
+            <div class="end-ground"></div>
+          </div>
+        </div>
+        <div class="end-scene-light">
+          <div class="end-scene-copy">
+            <p class="end-scene-kicker">UNTIL THE NEXT IDEA.</p>
+          </div>
+          <svg class="end-sky" viewBox="0 0 560 140" focusable="false" aria-hidden="true">
+            <path class="end-trail" d="M36 96 C 150 18, 290 126, 508 42" fill="none" stroke="#42664b" stroke-width="1.25" stroke-dasharray="3 7" stroke-linecap="round"/>
+            <g class="end-plane">
+              <g class="end-plane-body">
+                <path d="M0 8 L26 0 L18 10 L26 16 Z" fill="#c96d4d"/>
+                <path d="M8 8 L18 10 L12 12 Z" fill="#fbf8f1"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="site-end-legal">
       <p>&copy; <script>document.write(new Date().getFullYear());</script> Abhishek Bhowmick. All Rights Reserved.</p>
     </div>
-  </div>
-  <a href="#" class="btn back-to-top"><i data-lucide="chevron-up" aria-hidden="true"></i></a>
+  </footer>
+  <a href="#" class="btn back-to-top" aria-label="Back to top"><i data-lucide="chevron-up" aria-hidden="true"></i></a>
   <div id="loader" class="show"><div class="loader"></div></div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
   <script src="../lib/easing/easing.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.544.0/dist/umd/lucide.min.js"></script>
-  <script src="../js/main.js?v=ui-fix7"></script>
-  <script src="../js/theme.js?v=ui-fix14"></script>
+  <script src="../js/main.js?v=end1"></script>
+  <script src="../js/theme.js?v=hint6"></script>
+  <script src="../js/theme-atmosphere.js?v=atm5"></script>
   <script>if (window.lucide) { lucide.createIcons({ attrs: { 'stroke-width': 1.75 } }); }</script>
 </body>
 </html>
