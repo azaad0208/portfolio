@@ -1588,6 +1588,38 @@ html[data-theme="dark"] body.home-page .ai-work-card:focus-visible {
   outline-color: #f2f2f2;
 }
 
+@media (max-width: 767.98px) {
+  body.home-page #aiWorkModal {
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  body.home-page #aiWorkModal .modal-dialog,
+  body.home-page #aiWorkModal .modal-dialog.modal-dialog-centered {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    margin: 0;
+  }
+
+  body.home-page #aiWorkModal.fade .modal-dialog {
+    transform: translate3d(0, 100%, 0);
+    transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  body.home-page #aiWorkModal.show .modal-dialog,
+  body.home-page #aiWorkModal.fade.show .modal-dialog {
+    transform: translate3d(0, 0, 0);
+  }
+
+  body.home-page #aiWorkModal .ai-work-modal {
+    width: 100%;
+    border-radius: 16px 16px 0 0 !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1615,6 +1647,12 @@ html[data-theme="dark"] body.home-page .ai-work-card:focus-visible {
   }
 
   body.home-page .navbar-light .navbar-nav .nav-link::after {
+    transition: none;
+  }
+
+  body.home-page #aiWorkModal.fade .modal-dialog,
+  body.home-page #aiWorkModal.show .modal-dialog {
+    transform: none;
     transition: none;
   }
 }

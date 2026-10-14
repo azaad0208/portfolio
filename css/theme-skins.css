@@ -1074,9 +1074,10 @@ html:not([data-theme="dark"]) body.home-page .ai-work-sheet-handle {
   }
 
   body.home-page #aiWorkModal .ai-work-modal {
-    border-radius: 0 !important;
+    border-radius: 16px 16px 0 0 !important;
     border-left: 0 !important;
     border-right: 0 !important;
+    border-bottom: 0 !important;
     box-shadow: none !important;
   }
 }
