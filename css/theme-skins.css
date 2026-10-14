@@ -52,6 +52,7 @@ html[data-theme="dark"] body.home-page .hero,
 html[data-theme="dark"] body.home-page .about,
 html[data-theme="dark"] body.home-page .experience,
 html[data-theme="dark"] body.home-page .ai-work,
+html[data-theme="dark"] body.home-page .work-board,
 html[data-theme="dark"] body.home-page .blog,
 html[data-theme="dark"] body.home-page .service,
 html[data-theme="dark"] body.home-page .footer,
@@ -102,6 +103,7 @@ body.home-page .hero,
 body.home-page .about,
 body.home-page .experience,
 body.home-page .ai-work,
+body.home-page .work-board,
 body.home-page .blog,
 body.home-page .service,
 body.home-page .footer,
@@ -114,6 +116,7 @@ html[data-theme="dark"] body.home-page .hero,
 html[data-theme="dark"] body.home-page .about,
 html[data-theme="dark"] body.home-page .experience,
 html[data-theme="dark"] body.home-page .ai-work,
+html[data-theme="dark"] body.home-page .work-board,
 html[data-theme="dark"] body.home-page .blog,
 html[data-theme="dark"] body.home-page .service,
 html[data-theme="dark"] body.home-page .footer {
@@ -283,6 +286,14 @@ body.home-page .project-card-soon {
   cursor: default;
 }
 
+body.home-page a.project-card-soon {
+  cursor: pointer;
+}
+
+body.home-page a.project-card-soon:hover {
+  color: var(--accent) !important;
+}
+
 body.home-page .project-card-soon {
   display: inline-flex;
   align-items: center;
@@ -370,6 +381,10 @@ html[data-theme="dark"] body.home-page .work-filter.is-active {
   color: #10101b;
 }
 
+html:not([data-theme="dark"]) body.home-page .work-filter.is-active {
+  color: #f6f2e8;
+}
+
 body.home-page .service .service-item,
 html[data-theme="dark"] body.home-page .service .service-item {
   background: transparent !important;
@@ -386,7 +401,8 @@ html[data-theme="dark"] body.home-page .service .service-icon {
 body.home-page .service .service-item:hover,
 html[data-theme="dark"] body.home-page .service .service-item:hover {
   background: transparent !important;
-  border-color: var(--accent) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 body.home-page .project-card-link {
@@ -678,7 +694,7 @@ body.home-page .contact-block + .contact-block {
   margin-top: 8px;
 }
 
-/* FitOS / QuickByte case studies */
+/* FitOS / QuickBite case studies */
 html[data-theme="dark"] body.work-layout .work-page,
 html[data-theme="dark"] body.work-layout .footer,
 html[data-theme="dark"] body.work-layout .site-end,
@@ -854,6 +870,15 @@ html[data-theme="dark"] body.home-page .ai-work-modal {
   max-height: min(88vh, 920px);
 }
 
+body.home-page .ai-work-modal.ai-work-modal--text {
+  overflow: visible;
+  max-height: none;
+}
+
+body.home-page .ai-work-modal-img[hidden] {
+  display: none !important;
+}
+
 html[data-theme="dark"] body.home-page .modal-content,
 html[data-theme="dark"] body.home-page .ai-work-modal {
   border: 2px solid var(--line) !important;
@@ -878,6 +903,10 @@ body.home-page .ai-work-modal-body {
   padding: 1.5rem 1.6rem 1.75rem;
 }
 
+body.home-page .ai-work-modal--text .ai-work-modal-body {
+  padding: 1.35rem 1.5rem 1.5rem;
+}
+
 body.home-page .ai-work-modal-body h3 {
   margin-bottom: 0.7rem;
   color: var(--text);
@@ -893,12 +922,52 @@ html:not([data-theme="dark"]) body.home-page .ai-work-modal-body h3 {
   font-weight: 400;
 }
 
-body.home-page .ai-work-modal-body p {
+body.home-page .ai-work-modal-body p,
+body.home-page .ai-work-modal-copy p {
   margin: 0.35rem 0 0;
   color: var(--muted);
   font-family: var(--body);
   font-size: 1rem;
   line-height: 1.65;
+}
+
+body.home-page .ai-work-modal-soon {
+  margin: 0 0 0.35rem !important;
+  color: var(--accent) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.home-page .ai-work-modal-lead {
+  color: var(--text) !important;
+  font-size: 1.05rem !important;
+}
+
+body.home-page .ai-work-modal-list,
+body.home-page .ai-work-modal-points {
+  margin: 0.85rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--text);
+  font-family: var(--body);
+}
+
+body.home-page .ai-work-modal-list li,
+body.home-page .ai-work-modal-points li {
+  margin: 0 0 0.45rem;
+}
+
+body.home-page .ai-work-modal-points h4 {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--body);
+  font-style: normal;
+}
+
+body.home-page .ai-work-modal-points p {
+  margin: 0;
 }
 
 body.home-page .ai-chip,
@@ -999,6 +1068,11 @@ html:not([data-theme="dark"]) body.home-page .ai-work-sheet-handle {
 }
 
 @media (max-width: 767.98px) {
+  body.home-page #aiWorkModal .ai-work-modal.ai-work-modal--text {
+    max-height: none;
+    overflow: visible;
+  }
+
   body.home-page #aiWorkModal .ai-work-modal {
     border-radius: 0 !important;
     border-left: 0 !important;

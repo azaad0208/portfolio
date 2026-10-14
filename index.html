@@ -34,11 +34,11 @@
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
   <!-- Template Stylesheet -->
-  <link href="css/style.css?v=hint6" rel="stylesheet" />
-  <link href="css/home.css?v=ui-fix18" rel="stylesheet" />
-  <link href="css/theme-skins.css?v=skin10" rel="stylesheet" />
+  <link href="css/style.css?v=work8" rel="stylesheet" />
+  <link href="css/home.css?v=work9" rel="stylesheet" />
+  <link href="css/theme-skins.css?v=work10" rel="stylesheet" />
   <link href="css/theme-atmosphere.css?v=atm5" rel="stylesheet" />
-  <link href="css/site-end.css?v=end13" rel="stylesheet" />
+  <link href="css/site-end.css?v=work1" rel="stylesheet" />
   <script>
     (function () {
       try {
@@ -117,8 +117,7 @@
           <a href="#home" class="nav-item nav-link active">Home</a>
           <a href="#about" class="nav-item nav-link">About</a>
           <a href="#experience" class="nav-item nav-link">Experience</a>
-          <a href="#ai-work" class="nav-item nav-link">AI Work</a>
-          <a href="#blog" class="nav-item nav-link">Projects</a>
+          <a href="#work" class="nav-item nav-link">Work</a>
           <a href="#service" class="nav-item nav-link">Specialities</a>
           <a href="#contact" class="nav-item nav-link">Contact</a>
         </div>
@@ -136,7 +135,7 @@
             <div class="hero-text hero-anim">
               <!-- <p>I'm</p> -->
               <h1>Abhishek Bhowmick</h1>
-              <h2></h2>
+              <h2 class="hero-typed"><span class="hero-typed-target"></span></h2>
               <div class="typed-text">
                 UX/UI Designer, AI/Agentic Product Designer, 3D Animator, AI Aficionado
               </div>
@@ -243,7 +242,7 @@
           <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
           <div class="journey-body">
             <h3 class="journey-role">UX UI Designer</h3>
-            <p class="journey-meta">KrazyBee Services Pvt. Ltd. · Bengaluru</p>
+            <p class="journey-meta">KrazyBee Services Pvt. Ltd., Bengaluru</p>
             <ul class="journey-copy">
               <li>Designing and optimizing both end-user and admin applications, ensuring smooth interactions and efficiency.</li>
               <li>Working closely with product managers to ensure designs align with business goals and user needs.</li>
@@ -256,7 +255,7 @@
           <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
           <div class="journey-body">
             <h3 class="journey-role">Visual Designer</h3>
-            <p class="journey-meta">Webkul Software Pvt. Ltd. · Noida</p>
+            <p class="journey-meta">Webkul Software Pvt. Ltd., Noida</p>
             <ul class="journey-copy">
               <li>Designed UIs for apps and websites across e-Commerce, CRM, ERP, SAAS, and POS systems.</li>
               <li>Created and adjusted wireframes and user flows to make sure designs are clear and easy to follow.</li>
@@ -269,7 +268,7 @@
           <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
           <div class="journey-body">
             <h3 class="journey-role">UX/UI Designer</h3>
-            <p class="journey-meta">Wallicon Pvt. Ltd. · Lucknow</p>
+            <p class="journey-meta">Wallicon Pvt. Ltd., Lucknow</p>
             <ul class="journey-copy">
               <li>Designed desktop and mobile websites ensuring clear UX paths, enhanced engagement through effective UI for frontend, sellers panel and admin panel.</li>
               <li>Created banners, screens, wireframes, and prototypes.</li>
@@ -282,7 +281,7 @@
           <div class="journey-rail" aria-hidden="true"><span class="journey-node"></span></div>
           <div class="journey-body">
             <h3 class="journey-role">UX/UI Designer</h3>
-            <p class="journey-meta">ITLH LLP · Navi Mumbai</p>
+            <p class="journey-meta">ITLH LLP, Navi Mumbai</p>
             <ul class="journey-copy">
               <li>Designed and delivered web and mobile experiences under mentor and product designer supervision.</li>
               <li>Created wireframes, prototypes, and high-fidelity UI for in-house products.</li>
@@ -302,16 +301,15 @@
   </div>
   <!-- Job Experience End -->
 
-  <!-- AI Work Start -->
-  <div class="ai-work" id="ai-work">
+  <!-- Work Start -->
+  <div class="work-board blog" id="work">
     <div class="container-fluid">
-      <div class="section-header text-center">
-        <p>Plugins &amp; AI Products</p>
-        <h2>AI Work</h2>
-      </div>
-      <div class="ai-work-marquee" id="ai-work-carousel">
-        <div class="ai-work-track" id="ai-work-track"></div>
-      </div>
+      <header class="section-header text-center">
+        <p>From Projects</p>
+        <h2>My Work</h2>
+      </header>
+      <div class="work-filters" role="tablist" aria-label="Work filters"></div>
+      <div class="row work-board-list" id="work-board-list"></div>
     </div>
   </div>
 
@@ -327,27 +325,16 @@
           <img id="aiWorkModalImage" src="" alt="" />
         </div>
         <div class="ai-work-modal-body">
+          <p class="ai-work-modal-soon" id="aiWorkModalSoon" hidden>Case study coming soon</p>
           <h3 id="aiWorkModalTitle"></h3>
           <div class="blog-meta" id="aiWorkModalTags"></div>
-          <p id="aiWorkModalText"></p>
+          <div id="aiWorkModalText" class="ai-work-modal-copy"></div>
           <div class="hero-btn" id="aiWorkModalLinks"></div>
         </div>
       </div>
     </div>
   </div>
-  <!-- AI Work End -->
-
-  <!-- Blog Start -->
-  <div class="blog" id="blog">
-    <div class="container-fluid">
-      <div class="section-header text-center">
-        <p>From Projects</p>
-        <h2>My Work</h2>
-      </div>
-      <div class="row" id="data-container"></div>
-    </div>
-  </div>
-  <!-- Blog End -->
+  <!-- Work End -->
 
   <!-- Service Start -->
   <div class="service" id="service">
@@ -536,15 +523,16 @@
   <script src="mail/contact.js"></script>
 
   <!-- Template Javascript -->
-  <script src="js/main.js?v=end1"></script>
+  <script src="js/main.js?v=work1"></script>
   <script src="js/theme.js?v=hint6"></script>
   <script src="js/theme-atmosphere.js?v=atm5"></script>
   <script src="js/updates.js?v=upd1"></script>
-  <script src="projects/index.js?v=soon2"></script>
-  <script src="projects/ai-work.js?v=soon1"></script>
+  <script src="projects/index.js?v=work5"></script>
+  <script src="projects/ai-work.js?v=work11"></script>
+  <script src="projects/work.js?v=work9"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/motion.js?v=end8"></script>
+  <script src="js/motion.js?v=work7"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.544.0/dist/umd/lucide.min.js"></script>
   <script>if (window.lucide) { lucide.createIcons({ attrs: { "stroke-width": 1.75 } }); }</script>
 </body>

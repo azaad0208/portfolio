@@ -51,10 +51,7 @@
   setupProgress();
 
   function refreshWow() {
-    if (reduceMotion || typeof WOW !== "function") {
-      return;
-    }
-    new WOW({ mobile: true, live: true }).init();
+    return;
   }
 
   refreshWow();
@@ -125,7 +122,6 @@
       gsap.set(ctas, { autoAlpha: 1, y: 0, opacity: 1, visibility: "visible" });
     }
 
-    var support = document.querySelector(".hero-text h2");
     var photo = document.querySelector(".hero-image img");
     function scrubTrigger() {
       return {
@@ -147,19 +143,6 @@
         scrollTrigger: scrubTrigger(),
       }
     );
-
-    if (support) {
-      gsap.fromTo(
-        support,
-        { y: 0 },
-        {
-          y: isMobile() ? -36 : -72,
-          ease: "none",
-          immediateRender: false,
-          scrollTrigger: scrubTrigger(),
-        }
-      );
-    }
 
     if (photo) {
       gsap.fromTo(
@@ -192,6 +175,7 @@
         {
           y: toY,
           ease: "none",
+          immediateRender: false,
           scrollTrigger: {
             trigger: trigger || el,
             start: "top bottom",
@@ -206,13 +190,13 @@
     var headingTo = isMobile() ? -16 : -24;
 
     [
-      ["#about", "#about .col-lg-6:first-child .about-content", isMobile() ? 22 : 40, isMobile() ? -28 : -48, 1.2],
-      ["#about", "#about .col-lg-6:last-child .about-content", isMobile() ? 30 : 56, isMobile() ? -20 : -36, 1.3],
+      ["#about", "#about .col-lg-6:first-child .about-content", 0, headingTo, 1.2],
+      ["#about", "#about .col-lg-6:last-child .about-content", 0, headingTo, 1.2],
       [".experience", ".experience .section-header", headingFrom, headingTo, 1.15],
-      [".ai-work", ".ai-work .section-header", headingFrom, headingTo, 1.15],
+      ["#work", "#work .section-header", headingFrom, headingTo, 1.15],
       ["#service", "#service .section-header", headingFrom, headingTo, 1.15],
-      ["#contact", "#contact .site-end-intro", isMobile() ? 16 : 24, isMobile() ? -10 : -16, 1.2],
-      ["#contact", "#contact .site-end-aside", isMobile() ? 18 : 28, isMobile() ? -8 : -12, 1.25],
+      ["#contact", "#contact .site-end-intro", 0, headingTo, 1.2],
+      ["#contact", "#contact .site-end-aside", 0, headingTo, 1.2],
     ].forEach(function (item) {
       var section = document.querySelector(item[0]);
       if (!section) {
@@ -223,39 +207,28 @@
       });
     });
 
-    gsap.utils.toArray(".project-card-media").forEach(function (media) {
-      var shift = media.querySelector(".project-card-media-shift");
-      if (!shift) {
-        return;
-      }
-      gsap.fromTo(
-        shift,
-        { yPercent: -14 },
-        {
-          yPercent: 12,
-          ease: "none",
-          scrollTrigger: {
-            trigger: media,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1.15,
-          },
-        }
-      );
+    window.bindWorkMediaParallax();
+
+    gsap.utils.toArray("#service .service-item").forEach(function (el) {
+      drift(el, 0, isMobile() ? -12 : -20, el, 1.05);
     });
 
-    gsap.utils.toArray("#service .service-icon img").forEach(function (el) {
-      drift(el, isMobile() ? 8 : 12, isMobile() ? -6 : -10, el.closest(".service-item") || el, 1.05);
-    });
+  }
 
-    gsap.utils.toArray("#service .service-text").forEach(function (el) {
-      drift(el, isMobile() ? 18 : 28, isMobile() ? -14 : -22, el.closest(".service-item") || el, 1.15);
-    });
+  function isDarkTheme() {
+    return document.documentElement.getAttribute("data-theme") === "dark";
+  }
 
-    var aiTrack = document.querySelector(".ai-work-marquee");
-    if (aiTrack) {
-      drift(aiTrack, isMobile() ? 10 : 16, isMobile() ? -10 : -16, document.querySelector(".ai-work"), 1.2);
-    }
+  function showJourneyStatic() {
+    document.querySelectorAll(".journey-body").forEach(function (body) {
+      gsap.set(body, {
+        autoAlpha: 1,
+        x: 0,
+        y: 0,
+        rotationX: 0,
+        rotationY: 0,
+      });
+    });
   }
 
   function setupExperience() {
@@ -264,6 +237,14 @@
     var progress = document.querySelector(".journey-progress");
     var track = document.querySelector(".journey-track");
     if (!list || !items.length) {
+      return;
+    }
+
+    if (!isDarkTheme()) {
+      items.forEach(function (item) {
+        item.classList.add("is-active");
+      });
+      showJourneyStatic();
       return;
     }
 
@@ -375,11 +356,66 @@
     });
   }
 
+  window.bindWorkMediaParallax = function () {
+    if (window._workMediaTriggers && window._workMediaTriggers.length) {
+      window._workMediaTriggers.forEach(function (tween) {
+        if (tween && tween.scrollTrigger) {
+          tween.scrollTrigger.kill();
+        }
+        if (tween && tween.kill) {
+          tween.kill();
+        }
+      });
+    }
+    window._workMediaTriggers = [];
+    if (document.documentElement.getAttribute("data-theme") !== "dark") {
+      gsap.utils.toArray(".project-card-media-shift").forEach(function (shift) {
+        gsap.set(shift, { clearProps: "transform,yPercent" });
+      });
+      return;
+    }
+    gsap.utils.toArray(".project-card-media").forEach(function (media) {
+      var shift = media.querySelector(".project-card-media-shift");
+      if (!shift) {
+        return;
+      }
+      gsap.set(shift, { yPercent: 0 });
+      var tween = gsap.fromTo(
+        shift,
+        { yPercent: 6 },
+        {
+          yPercent: -6,
+          ease: "none",
+          immediateRender: false,
+          scrollTrigger: {
+            trigger: media,
+            start: "center bottom",
+            end: "center top",
+            scrub: 1.15,
+          },
+        }
+      );
+      window._workMediaTriggers.push(tween);
+    });
+  };
+
   setupNavbar();
   heroEntrance();
   heroParallax();
   setupExperience();
   pageParallax();
+
+  document.documentElement.addEventListener("portfolio-theme-change", function () {
+    if (!isDarkTheme()) {
+      showJourneyStatic();
+    }
+    if (typeof window.bindWorkMediaParallax === "function") {
+      window.bindWorkMediaParallax();
+    }
+    if (typeof ScrollTrigger !== "undefined") {
+      ScrollTrigger.refresh();
+    }
+  });
 
   window.addEventListener("load", function () {
     if (typeof ScrollTrigger !== "undefined") {

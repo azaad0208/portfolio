@@ -22,7 +22,7 @@ const aiWorkItems = [
     short:
       "A Figma plugin that creates, governs, and scores design systems with tokens and export.",
     name: "Hive AI — Figma Design System Plugin",
-    image: "",
+    image: "img/projects/ai/hive.webp",
     chips: [
       { label: "Figma", icon: "figma" },
       { label: "Gemini", icon: "gemini" },
@@ -32,6 +32,25 @@ const aiWorkItems = [
       "Enterprise Figma plugin to create, govern, and audit design systems: primitive, semantic, and component tokens, CSS/SCSS/W3C/Style Dictionary export, Auto-Heal, and a 0–100% design-system health score.",
     url: "",
     urlName: "",
+    comingSoon: true,
+    preview: {
+      title: "Hive: Your AI Design System Engineer",
+      lead: "Build consistent design systems with AI, directly in Figma.",
+      body: [
+        "Hive helps you create design tokens and reusable components, build tables, generate documentation, audit inconsistencies, and export tokens for development.",
+        "Six tools. One connected design system.",
+      ],
+      list: [
+        "Token Builder",
+        "Component Builder",
+        "Table Builder",
+        "Docs",
+        "Auditor",
+        "Publisher",
+      ],
+      note: "Hive works with your existing design tokens and components to help keep your UI consistent and reduce repetitive design system work.",
+    },
+    categories: ["ai"],
   },
   {
     id: "arcade",
@@ -49,6 +68,7 @@ const aiWorkItems = [
       "Playable arcade games inside Figma (True or False, Car Race, Catch the Egg, Shoot Balls, Snake Rush) with scoring, difficulty, economy, skins, and pause/revive — published on Figma Community.",
     url: "https://www.figma.com/community/plugin/1630586678262398992/design-arcade",
     urlName: "Figma Community",
+    categories: ["ai", "experimental"],
   },
   {
     id: "fitos",
@@ -60,19 +80,21 @@ const aiWorkItems = [
       { label: "Gemini", icon: "gemini" },
       { label: "Google AI Studio", icon: "google-ai" },
       { label: "Cursor", icon: "cursor" },
+      { label: "ChatGPT", icon: "chatgpt" },
     ],
     description:
       "Operating system connecting gym owners, branch managers, trainers, and members: revenue and staffing, check-ins and pricing, trainer workouts, and a QR member pass with live sync.",
     url: "",
     urlName: "",
     page: "work/fitos.html",
+    categories: ["product", "saas", "ai"],
   },
   {
     id: "quickbite",
-    title: "QuickByte",
+    title: "QuickBite",
     short: "Restaurant ops from dine-in and kitchen display through to delivery.",
-    name: "QuickByte — Restaurant Ops & Delivery",
-    image: "",
+    name: "QuickBite — Restaurant Ops & Delivery",
+    image: "img/projects/ai/quickbite.webp",
     chips: [
       { label: "Gemini", icon: "gemini" },
       { label: "Google AI Studio", icon: "google-ai" },
@@ -82,7 +104,38 @@ const aiWorkItems = [
       "Platform for diners, kitchen, managers, and riders: dine-in/takeaway/delivery ordering, kitchen display, live stock, and delivery claim-to-doorstep workflows.",
     url: "",
     urlName: "",
-    page: "work/quickbyte.html",
+    comingSoon: true,
+    preview: {
+      title: "QuickBite",
+      lead: "From order to delivery, in sync.",
+      body: [
+        "A real-time, full-stack restaurant management, kitchen orchestration, and on-demand delivery ecosystem. It bridges the operational gaps between front-of-house (customers/diners), back-of-house (chefs/line cooks via a dedicated Kitchen Display System — KDS), restaurant management (owners/cashiers), logistics partners (delivery riders/agents), and platform administrators.",
+        "An all-in-one, real-time restaurant operating system and delivery platform that connects diners, kitchen staff, store managers, and delivery riders into one synchronized system.",
+      ],
+      points: [
+        {
+          heading: "Digital Ordering (Customers)",
+          text: "Browse interactive menus, add special cooking instructions, and order for Dine-in (table QR), Takeaway, or Delivery with live milestone tracking.",
+        },
+        {
+          heading: "Smart Kitchen Display System (KDS for Chefs)",
+          text: "Replaces paper tickets with digital tickets featuring live urgency timers (white → yellow → red) and a Batch Prep mode to cook identical items together.",
+        },
+        {
+          heading: "Instant Front-of-House Control (Owners/Managers)",
+          text: "Review incoming orders, hold or reject with reason, monitor live prep times, and bump prepared food to “Ready for Dispatch.”",
+        },
+        {
+          heading: "Live Menu & Stock Management (Kitchen Staff and Restaurant Management)",
+          text: "Chefs or managers can mark any item “Out of Stock” directly from the kitchen screen, immediately hiding it from customer menus.",
+        },
+        {
+          heading: "Integrated Delivery Logistics (Riders)",
+          text: "Riders get notified the second food is bagged and ready, claiming deliveries and updating status from pickup to doorstep.",
+        },
+      ],
+    },
+    categories: ["product", "saas", "ai"],
   },
   {
     id: "vernac",
@@ -100,6 +153,7 @@ const aiWorkItems = [
       "One-click translation of Figma text layers into Indic and other languages, with side-by-side localized frames, layer exclusions for brands and logos, and proofreading before generate.",
     url: "https://www.figma.com/community/plugin/1665010377089179726/vernac-instant-multi-language-text-translator",
     urlName: "Figma Community",
+    categories: ["ai", "experimental"],
   },
   {
     id: "vivid",
@@ -116,8 +170,13 @@ const aiWorkItems = [
       "Turns any image into Dominant, Vibrant, Muted, Contrast, and Mixed palettes. HEX/RGB/CSS/HSL/HSB, lock and regenerate, PNG/JSON/CSS export, and Figma Color Styles.",
     url: "https://www.figma.com/community/plugin/1573288416469934658/vivid-color-palette-generator",
     urlName: "Figma Community",
+    categories: ["ai", "experimental"],
   },
 ];
+
+window.aiWorkItems = aiWorkItems;
+window.chipSpans = chipSpans;
+window.chipIcons = chipIcons;
 
 function escapeHtml(value) {
   return String(value)
@@ -153,6 +212,111 @@ function cardMarkup(item) {
   `;
 }
 
+function previewMarkup(item) {
+  const preview = item.preview || {};
+  const parts = [];
+  if (preview.lead) {
+    parts.push("<p class=\"ai-work-modal-lead\">" + escapeHtml(preview.lead) + "</p>");
+  }
+  (preview.body || []).forEach(function (para) {
+    parts.push("<p>" + escapeHtml(para) + "</p>");
+  });
+  if (preview.list && preview.list.length) {
+    parts.push(
+      "<ul class=\"ai-work-modal-list\">" +
+        preview.list
+          .map(function (entry) {
+            return "<li>" + escapeHtml(entry) + "</li>";
+          })
+          .join("") +
+        "</ul>"
+    );
+  }
+  if (preview.points && preview.points.length) {
+    parts.push(
+      "<ol class=\"ai-work-modal-points\">" +
+        preview.points
+          .map(function (point) {
+            return (
+              "<li><h4>" +
+              escapeHtml(point.heading) +
+              "</h4><p>" +
+              escapeHtml(point.text) +
+              "</p></li>"
+            );
+          })
+          .join("") +
+        "</ol>"
+    );
+  }
+  if (preview.note) {
+    parts.push("<p>" + escapeHtml(preview.note) + "</p>");
+  }
+  if (!parts.length) {
+    parts.push("<p>" + escapeHtml(item.description || "") + "</p>");
+  }
+  return parts.join("");
+}
+
+function openAiWork(id) {
+  const item = aiWorkItems.find((entry) => entry.id === id);
+  if (!item) {
+    return;
+  }
+
+  if (item.page && !item.comingSoon) {
+    window.location.assign(item.page);
+    return;
+  }
+
+  if (item.url && !item.comingSoon && !item.preview) {
+    window.open(item.url, "_blank", "noopener,noreferrer");
+    return;
+  }
+
+  const image = document.getElementById("aiWorkModalImage");
+  const media = document.getElementById("aiWorkModalMedia");
+  const title = document.getElementById("aiWorkModalTitle");
+  const tags = document.getElementById("aiWorkModalTags");
+  const text = document.getElementById("aiWorkModalText");
+  const soon = document.getElementById("aiWorkModalSoon");
+  const links = document.getElementById("aiWorkModalLinks");
+  const preview = item.preview || {};
+
+  const sheet = document.querySelector("#aiWorkModal .ai-work-modal");
+  if (sheet) {
+    sheet.classList.add("ai-work-modal--text");
+  }
+  if (media) {
+    media.hidden = true;
+  }
+  if (image) {
+    image.removeAttribute("src");
+    image.alt = "";
+  }
+  if (title) {
+    title.textContent = preview.title || item.name;
+  }
+  if (soon) {
+    soon.hidden = !item.comingSoon;
+  }
+  if (tags) {
+    tags.className = "ai-work-chips";
+    tags.innerHTML = chipSpans(item.chips);
+  }
+  if (text) {
+    text.innerHTML = previewMarkup(item);
+  }
+  if (links) {
+    links.innerHTML = "";
+    links.style.display = "none";
+  }
+
+  $("#aiWorkModal").modal("show");
+}
+
+window.openAiWork = openAiWork;
+
 (function initAiWork() {
   const marquee = document.getElementById("ai-work-carousel");
   const track = document.getElementById("ai-work-track");
@@ -178,52 +342,6 @@ function cardMarkup(item) {
       return;
     }
     track.classList.toggle("is-paused", paused);
-  }
-
-  function openAiWork(id) {
-    const item = aiWorkItems.find((entry) => entry.id === id);
-    if (!item) {
-      return;
-    }
-
-    if (item.id === "fitos" && item.page) {
-      window.location.assign(item.page);
-      return;
-    }
-
-    const image = document.getElementById("aiWorkModalImage");
-    const media = document.getElementById("aiWorkModalMedia");
-    const title = document.getElementById("aiWorkModalTitle");
-    const tags = document.getElementById("aiWorkModalTags");
-    const text = document.getElementById("aiWorkModalText");
-    const links = document.getElementById("aiWorkModalLinks");
-
-    const hasImage = Boolean(item.image);
-    media.hidden = !hasImage;
-    if (hasImage) {
-      image.src = item.image;
-      image.alt = item.name;
-    } else {
-      image.removeAttribute("src");
-      image.alt = "";
-    }
-    title.textContent = item.name;
-    tags.className = "ai-work-chips";
-    tags.innerHTML = chipSpans(item.chips);
-    text.textContent = item.description;
-
-    if (item.url) {
-      links.innerHTML = `<a class="btn" target="_blank" rel="noopener noreferrer" href="${escapeHtml(
-        item.url
-      )}">${escapeHtml(item.urlName || "Open")}</a>`;
-      links.style.display = "";
-    } else {
-      links.innerHTML = "";
-      links.style.display = "none";
-    }
-
-    setPaused(true);
-    $("#aiWorkModal").modal("show");
   }
 
   renderTrack();

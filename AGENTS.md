@@ -18,6 +18,6 @@ Serve `E:\For-Portfolio` (Python: `python -m http.server 5500`). Give the user `
 
 ## Live update
 
-Only when they ask: commit in this repo, push `origin main`. Confirm Netlify will pick it up. Do not force-push.
+Only when they ask: commit in this repo, push `origin main`. Create an annotated git tag (`vX.Y.Z`) for that live release and push the tag. Confirm Netlify will pick it up. Do not force-push.
 
 Human-editable copies: `INSTRUCTIONS.md`, `docs/WORKFLOW.md`.

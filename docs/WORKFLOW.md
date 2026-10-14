@@ -21,7 +21,9 @@ cd E:\For-Portfolio
 git status
 git add <approved files>
 git commit -m "short why message"
+git tag -a vX.Y.Z -m "short why message"
 git push origin main
+git push origin vX.Y.Z
 ```
 
 Netlify deploys from GitHub `main`. Public URL: https://abhishekbhowmick.netlify.app/

@@ -2258,6 +2258,37 @@ body.work-layout .navbar.nav-sticky {
   line-height: 1.7;
 }
 
+.work-hero-copy p + p {
+  margin-top: 1rem;
+}
+
+.work-overview-list {
+  list-style: decimal;
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.work-overview-list > li {
+  margin: 0 0 1.25rem;
+  padding-left: 0.35rem;
+}
+
+.work-overview-list > li:last-child {
+  margin-bottom: 0;
+}
+
+.work-overview-list h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.work-overview-list p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
 .work-pain > .work-section-lead {
   margin-bottom: 36px;
 }

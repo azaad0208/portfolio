@@ -2,6 +2,7 @@
 const dataArray = [
   {
     image: "img/projects/wallicon-interior-pro.webp",
+    id: "wallicon",
     project: "Wallicon",
     skills: [
       "UX Design",
@@ -16,28 +17,34 @@ const dataArray = [
     url: "https://wallicon.in",
     url2: "https://dealer.wallicon.in",
     url2Name: "Dealer Website",
-    comingSoon: true
+    comingSoon: true,
+    categories: ["product", "saas"],
   },
   {
     image: "img/projects/discount-engine.webp",
+    id: "deals",
     project: "Designing for Deals: A Simple Discount System Design",
     skills: ["UX Design", "User Research", "UI Design", "Discount Engine Design", "Admin Panel", "Wireframing", "Figma"],
     description:
       "This project showcases the design of an easy-to-use discount system for a luxury jewelry e-commerce platform. It features seamless discount integration on product and checkout pages, along with a simple admin dashboard for managing offers. The goal is to boost sales and enhance customer experience.",
     url: "https://www.behance.net/gallery/208140321/Designing-for-Deals-A-Simple-Discount-System-Design",
     url2: "",
+    categories: ["product", "saas"],
   },
   {
     image: "img/projects/restro-pos-webkul.webp",
+    id: "restro",
     project: "Restro-POS Case Study",
     skills: ["UX Design", "UI Design", "POS Panel", "Figma"],
     description:
       "Webkul provides a Restro POS table booking system with a user-friendly interface for fast transactions, featuring reporting, offline orders, payments, table selection, inventory management, staff management, customer insights, and promotions.",
     url: "https://webkul.design/project/pos/",
     url2: "",
+    categories: ["product", "saas"],
   },
   {
     image: "img/projects/go-park-yourself.webp",
+    id: "gopark",
     project: "Go Park Yourself- UX Case Study",
     skills: ["UX Design", "User Research", "Wireframing", "Prototyping", "Adobe XD"],
     description:
@@ -47,18 +54,22 @@ const dataArray = [
     url: "https://www.behance.net/gallery/113205683/Go-Park-Yourself-(Parking-App)-UX-Case-Study",
     url2: "",
     comingSoon: true,
+    categories: ["product"],
   },
   {
     image: "img/projects/krayin-crm-webkul.webp",
+    id: "krayin",
     project: "Krayin CRM- Case Study",
     skills: ["UI Design", "Wireframing", "CRM Design", "Figma"],
     description:
       "Krayin CRM by Webkul is a free, open-source Laravel CRM for SMEs and enterprises that automates sales and marketing to drive substantial growth through complete customer lifecycle management.",
     url: "https://webkul.design/project/krayin-crm/",
     url2: "https://demo.krayincrm.com/",
+    categories: ["saas", "product"],
   },
   {
     image: "img/projects/bagisto-webkul.webp",
+    id: "bagisto",
     project: "Bagisto",
     skills: ["UI Design", "Wireframing", "Prototyping", "Website Design", "Admin Panel", "Figma"],
     description:
@@ -69,8 +80,11 @@ const dataArray = [
     url2: "https://demo.bagisto.com/",
     urlName: "",
     url2Name: "",
+    categories: ["product", "saas"],
   },
 ];
+
+window.portfolioProjects = dataArray;
 
 const container = document.getElementById("data-container");
 

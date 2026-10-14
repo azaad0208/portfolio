@@ -630,7 +630,8 @@ html[data-theme="dark"] body.work-layout .btn.back-to-top:hover {
   }
 
   html[data-theme="dark"] .site-end-email {
-    font-size: clamp(1.35rem, 3.2vw, 2.4rem);
+    font-size: clamp(1.05rem, 2.2vw, 1.55rem);
+    white-space: nowrap;
   }
 }
 
@@ -696,7 +697,15 @@ html[data-theme="dark"] body.work-layout .btn.back-to-top:hover {
   }
 
   html[data-theme="dark"] .site-end-email {
-    font-size: clamp(1.2rem, 6.4vw, 1.7rem);
+    display: block;
+    width: 100%;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   html:not([data-theme="dark"]) .end-scene-light {
@@ -748,7 +757,7 @@ html[data-theme="dark"] body.work-layout .btn.back-to-top:hover {
 @media (max-width: 374.98px) {
   html[data-theme="dark"] .site-end-email,
   html:not([data-theme="dark"]) .site-end-email {
-    font-size: 1.05rem;
+    font-size: 0.88rem;
   }
 
   html:not([data-theme="dark"]) .end-sky {

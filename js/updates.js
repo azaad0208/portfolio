@@ -41,8 +41,8 @@
             description: "Added an AI Work section for plugins and AI-assisted products.",
             date: "2026-07-22",
             type: "AI Work",
-            link: "/#ai-work",
-            cta: "View AI Work"
+            link: "/#work",
+            cta: "View Work"
         },
         {
             title: "Portfolio redesigned",
