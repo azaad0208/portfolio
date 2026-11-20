@@ -1657,3 +1657,32 @@ html[data-theme="dark"] body.home-page .ai-work-card:focus-visible {
   }
 }
 
+/* Work cards: the whole card is the link (the link stretches over the card) */
+body.home-page .work-board .project-card {
+  position: relative;
+  isolation: isolate;
+}
+body.home-page .work-board .project-card .blog-text {
+  position: static;
+}
+body.home-page .work-board .project-card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+}
+body.home-page .work-board .project-card-link:focus-visible {
+  outline: none;
+}
+body.home-page .work-board .project-card-link:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+body.home-page .work-board .project-card:has(.project-card-link):hover .project-card-title {
+  color: var(--accent);
+}
+/* Light: show up to three lines of description */
+html:not([data-theme="dark"]) body.home-page .work-board .truncate {
+  -webkit-line-clamp: 3;
+  max-height: 4.8em;
+}

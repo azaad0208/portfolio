@@ -72,8 +72,8 @@ const aiWorkItems = [
   },
   {
     id: "fitos",
-    title: "FitOS",
-    short: "A multi-branch gym OS for owners, trainers, and members.",
+    title: "FitOS: UX research case study",
+    short: "How I researched and designed FitOS, a real-time operating system for multi-branch gyms. From stakeholder research to one connected product for owners, branch managers, trainers and members.",
     name: "FitOS — Multi-Branch Gym OS",
     image: "img/projects/ai/Fitos-gym_ecosystem.webp",
     chips: [

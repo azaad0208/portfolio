@@ -103,7 +103,7 @@ html.has-motion:not([data-theme="dark"]) .atmosphere-cloud {
 @media (hover: hover) and (pointer: fine) {
   html[data-theme="dark"] body.home-page,
   html[data-theme="dark"] body.work-layout {
-    cursor: url("../img/cursor-pixel.svg") 2 2, auto;
+    cursor: url("../img/cursor-pixel.svg?v=2") 1 1, auto;
   }
 
   html[data-theme="dark"] body.home-page a,
@@ -127,12 +127,12 @@ html.has-motion:not([data-theme="dark"]) .atmosphere-cloud {
   html[data-theme="dark"] body.work-layout .theme-switch,
   html[data-theme="dark"] body.work-layout .work-tabs a,
   html[data-theme="dark"] body.work-layout .navbar-brand {
-    cursor: url("../img/cursor-pixel-hover.svg") 2 2, pointer;
+    cursor: url("../img/cursor-pixel-hover.svg?v=2") 1 1, pointer;
   }
 
   html:not([data-theme="dark"]) body.home-page,
   html:not([data-theme="dark"]) body.work-layout {
-    cursor: url("../img/cursor-pencil.svg") 2 2, auto;
+    cursor: url("../img/cursor-pencil.svg?v=2") 3 29, auto;
   }
 
   html:not([data-theme="dark"]) body.home-page a,
@@ -156,7 +156,7 @@ html.has-motion:not([data-theme="dark"]) .atmosphere-cloud {
   html:not([data-theme="dark"]) body.work-layout .theme-switch,
   html:not([data-theme="dark"]) body.work-layout .work-tabs a,
   html:not([data-theme="dark"]) body.work-layout .navbar-brand {
-    cursor: url("../img/cursor-pencil-hover.svg") 2 2, pointer;
+    cursor: url("../img/cursor-pencil-hover.svg?v=2") 3 29, pointer;
   }
 
   html[data-theme="dark"] body.home-page input,
